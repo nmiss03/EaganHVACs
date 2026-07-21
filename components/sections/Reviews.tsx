@@ -7,10 +7,12 @@ import { reviews, type Review } from "@/lib/site";
 
 function TestimonialCard({ review }: { review: Review }) {
   const initials = review.name
-    .split(" ")
+    .split(/\s+/)
     .map((part) => part[0])
+    .filter((ch): ch is string => Boolean(ch && /[A-Za-z]/.test(ch)))
     .slice(0, 2)
-    .join("");
+    .join("")
+    .toUpperCase();
 
   return (
     <figure className="flex h-full flex-col rounded-xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover">

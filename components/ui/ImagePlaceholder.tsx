@@ -1,8 +1,7 @@
-import { Icon, type IconName } from "@/components/ui/Icon";
+import { ComfortIllustration } from "@/components/ui/ComfortIllustration";
 
 interface ImagePlaceholderProps {
   label: string;
-  icon?: IconName;
   aspect?: "video" | "4/3" | "square" | "3/4";
   className?: string;
 }
@@ -20,7 +19,6 @@ const aspects = {
  */
 export function ImagePlaceholder({
   label,
-  icon = "home",
   aspect = "4/3",
   className = "",
 }: ImagePlaceholderProps) {
@@ -46,14 +44,17 @@ export function ImagePlaceholder({
         </defs>
         <rect width="100%" height="100%" fill="url(#ph-grid)" />
       </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center">
-        <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white text-navy-400 shadow-card">
-          <Icon name={icon} className="h-7 w-7" />
-        </span>
-        <span className="text-xs font-semibold uppercase tracking-[0.14em] text-navy-400">
-          {label}
-        </span>
-      </div>
+      <div
+        aria-hidden="true"
+        className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent-200/30 blur-2xl"
+      />
+      <ComfortIllustration
+        tone="light"
+        className="absolute inset-0 h-full w-full p-6"
+      />
+      <span className="absolute left-4 top-4 rounded-full bg-white/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-navy-500 shadow-sm backdrop-blur">
+        {label}
+      </span>
     </div>
   );
 }

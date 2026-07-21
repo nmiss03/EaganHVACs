@@ -39,7 +39,7 @@ export function Footer() {
                 href={`mailto:${site.email}`}
                 className="flex items-center gap-3 transition-colors hover:text-accent-300"
               >
-                <Icon name="clipboard" className="h-4 w-4 text-accent-400" />
+                <Icon name="mail" className="h-4 w-4 text-accent-400" />
                 {site.email}
               </a>
               <p className="flex items-center gap-3">

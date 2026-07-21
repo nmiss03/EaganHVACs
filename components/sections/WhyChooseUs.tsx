@@ -20,8 +20,7 @@ export function WhyChooseUs() {
               className="absolute -left-4 -top-4 h-full w-full rounded-xl border-2 border-dashed border-navy-200"
             />
             <ImagePlaceholder
-              label="Photo of a completed local installation"
-              icon="home"
+              label="Installation photo coming soon"
               aspect="4/3"
               className="relative shadow-card-hover"
             />

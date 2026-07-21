@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/ui/Button";
+import { ComfortIllustration } from "@/components/ui/ComfortIllustration";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { SectionDivider } from "@/components/ui/SectionDivider";
@@ -89,7 +90,7 @@ export function Hero() {
               />
               <div
                 role="img"
-                aria-label="Placeholder for a photo of a local HVAC technician servicing a home system"
+                aria-label="Illustration of a comfortable home with heating and cooling airflow — placeholder for a photo of a local HVAC technician"
                 className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gradient-to-br from-navy-700 via-navy-800 to-navy-950 shadow-2xl"
               >
                 <svg className="absolute inset-0 h-full w-full text-white/[0.05]" aria-hidden="true">
@@ -100,18 +101,34 @@ export function Hero() {
                   </defs>
                   <rect width="100%" height="100%" fill="url(#hero-ph)" />
                 </svg>
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8 text-center">
-                  <span className="flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 text-accent-400 backdrop-blur">
-                    <Icon name="thermometer" className="h-10 w-10" />
-                  </span>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy-100/60">
-                    Technician photo placeholder
-                  </p>
-                </div>
+                <ComfortIllustration
+                  tone="dark"
+                  className="absolute inset-x-0 top-0 h-[78%] w-full p-4"
+                />
+                <span className="absolute left-4 top-4 hidden rounded-full bg-navy-950/60 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-navy-100/70 backdrop-blur sm:inline-block">
+                  Team photo coming soon
+                </span>
+                {/* stat strip */}
+                <dl className="absolute inset-x-0 bottom-0 grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 bg-navy-950/50 backdrop-blur">
+                  {[
+                    { value: "~1 hr", label: "Avg. callback" },
+                    { value: "24/7", label: "Emergency line" },
+                    { value: "12+", label: "Cities served" },
+                  ].map((stat) => (
+                    <div key={stat.label} className="flex flex-col px-3 py-3.5 text-center sm:py-4">
+                      <dt className="order-2 mt-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-navy-100/60">
+                        {stat.label}
+                      </dt>
+                      <dd className="order-1 font-display text-lg font-extrabold text-white sm:text-xl">
+                        {stat.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
 
               {/* Floating rating card */}
-              <div className="absolute -bottom-6 -left-3 rounded-xl bg-white p-4 shadow-card-hover sm:-left-8">
+              <div className="absolute -left-3 top-[40%] rounded-xl bg-white p-4 shadow-card-hover sm:-left-8">
                 <div className="flex items-center gap-3">
                   <div
                     className="flex text-accent-500"
