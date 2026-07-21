@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
-import { navLinks, serviceAreas, services, site } from "@/lib/site";
+import { locations } from "@/lib/content";
+import { navLinks, services, site } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -82,7 +83,7 @@ export function Footer() {
               {services.map((service) => (
                 <li key={service.title}>
                   <Link
-                    href="/#services"
+                    href={`/services/${service.slug}`}
                     className="text-navy-100/70 transition-colors hover:text-accent-300"
                   >
                     {service.title}
@@ -92,18 +93,23 @@ export function Footer() {
             </ul>
           </nav>
 
-          <div className="lg:col-span-3">
+          <nav aria-label="Footer — service area" className="lg:col-span-3">
             <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-white">
               Service Area
             </h2>
             <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
-              {serviceAreas.map((city) => (
-                <li key={city} className="text-navy-100/70">
-                  {city}
+              {locations.map((location) => (
+                <li key={location.slug}>
+                  <Link
+                    href={`/locations/${location.slug}`}
+                    className="text-navy-100/70 transition-colors hover:text-accent-300"
+                  >
+                    {location.name}
+                  </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-navy-100/60 sm:flex-row">

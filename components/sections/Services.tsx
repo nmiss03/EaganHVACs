@@ -34,10 +34,10 @@ function ServiceCard({ service }: { service: Service }) {
         ))}
       </ul>
       <Link
-        href="/#inquiry"
+        href={`/services/${service.slug}`}
         className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-navy-900 transition-colors hover:text-accent-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500"
       >
-        Request this service
+        Learn more about {service.title.toLowerCase()}
         <Icon
           name="arrowRight"
           className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"

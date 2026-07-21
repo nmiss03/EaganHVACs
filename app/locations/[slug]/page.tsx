@@ -1,0 +1,229 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/landing/Breadcrumbs";
+import { CTABand } from "@/components/landing/CTABand";
+import { FaqList } from "@/components/landing/FaqList";
+import { PageHero } from "@/components/landing/PageHero";
+import { Container } from "@/components/ui/Container";
+import { Icon } from "@/components/ui/Icon";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import { absoluteUrl, getLocation, locations } from "@/lib/content";
+import { services, site, whyUs } from "@/lib/site";
+
+export function generateStaticParams() {
+  return locations.map((location) => ({ slug: location.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const location = getLocation(slug);
+  if (!location) return {};
+  const title = `HVAC Repair in ${location.name}, MN | Furnace & AC Service`;
+  const description = `Trusted HVAC repair and installation in ${location.name}, MN. Local furnace repair, AC service, and 24/7 emergency help from vetted ${location.county} pros. Free quotes.`;
+  return {
+    title,
+    description,
+    alternates: { canonical: `/locations/${location.slug}` },
+    openGraph: {
+      title,
+      description,
+      url: absoluteUrl(`/locations/${location.slug}`),
+    },
+  };
+}
+
+export default async function LocationDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const location = getLocation(slug);
+  if (!location) notFound();
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "HVACBusiness",
+    "@id": `${site.url}/#business`,
+    name: site.name,
+    description: `HVAC repair, installation, and maintenance serving ${location.name}, ${location.county}, Minnesota.`,
+    url: absoluteUrl(`/locations/${location.slug}`),
+    telephone: site.phoneHref.replace("tel:", ""),
+    email: site.email,
+    areaServed: { "@type": "City", name: `${location.name}, MN` },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: site.address.city,
+      addressRegion: site.address.state,
+      addressCountry: "US",
+    },
+  };
+
+  const localFaqs = [
+    {
+      question: `Do you offer emergency HVAC service in ${location.name}?`,
+      answer: `Yes. Contractors in our network provide 24/7 emergency furnace and AC repair throughout ${location.name} and ${location.county}, including nights, weekends, and holidays for no-heat and no-cooling emergencies.`,
+    },
+    {
+      question: `How fast can a technician reach my home in ${location.name}?`,
+      answer: `Because the pros we work with are local to the south metro, most ${location.name} homeowners get a callback within the hour during business hours, with same-day appointments available for urgent repairs.`,
+    },
+    {
+      question: `Are the HVAC contractors serving ${location.name} licensed and insured?`,
+      answer: `Every contractor we match you with is licensed, insured, and vetted for quality workmanship before they're sent to a ${location.name} home.`,
+    },
+  ];
+
+  const nearbyLinks = location.nearby
+    .map((name) => locations.find((l) => l.name === name))
+    .filter((l): l is (typeof locations)[number] => Boolean(l));
+
+  return (
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Service Area", href: "/locations" },
+          { label: `${location.name}, MN`, href: `/locations/${location.slug}` },
+        ]}
+      />
+      <PageHero
+        eyebrow={`${location.name}, ${location.county}`}
+        icon="mapPin"
+        title={`HVAC Repair & Installation in ${location.name}, MN`}
+        intro={[location.intro]}
+      />
+
+      {/* Services offered locally */}
+      <section className="bg-white py-16 lg:py-20">
+        <Container>
+          <SectionTitle
+            eyebrow="Local services"
+            title={`HVAC services we offer in ${location.name}`}
+            description={`From emergency furnace repair to full system replacement, here's how local pros keep ${location.name} homes comfortable year-round.`}
+          />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            {services.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group flex h-full flex-col rounded-xl border border-navy-900/[0.06] bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900/[0.05] text-navy-800 transition-colors group-hover:bg-navy-900 group-hover:text-accent-400">
+                  <Icon name={service.icon} className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 font-display text-lg font-bold text-navy-900">
+                  {service.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">
+                  {service.description}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 transition-colors group-hover:text-accent-600">
+                  Learn more
+                  <Icon name="arrowRight" className="h-4 w-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Local context + neighborhoods */}
+      <section className="bg-slate-50 py-16 lg:py-20">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <SectionTitle
+                align="left"
+                eyebrow="Local knowledge"
+                title={`Serving homeowners across ${location.name}`}
+              />
+              <p className="mt-5 text-[15px] leading-relaxed text-slate-600">
+                {location.localNote}
+              </p>
+              <div className="mt-6">
+                <p className="text-sm font-bold uppercase tracking-[0.12em] text-navy-700">
+                  Neighborhoods we serve
+                </p>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {location.neighborhoods.map((n) => (
+                    <li
+                      key={n}
+                      className="rounded-full border border-navy-900/[0.08] bg-white px-3.5 py-1.5 text-sm text-navy-800"
+                    >
+                      {n}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <ul className="space-y-6">
+              {whyUs.map((item) => (
+                <li key={item.title} className="flex gap-5">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-accent-600 shadow-card">
+                    <Icon name={item.icon} className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-navy-900">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                      {item.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </section>
+
+      <FaqList
+        title={`HVAC in ${location.name} — common questions`}
+        faqs={localFaqs}
+      />
+
+      {/* Nearby cities internal links */}
+      {nearbyLinks.length > 0 ? (
+        <section className="bg-slate-50 py-16 lg:py-20">
+          <Container>
+            <SectionTitle eyebrow="Nearby" title="We also serve these nearby cities" />
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {nearbyLinks.map((l) => (
+                <Link
+                  key={l.slug}
+                  href={`/locations/${l.slug}`}
+                  className="group flex items-center gap-3 rounded-xl border border-navy-900/[0.07] bg-white p-4 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+                >
+                  <Icon name="mapPin" className="h-4 w-4 shrink-0 text-accent-500" />
+                  <span className="font-display text-sm font-bold text-navy-900">
+                    {l.name}, MN
+                  </span>
+                  <Icon
+                    name="arrowRight"
+                    className="ml-auto h-4 w-4 text-navy-300 transition-transform group-hover:translate-x-1"
+                  />
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
+      <CTABand
+        heading={`Need HVAC help in ${location.name}?`}
+        sub={`Get connected with a trusted local pro serving ${location.name} and ${location.county} — free quotes, honest pricing, and fast response.`}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+    </>
+  );
+}

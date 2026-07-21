@@ -20,12 +20,12 @@ export const site = {
 } as const;
 
 export const navLinks = [
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
+  { label: "Service Area", href: "/locations" },
   { label: "Why Us", href: "/#why-us" },
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Reviews", href: "/#reviews" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Service Area", href: "/#service-area" },
 ] as const;
 
 export const trustBadges: ReadonlyArray<{ icon: IconName; label: string }> = [
@@ -36,6 +36,7 @@ export const trustBadges: ReadonlyArray<{ icon: IconName; label: string }> = [
 ];
 
 export interface Service {
+  slug: string;
   icon: IconName;
   title: string;
   description: string;
@@ -44,6 +45,7 @@ export interface Service {
 
 export const services: readonly Service[] = [
   {
+    slug: "ac-repair",
     icon: "snowflake",
     title: "AC Repair & Service",
     description:
@@ -51,6 +53,7 @@ export const services: readonly Service[] = [
     features: ["Same-day appointments", "All makes & models", "Upfront estimates"],
   },
   {
+    slug: "furnace-repair",
     icon: "flame",
     title: "Furnace & Heating Repair",
     description:
@@ -58,6 +61,7 @@ export const services: readonly Service[] = [
     features: ["No-heat priority service", "Safety inspections", "Honest recommendations"],
   },
   {
+    slug: "installation-replacement",
     icon: "gauge",
     title: "Installation & Replacement",
     description:
@@ -65,6 +69,7 @@ export const services: readonly Service[] = [
     features: ["Free replacement quotes", "Energy-efficient systems", "Rebate guidance"],
   },
   {
+    slug: "maintenance-tune-ups",
     icon: "wrench",
     title: "Maintenance & Tune-Ups",
     description:
@@ -72,6 +77,7 @@ export const services: readonly Service[] = [
     features: ["Spring AC tune-ups", "Fall furnace checks", "Multi-point inspections"],
   },
   {
+    slug: "indoor-air-quality",
     icon: "wind",
     title: "Indoor Air Quality",
     description:
@@ -79,6 +85,7 @@ export const services: readonly Service[] = [
     features: ["Duct cleaning", "Humidifiers & dehumidifiers", "Air purification"],
   },
   {
+    slug: "emergency-hvac",
     icon: "bolt",
     title: "24/7 Emergency Service",
     description:

@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { serviceAreas, site } from "@/lib/site";
+import { locations } from "@/lib/content";
+import { site } from "@/lib/site";
 
 export function ServiceArea() {
   return (
@@ -27,13 +29,15 @@ export function ServiceArea() {
             </Reveal>
             <Reveal delay={100}>
               <ul className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {serviceAreas.map((city) => (
-                  <li
-                    key={city}
-                    className="flex items-center gap-2 rounded-xl border border-navy-900/[0.07] bg-white px-3.5 py-2.5 text-sm font-medium text-navy-800 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-300 hover:shadow-card"
-                  >
-                    <Icon name="mapPin" className="h-4 w-4 shrink-0 text-accent-500" />
-                    {city}
+                {locations.map((location) => (
+                  <li key={location.slug}>
+                    <Link
+                      href={`/locations/${location.slug}`}
+                      className="flex items-center gap-2 rounded-xl border border-navy-900/[0.07] bg-white px-3.5 py-2.5 text-sm font-medium text-navy-800 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-300 hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500"
+                    >
+                      <Icon name="mapPin" className="h-4 w-4 shrink-0 text-accent-500" />
+                      {location.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
