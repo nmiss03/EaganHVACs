@@ -7,16 +7,24 @@ export function JsonLd() {
   const business = {
     "@context": "https://schema.org",
     "@type": "HVACBusiness",
+    "@id": `${site.url}/#business`,
     name: site.name,
     description: site.description,
     url: site.url,
-    telephone: site.phone,
+    telephone: site.phoneHref.replace("tel:", ""),
     email: site.email,
+    priceRange: "$$",
+    image: `${site.url}/opengraph-image`,
     address: {
       "@type": "PostalAddress",
       addressLocality: site.address.city,
       addressRegion: site.address.state,
       addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 44.8041,
+      longitude: -93.1669,
     },
     areaServed: serviceAreas.map((city) => ({
       "@type": "City",

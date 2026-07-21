@@ -6,7 +6,9 @@ export const site = {
   tagline: "Heating & cooling help you can count on in Eagan, MN",
   description:
     "Eagan HVACs connects Eagan homeowners with trusted local HVAC contractors for furnace repair, AC service, installations, and 24/7 emergency help.",
-  url: "https://eaganhvacs.com",
+  // Canonical origin — must match the primary domain served by Vercel
+  // (the apex eaganhvacs.com 308-redirects to www).
+  url: "https://www.eaganhvacs.com",
   phone: "(612) 424-5423",
   phoneHref: "tel:+16124245423",
   email: "namiss@eaganhvacs.com",

@@ -46,18 +46,16 @@ export function InquirySection() {
             </Reveal>
             <ul className="mt-10 space-y-6">
               {reassurances.map((item, i) => (
-                <Reveal key={item.title} delay={i * 80}>
-                  <li className="flex gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-accent-600 shadow-card">
-                      <Icon name={item.icon} className="h-5 w-5" strokeWidth={2} />
-                    </span>
-                    <div>
-                      <h3 className="font-display text-base font-bold text-navy-900">
-                        {item.title}
-                      </h3>
-                      <p className="mt-1 text-sm text-slate-600">{item.description}</p>
-                    </div>
-                  </li>
+                <Reveal as="li" key={item.title} delay={i * 80} className="flex gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-accent-600 shadow-card">
+                    <Icon name={item.icon} className="h-5 w-5" strokeWidth={2} />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-base font-bold text-navy-900">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-600">{item.description}</p>
+                  </div>
                 </Reveal>
               ))}
             </ul>

@@ -45,20 +45,18 @@ export function WhyChooseUs() {
             </Reveal>
             <ul className="mt-10 space-y-7">
               {whyUs.map((item, i) => (
-                <Reveal key={item.title} delay={i * 80}>
-                  <li className="flex gap-5">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-accent-600 shadow-card">
-                      <Icon name={item.icon} className="h-6 w-6" />
-                    </span>
-                    <div>
-                      <h3 className="font-display text-lg font-bold text-navy-900">
-                        {item.title}
-                      </h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
-                        {item.description}
-                      </p>
-                    </div>
-                  </li>
+                <Reveal as="li" key={item.title} delay={i * 80} className="flex gap-5">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-accent-600 shadow-card">
+                    <Icon name={item.icon} className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-navy-900">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                      {item.description}
+                    </p>
+                  </div>
                 </Reveal>
               ))}
             </ul>

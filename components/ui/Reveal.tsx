@@ -7,6 +7,8 @@ interface RevealProps {
   className?: string;
   /** Transition delay in milliseconds, for staggered groups. */
   delay?: number;
+  /** Element to render, so lists can animate without invalid markup. */
+  as?: "div" | "li";
 }
 
 /**
@@ -15,8 +17,8 @@ interface RevealProps {
  * elements still below the fold are hidden and revealed on scroll.
  * Children stay server-rendered — this wrapper only toggles a class.
  */
-export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
+export function Reveal({ children, className = "", delay = 0, as: Tag = "div" }: RevealProps) {
+  const ref = useRef<HTMLElement>(null);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
@@ -41,12 +43,12 @@ export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   }, []);
 
   return (
-    <div
-      ref={ref}
+    <Tag
+      ref={ref as never}
       className={`reveal ${hidden ? "reveal-hidden" : ""} ${className}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}
-    </div>
+    </Tag>
   );
 }
