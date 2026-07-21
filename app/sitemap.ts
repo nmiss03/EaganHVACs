@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { locations, serviceDetails } from "@/lib/content";
+import { allServiceDetails, locations } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${site.url}/faq`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${site.url}/privacy`,
       lastModified: now,
       changeFrequency: "yearly",
@@ -33,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const servicePages: MetadataRoute.Sitemap = serviceDetails.map((service) => ({
+  const servicePages: MetadataRoute.Sitemap = allServiceDetails.map((service) => ({
     url: `${site.url}/services/${service.slug}`,
     lastModified: now,
     changeFrequency: "monthly",

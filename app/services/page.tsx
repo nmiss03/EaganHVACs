@@ -5,7 +5,7 @@ import { CTABand } from "@/components/landing/CTABand";
 import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
-import { serviceDetails } from "@/lib/content";
+import { allServiceDetails } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default function ServicesIndexPage() {
       <section className="bg-white py-16 lg:py-20">
         <Container>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            {serviceDetails.map((service) => (
+            {allServiceDetails.map((service) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}

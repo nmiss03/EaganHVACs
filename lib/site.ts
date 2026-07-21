@@ -25,7 +25,7 @@ export const navLinks = [
   { label: "Why Us", href: "/#why-us" },
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Reviews", href: "/#reviews" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "FAQ", href: "/faq" },
 ] as const;
 
 export const trustBadges: ReadonlyArray<{ icon: IconName; label: string }> = [
@@ -221,21 +221,6 @@ export const faqs: readonly Faq[] = [
     answer:
       "Many contractors in our network offer flexible financing options for new installations and replacements, along with guidance on utility rebates and energy-efficiency incentives available to Minnesota homeowners.",
   },
-];
-
-export const serviceAreas: readonly string[] = [
-  "Eagan",
-  "Apple Valley",
-  "Burnsville",
-  "Rosemount",
-  "Inver Grove Heights",
-  "Mendota Heights",
-  "Lakeville",
-  "Savage",
-  "Bloomington",
-  "Farmington",
-  "West St. Paul",
-  "Sunfish Lake",
 ];
 
 export const serviceOptions: readonly string[] = [

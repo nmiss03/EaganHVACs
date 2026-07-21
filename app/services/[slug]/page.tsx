@@ -8,11 +8,11 @@ import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { absoluteUrl, getServiceDetail, locations, serviceDetails } from "@/lib/content";
+import { absoluteUrl, getServiceDetail, allServiceDetails, locations } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
-  return serviceDetails.map((service) => ({ slug: service.slug }));
+  return allServiceDetails.map((service) => ({ slug: service.slug }));
 }
 
 export async function generateMetadata({
@@ -60,7 +60,7 @@ export default async function ServiceDetailPage({
     areaServed: locations.map((l) => ({ "@type": "City", name: `${l.name}, MN` })),
   };
 
-  const otherServices = serviceDetails.filter((s) => s.slug !== service.slug);
+  const otherServices = allServiceDetails.filter((s) => s.slug !== service.slug);
 
   return (
     <>

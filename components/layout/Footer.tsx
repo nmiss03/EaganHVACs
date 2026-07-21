@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
-import { locations } from "@/lib/content";
-import { navLinks, services, site } from "@/lib/site";
+import { allServiceDetails, locations } from "@/lib/content";
+import { navLinks, site } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -80,7 +80,7 @@ export function Footer() {
               Services
             </h2>
             <ul className="mt-5 space-y-3 text-sm">
-              {services.map((service) => (
+              {allServiceDetails.map((service) => (
                 <li key={service.title}>
                   <Link
                     href={`/services/${service.slug}`}

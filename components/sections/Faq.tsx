@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
@@ -39,13 +40,20 @@ export function Faq() {
         <Reveal className="mt-10 text-center">
           <p className="text-sm text-slate-600">
             Still have questions?{" "}
+            <Link
+              href="/faq"
+              className="font-semibold text-navy-900 underline decoration-accent-400 decoration-2 underline-offset-4 transition-colors hover:text-accent-600"
+            >
+              Browse all FAQs
+            </Link>{" "}
+            or{" "}
             <a
               href={site.phoneHref}
               className="font-semibold text-navy-900 underline decoration-accent-400 decoration-2 underline-offset-4 transition-colors hover:text-accent-600"
             >
-              Call {site.phone}
-            </a>{" "}
-            — we&rsquo;re happy to help.
+              call {site.phone}
+            </a>
+            .
           </p>
         </Reveal>
       </Container>

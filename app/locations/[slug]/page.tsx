@@ -161,6 +161,32 @@ export default async function LocationDetailPage({
                   ))}
                 </ul>
               </div>
+              {/* Map placeholder — swap for an embedded map when ready */}
+              <div
+                role="img"
+                aria-label={`Map placeholder for the ${location.name} service area`}
+                className="relative mt-8 aspect-[16/7] overflow-hidden rounded-xl bg-gradient-to-br from-navy-100 via-navy-50 to-white shadow-card"
+              >
+                <svg className="absolute inset-0 h-full w-full text-navy-900/[0.05]" aria-hidden="true">
+                  <defs>
+                    <pattern id="loc-map-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                      <path d="M30 0H0v30" fill="none" stroke="currentColor" strokeWidth="1" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#loc-map-grid)" />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-500 text-white shadow-glow">
+                    <Icon name="mapPin" className="h-5 w-5" />
+                  </span>
+                  <p className="font-display text-sm font-extrabold text-navy-900">
+                    Serving all of {location.name}, MN
+                  </p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-navy-400">
+                    Service area map placeholder
+                  </p>
+                </div>
+              </div>
             </div>
             <ul className="space-y-6">
               {whyUs.map((item) => (

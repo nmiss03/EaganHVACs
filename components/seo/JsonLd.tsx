@@ -1,4 +1,5 @@
-import { faqs, serviceAreas, site } from "@/lib/site";
+import { locations } from "@/lib/content";
+import { faqs, site } from "@/lib/site";
 
 /**
  * LocalBusiness + FAQPage structured data for local-search visibility.
@@ -26,9 +27,9 @@ export function JsonLd() {
       latitude: 44.8041,
       longitude: -93.1669,
     },
-    areaServed: serviceAreas.map((city) => ({
+    areaServed: locations.map((location) => ({
       "@type": "City",
-      name: `${city}, MN`,
+      name: `${location.name}, MN`,
     })),
     openingHoursSpecification: [
       {
@@ -53,6 +54,15 @@ export function JsonLd() {
     })),
   };
 
+  const webSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    name: site.name,
+    url: site.url,
+    publisher: { "@id": `${site.url}/#business` },
+  };
+
   return (
     <>
       <script
@@ -62,6 +72,10 @@ export function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSite) }}
       />
     </>
   );

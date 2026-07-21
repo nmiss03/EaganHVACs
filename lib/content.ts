@@ -368,9 +368,186 @@ export const serviceDetails: readonly ServiceDetail[] = [
   },
 ];
 
+export const extraServiceDetails: readonly ServiceDetail[] = [
+  {
+    slug: "heat-pumps",
+    icon: "gauge",
+    title: "Heat Pump Repair & Installation",
+    h1: "Heat Pump Repair & Installation in Eagan, MN",
+    metaTitle: "Heat Pump Repair & Installation Eagan MN | Cold-Climate Experts",
+    metaDescription:
+      "Heat pump repair and cold-climate heat pump installation in Eagan, MN. Dual-fuel systems, rebate guidance, and honest advice from vetted local pros.",
+    tagline: "Modern cold-climate heat pumps heat Minnesota homes — when they're set up right.",
+    intro: [
+      "Heat pumps have come a long way: today's cold-climate models heat efficiently well below zero, and paired with a furnace in a dual-fuel setup they can cut heating costs significantly. But they only perform when they're sized, installed, and configured correctly for Minnesota winters — which is where a vetted local pro matters.",
+      "Whether your existing heat pump is icing up, stuck on auxiliary heat, or you're weighing a new cold-climate system for the rebates, Eagan HVACs connects you with technicians across Eagan and the south metro who work on heat pumps every week — not as an afterthought.",
+    ],
+    signs: [
+      "Outdoor unit stays iced over beyond normal defrost cycles",
+      "System blows lukewarm air in heating mode",
+      "Auxiliary or emergency heat runs constantly",
+      "Electric bills spiking in winter",
+      "Heat pump short cycles or is louder than usual",
+      "You're considering a high-efficiency upgrade for rebates",
+    ],
+    included: [
+      {
+        title: "Cold-climate expertise",
+        description:
+          "Techs diagnose reversing valves, defrost boards, and refrigerant charge — the failure points unique to heat pumps in cold climates.",
+      },
+      {
+        title: "Dual-fuel system design",
+        description:
+          "For installations, pros size the heat pump and set the balance point with your furnace so each runs when it's cheapest.",
+      },
+      {
+        title: "Rebate & incentive guidance",
+        description:
+          "Cold-climate heat pumps qualify for significant utility and federal incentives — installers help you capture them.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do heat pumps actually work in Minnesota winters?",
+        answer:
+          "Yes — modern cold-climate heat pumps heat effectively even at -13°F and below. Many Minnesota homes pair one with a gas furnace in a dual-fuel setup: the heat pump handles most of the season and the furnace takes over on the coldest days.",
+      },
+      {
+        question: "Why is my heat pump covered in ice?",
+        answer:
+          "Light frost is normal and defrost cycles should clear it. A unit that stays caked in ice usually has a failed defrost control, low refrigerant, or airflow problems — all worth a prompt diagnostic before the compressor is damaged.",
+      },
+      {
+        question: "Is a heat pump cheaper to run than a furnace?",
+        answer:
+          "For much of the heating season, yes — heat pumps move heat rather than create it, so they deliver more heat per dollar than electric resistance and often beat gas at milder temperatures. A pro can model the numbers for your home and utility rates.",
+      },
+    ],
+  },
+  {
+    slug: "thermostats",
+    icon: "thermometer",
+    title: "Thermostat Installation & Repair",
+    h1: "Smart Thermostat Installation in Eagan, MN",
+    metaTitle: "Smart Thermostat Installation Eagan MN | Nest, ecobee & More",
+    metaDescription:
+      "Smart thermostat installation and thermostat repair in Eagan, MN. Compatibility checks, C-wire installs, and proper setup for Nest, ecobee, and Honeywell.",
+    tagline: "The $200 upgrade that pays for itself — when it's wired and configured right.",
+    intro: [
+      "A smart thermostat is one of the cheapest ways to cut heating and cooling costs — typically saving around 8% on energy bills through smarter schedules and occupancy sensing. But Minnesota systems with dual-fuel setups, humidifiers, or older wiring often need a proper C-wire and correct configuration to work reliably.",
+      "Eagan HVACs connects you with local techs who install and configure Nest, ecobee, Honeywell, and other smart thermostats correctly the first time — and who can diagnose an existing thermostat that's misreading temperatures or short-cycling your equipment.",
+    ],
+    signs: [
+      "Blank or unresponsive thermostat screen",
+      "Rooms never match the set temperature",
+      "System short cycles on and off frequently",
+      "Your smart thermostat keeps losing power or Wi-Fi",
+      "No C-wire and your new thermostat won't stay charged",
+      "Schedules and away modes aren't actually saving energy",
+    ],
+    included: [
+      {
+        title: "Compatibility check & C-wire",
+        description:
+          "The tech verifies your system's wiring — including adding a C-wire or adapter — so the thermostat runs reliably.",
+      },
+      {
+        title: "Correct system configuration",
+        description:
+          "Heat pumps, dual-fuel, multi-stage systems, and humidifiers each need specific settings to avoid wasted energy or damage.",
+      },
+      {
+        title: "Setup & walkthrough",
+        description:
+          "App connection, schedules, and sensors configured before the tech leaves — you know exactly how to use it.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Are smart thermostats really worth it?",
+        answer:
+          "For most homes, yes. Studies consistently show roughly 8% savings on heating and cooling costs, which typically pays back the device within a couple of years — faster in a climate like Minnesota's with heavy heating use.",
+      },
+      {
+        question: "Can I install a smart thermostat myself?",
+        answer:
+          "Sometimes — but many Minnesota homes lack the C-wire smart thermostats need, and dual-fuel or heat pump systems are easy to misconfigure in ways that spike bills or harm equipment. A pro install is quick and removes the guesswork.",
+      },
+      {
+        question: "Which smart thermostat works with my system?",
+        answer:
+          "It depends on your equipment: some models handle dual-fuel and multi-stage systems better than others. A technician can check your wiring and recommend the right fit among Nest, ecobee, Honeywell, and others.",
+      },
+    ],
+  },
+  {
+    slug: "duct-cleaning",
+    icon: "wind",
+    title: "Air Duct Cleaning",
+    h1: "Air Duct Cleaning in Eagan, MN",
+    metaTitle: "Air Duct Cleaning Eagan MN | Whole-Home Duct Service",
+    metaDescription:
+      "Professional air duct cleaning in Eagan, MN. Whole-system negative-pressure cleaning, dryer vent service, and honest advice on whether your ducts need it.",
+    tagline: "Two decades of dust doesn't belong in the air your family breathes.",
+    intro: [
+      "Your ductwork moves every bit of air your family breathes — and after years of construction dust, pet hair, and everyday living, a lot of homes are circulating more than they should. Done properly with negative-pressure equipment, duct cleaning removes that buildup at the source instead of just knocking it loose.",
+      "Eagan HVACs connects you with local duct cleaning pros who do it right — full-system cleaning, honest assessments of whether your ducts actually need it, and add-ons like dryer vent cleaning that reduce a genuine fire risk.",
+    ],
+    signs: [
+      "Visible dust puffing from supply vents",
+      "You've recently renovated or finished a basement",
+      "Dust returns quickly after cleaning the house",
+      "Musty or stale smell when the system runs",
+      "Evidence of pests or rodents in ductwork",
+      "It's been 10+ years (or never) since the last cleaning",
+    ],
+    included: [
+      {
+        title: "Whole-system negative-pressure cleaning",
+        description:
+          "Supply and return trunks, branch runs, and registers cleaned with truck- or portable-mounted vacuum equipment — not just a shop vac at the vents.",
+      },
+      {
+        title: "Honest assessment first",
+        description:
+          "If your ducts don't actually need cleaning, the pro will tell you — and point you at the filtration fix that will help instead.",
+      },
+      {
+        title: "Dryer vent cleaning",
+        description:
+          "Lint-clogged dryer vents are a leading cause of house fires; cleaning them is a quick add-on while the equipment is on site.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How often should air ducts be cleaned?",
+        answer:
+          "NADCA (the industry association) suggests every 3–5 years for most homes, or sooner after renovations, pest issues, or if you see visible dust and mold. Many homes have never had it done — that's the highest-value first cleaning.",
+      },
+      {
+        question: "Does duct cleaning help with allergies?",
+        answer:
+          "It can, especially when paired with better filtration. Removing settled dust, dander, and pollen from ducts reduces what gets recirculated — though a high-MERV filter or air cleaner is the other half of the solution.",
+      },
+      {
+        question: "How much does duct cleaning cost?",
+        answer:
+          "It depends on your home's size and duct layout, which is why quotes are free and upfront. Be wary of too-good-to-be-true coupon offers — legitimate whole-system cleaning takes hours, not 45 minutes.",
+      },
+    ],
+  },
+];
+
 export function getServiceDetail(slug: string): ServiceDetail | undefined {
-  return serviceDetails.find((s) => s.slug === slug);
+  return allServiceDetails.find((s) => s.slug === slug);
 }
+
+/** Core + additional services, in display order. */
+export const allServiceDetails: readonly ServiceDetail[] = [
+  ...serviceDetails,
+  ...extraServiceDetails,
+];
 
 export interface Location {
   slug: string;
@@ -517,6 +694,50 @@ export const locations: readonly Location[] = [
       "Sunfish Lake's estate homes deserve premium HVAC care, and local pros deliver. We connect residents with vetted, licensed technicians experienced in the larger, often multi-zone heating and cooling systems these custom homes require.",
     localNote:
       "With Sunfish Lake's large custom homes and wooded lots, local installers are equipped to design, service, and replace the more sophisticated zoned HVAC systems these properties often use.",
+  },
+  {
+    slug: "south-st-paul",
+    name: "South St. Paul",
+    county: "Dakota County",
+    neighborhoods: ["Kaposia", "North End", "Southview area", "Riverside"],
+    nearby: ["West St. Paul", "Inver Grove Heights", "Mendota Heights", "Eagan"],
+    intro:
+      "South St. Paul's classic river-town neighborhoods count on us for honest, reliable heating and cooling help. From the homes above Kaposia Landing to the North End, we connect residents with licensed local technicians for furnace repair, AC service, and full system replacements.",
+    localNote:
+      "South St. Paul has some of the metro's most established housing stock, with many homes still running boilers or decades-old furnaces — local techs are comfortable with older systems and with planning sensible, efficient upgrades when the time comes.",
+  },
+  {
+    slug: "prior-lake",
+    name: "Prior Lake",
+    county: "Scott County",
+    neighborhoods: ["The Wilds", "Jeffers Pond", "Spring Lake", "Downtown Prior Lake"],
+    nearby: ["Savage", "Shakopee", "Lakeville", "Burnsville"],
+    intro:
+      "Prior Lake homeowners — from lakeshore properties to the newer neighborhoods around Jeffers Pond — get fast, trustworthy HVAC service through our vetted local network. Same-day repairs, seasonal tune-ups, and right-sized system installations, all with upfront pricing.",
+    localNote:
+      "Prior Lake's mix of lake homes and newer developments means everything from humidity control for lakeside properties to warranty-protecting maintenance on newer high-efficiency systems — local pros handle both routinely.",
+  },
+  {
+    slug: "shakopee",
+    name: "Shakopee",
+    county: "Scott County",
+    neighborhoods: ["Southbridge", "Dean Lakes", "Riverside Fields", "Downtown Shakopee"],
+    nearby: ["Prior Lake", "Savage", "Burnsville", "Bloomington"],
+    intro:
+      "Shakopee's fast-growing neighborhoods rely on us for dependable heating and cooling. Whether you're in Southbridge, near Dean Lakes, or in an established home closer to downtown, we match you with licensed local technicians for furnace and AC repair, maintenance, and replacements.",
+    localNote:
+      "As one of the metro's fastest-growing cities, Shakopee has many newer homes with builder-grade equipment now reaching its first major service years — exactly when proper maintenance and honest repair advice matter most.",
+  },
+  {
+    slug: "mendota",
+    name: "Mendota",
+    county: "Dakota County",
+    neighborhoods: ["Historic Mendota village", "Sibley Historic Site area"],
+    nearby: ["Mendota Heights", "West St. Paul", "Eagan", "Inver Grove Heights"],
+    intro:
+      "Mendota may be one of Minnesota's smallest and oldest cities, but its homeowners get the same fast, honest HVAC service as the rest of the south metro. We connect residents of the historic village with trusted local technicians for heating repair, cooling service, and system replacements.",
+    localNote:
+      "Mendota's historic housing stock brings unique challenges — older ductwork, additions, and homes that predate central air entirely. Local pros are experienced with retrofits that respect these homes while bringing them up to modern comfort.",
   },
 ];
 
