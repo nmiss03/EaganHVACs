@@ -7,9 +7,9 @@ export const site = {
   description:
     "Eagan HVACs connects Eagan homeowners with trusted local HVAC contractors for furnace repair, AC service, installations, and 24/7 emergency help.",
   url: "https://eaganhvacs.com",
-  phone: "(651) 555-0148",
-  phoneHref: "tel:+16515550148",
-  email: "hello@eaganhvacs.com",
+  phone: "(612) 424-5423",
+  phoneHref: "tel:+16124245423",
+  email: "namiss@eaganhvacs.com",
   address: {
     city: "Eagan",
     state: "MN",

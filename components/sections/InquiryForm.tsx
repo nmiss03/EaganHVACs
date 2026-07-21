@@ -132,7 +132,7 @@ export function InquiryForm() {
             type="tel"
             autoComplete="tel"
             required
-            placeholder="(651) 555-0123"
+            placeholder="(612) 555-0123"
             className={inputClasses}
             aria-invalid={errors.phone ? true : undefined}
             aria-describedby={errors.phone ? "inquiry-phone-error" : undefined}
