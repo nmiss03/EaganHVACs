@@ -1,0 +1,55 @@
+import { ButtonLink } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+import { Icon } from "@/components/ui/Icon";
+import { Reveal } from "@/components/ui/Reveal";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import { steps } from "@/lib/site";
+
+export function HowItWorks() {
+  return (
+    <section id="how-it-works" className="scroll-mt-24 bg-white py-20 lg:py-28">
+      <Container>
+        <Reveal>
+          <SectionTitle
+            eyebrow="How It Works"
+            title="From 'it's broken' to 'it's fixed' in three steps"
+            description="No phone trees, no waiting a week for a callback. Getting help with your heating or cooling should be this simple."
+          />
+        </Reveal>
+
+        <ol className="relative mt-16 grid gap-12 lg:grid-cols-3 lg:gap-8">
+          {/* Connecting dashed line (desktop) */}
+          <div
+            aria-hidden="true"
+            className="absolute left-[16.67%] right-[16.67%] top-8 hidden border-t-2 border-dashed border-navy-200 lg:block"
+          />
+          {steps.map((step, i) => (
+            <Reveal key={step.title} delay={i * 120}>
+              <li className="relative flex flex-col items-center text-center">
+                <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-navy-900 text-accent-400 shadow-card-hover">
+                  <Icon name={step.icon} className="h-8 w-8" />
+                  <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-accent-500 font-display text-sm font-bold text-white">
+                    {i + 1}
+                  </span>
+                </span>
+                <h3 className="mt-6 font-display text-xl font-bold text-navy-900">
+                  {step.title}
+                </h3>
+                <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-600">
+                  {step.description}
+                </p>
+              </li>
+            </Reveal>
+          ))}
+        </ol>
+
+        <Reveal className="mt-14 text-center">
+          <ButtonLink href="/#inquiry" size="lg">
+            Start With a Free Quote
+            <Icon name="arrowRight" className="h-5 w-5" />
+          </ButtonLink>
+        </Reveal>
+      </Container>
+    </section>
+  );
+}
