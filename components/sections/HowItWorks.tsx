@@ -11,17 +11,17 @@ export function HowItWorks() {
       <Container>
         <Reveal>
           <SectionTitle
-            eyebrow="How It Works"
-            title="From 'it's broken' to 'it's fixed' in three steps"
-            description="No phone trees, no waiting a week for a callback. Getting help with your heating or cooling should be this simple."
+            eyebrow="How The Platform Works"
+            title="Understand first. Compare second. Decide on your terms."
+            description="We built the order homeowners actually want: education and honest numbers before anyone asks for your phone number."
           />
         </Reveal>
 
-        <ol className="relative mt-16 grid gap-12 lg:grid-cols-3 lg:gap-8">
+        <ol className="relative mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {/* Connecting dashed line (desktop) */}
           <div
             aria-hidden="true"
-            className="absolute left-[16.67%] right-[16.67%] top-8 hidden border-t-2 border-dashed border-navy-200 lg:block"
+            className="absolute left-[12.5%] right-[12.5%] top-8 hidden border-t-2 border-dashed border-navy-200 lg:block"
           />
           {steps.map((step, i) => (
             <Reveal
@@ -46,10 +46,13 @@ export function HowItWorks() {
           ))}
         </ol>
 
-        <Reveal className="mt-14 text-center">
-          <ButtonLink href="/#inquiry" size="lg">
-            Start With a Free Quote
+        <Reveal className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <ButtonLink href="/tools/hvac-cost-estimator" size="lg">
+            Start With the Cost Estimator
             <Icon name="arrowRight" className="h-5 w-5" />
+          </ButtonLink>
+          <ButtonLink href="/how-it-works" variant="white" size="lg">
+            See the full process
           </ButtonLink>
         </Reveal>
       </Container>

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Faq } from "@/components/sections/Faq";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { FeaturedResources } from "@/components/sections/FeaturedResources";
+import { FeaturedTools } from "@/components/sections/FeaturedTools";
 import { Hero } from "@/components/sections/Hero";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { InquirySection } from "@/components/sections/InquirySection";
-import { Reviews } from "@/components/sections/Reviews";
 import { ServiceArea } from "@/components/sections/ServiceArea";
-import { Services } from "@/components/sections/Services";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { ServicesStrip } from "@/components/sections/ServicesStrip";
+import { TrustSection } from "@/components/sections/TrustSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
@@ -19,14 +19,14 @@ export default function HomePage() {
     <>
       <JsonLd />
       <Hero />
-      <Services />
-      <WhyChooseUs />
+      <FeaturedTools />
+      <FeaturedResources />
       <HowItWorks />
-      <Reviews />
-      <Faq />
+      <TrustSection />
       <ServiceArea />
+      <ServicesStrip />
       <InquirySection />
-      <FinalCTA />
+      <Faq />
     </>
   );
 }

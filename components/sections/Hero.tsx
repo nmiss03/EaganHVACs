@@ -32,13 +32,13 @@ export function Hero() {
                 <span className="absolute h-full w-full animate-pulse-ring rounded-full bg-accent-400" />
                 <span className="relative h-2 w-2 rounded-full bg-accent-400" />
               </span>
-              Serving Eagan, MN & the South Metro
+              The Minnesota Homeowner&rsquo;s HVAC Platform
             </p>
 
-            <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
-              Compare local HVAC quotes,{" "}
+            <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.3rem]">
+              Make{" "}
               <span className="relative inline-block text-accent-400">
-                free
+                smarter
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 120 12"
@@ -54,36 +54,44 @@ export function Hero() {
                   />
                 </svg>
               </span>{" "}
-              — from trusted local pros.
+              HVAC decisions — before you spend thousands.
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-100/85">
-              Furnace out in January? AC struggling in July? We help Eagan
-              homeowners compare quotes from vetted, licensed local HVAC
-              contractors — so you get the right price and the right pro without
-              the guesswork. Free, no obligation.
+              Free cost estimators, honest Minnesota pricing guides, and
+              side-by-side quotes from licensed local contractors. Understand
+              your options first — then compare quotes when you&rsquo;re ready.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <ButtonLink href="/#inquiry" size="lg">
-                Get a Free Quote
+              <ButtonLink href="/tools" size="lg">
+                Explore Homeowner Tools
                 <Icon name="arrowRight" className="h-5 w-5" />
               </ButtonLink>
-              <ButtonLink href={site.phoneHref} variant="ghost" size="lg">
-                <Icon name="phone" className="h-5 w-5 text-accent-400" />
-                Call {site.phone}
+              <ButtonLink href="/#inquiry" variant="ghost" size="lg">
+                Compare Local Quotes
               </ButtonLink>
             </div>
+            <p className="mt-4 text-sm text-navy-100/60">
+              Emergency? Skip ahead:{" "}
+              <a
+                href={site.phoneHref}
+                className="font-semibold text-navy-100 underline decoration-accent-400 decoration-2 underline-offset-4 transition-colors hover:text-accent-300"
+              >
+                call {site.phone}
+              </a>{" "}
+              for the 24/7 network line.
+            </p>
 
-            <ul className="mt-10 grid grid-cols-1 gap-x-6 gap-y-3.5 border-t border-white/10 pt-8 sm:grid-cols-2">
+            <ul className="mt-8 grid grid-cols-1 gap-x-6 gap-y-3.5 border-t border-white/10 pt-8 sm:grid-cols-2">
               {trustBadges.map((badge) => (
                 <TrustBadge key={badge.label} icon={badge.icon} label={badge.label} />
               ))}
             </ul>
           </div>
 
-          {/* Visual: framed placeholder with floating proof cards */}
-          <div className="relative animate-fade-in lg:pl-6" aria-hidden="false">
+          {/* Visual: framed illustration with honest proof cards */}
+          <div className="relative animate-fade-in lg:pl-6">
             <div className="relative">
               <div
                 aria-hidden="true"
@@ -91,7 +99,7 @@ export function Hero() {
               />
               <div
                 role="img"
-                aria-label="Illustration of a comfortable home with heating and cooling airflow — placeholder for a photo of a local HVAC technician"
+                aria-label="Illustration of a comfortable home with heating and cooling airflow"
                 className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gradient-to-br from-navy-700 via-navy-800 to-navy-950 shadow-2xl"
               >
                 <svg className="absolute inset-0 h-full w-full text-white/[0.05]" aria-hidden="true">
@@ -106,15 +114,12 @@ export function Hero() {
                   tone="dark"
                   className="absolute inset-x-0 top-0 h-[78%] w-full p-4"
                 />
-                <span className="absolute left-4 top-4 hidden rounded-full bg-navy-950/60 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-navy-100/70 backdrop-blur sm:inline-block">
-                  Team photo coming soon
-                </span>
-                {/* stat strip */}
+                {/* stat strip — all true platform facts */}
                 <dl className="absolute inset-x-0 bottom-0 grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 bg-navy-950/50 backdrop-blur">
                   {[
-                    { value: "~1 hr", label: "Avg. callback" },
-                    { value: "24/7", label: "Emergency line" },
-                    { value: "12+", label: "Cities served" },
+                    { value: "3", label: "Free planning tools" },
+                    { value: "16", label: "Cities covered" },
+                    { value: "$0", label: "Cost to homeowners" },
                   ].map((stat) => (
                     <div key={stat.label} className="flex flex-col px-3 py-3.5 text-center sm:py-4">
                       <dt className="order-2 mt-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-navy-100/60">
@@ -128,21 +133,15 @@ export function Hero() {
                 </dl>
               </div>
 
-              {/* Floating rating card */}
+              {/* Floating card: free comparison */}
               <div className="absolute -left-3 top-[40%] rounded-xl bg-white p-4 shadow-card-hover sm:-left-8">
                 <div className="flex items-center gap-3">
-                  <div
-                    className="flex text-accent-500"
-                    role="img"
-                    aria-label="Rated 4.9 out of 5 stars"
-                  >
-                    {[0, 1, 2, 3, 4].map((i) => (
-                      <Icon key={i} name="star" className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-100 text-accent-600">
+                    <Icon name="dollar" className="h-5 w-5" />
+                  </span>
                   <div>
-                    <p className="text-sm font-bold text-navy-900">4.9 / 5</p>
-                    <p className="text-xs text-slate-500">Local homeowner rating</p>
+                    <p className="text-sm font-bold text-navy-900">Compare multiple quotes</p>
+                    <p className="text-xs text-slate-500">Always free · No obligation</p>
                   </div>
                 </div>
               </div>
@@ -153,7 +152,7 @@ export function Hero() {
                   <Icon name="bolt" className="h-4 w-4" />
                 </span>
                 <span className="text-xs font-bold text-navy-900">
-                  24/7 Emergency Service
+                  24/7 Emergency Network
                 </span>
               </div>
             </div>

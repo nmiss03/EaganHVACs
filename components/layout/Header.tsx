@@ -78,7 +78,7 @@ export function Header() {
             href="/#inquiry"
             className="hidden rounded-xl bg-accent-500 px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-all hover:-translate-y-0.5 hover:bg-accent-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 sm:inline-flex"
           >
-            Get a Free Quote
+            Compare Quotes
           </Link>
           <button
             type="button"
@@ -148,7 +148,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent-500 px-5 py-4 text-base font-semibold text-white shadow-glow transition-colors hover:bg-accent-600"
             >
-              Get a Free Quote
+              Compare Quotes
               <Icon name="arrowRight" className="h-4 w-4" />
             </Link>
             <a

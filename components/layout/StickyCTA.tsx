@@ -25,7 +25,7 @@ export function StickyCTA() {
           href="/#inquiry"
           className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-accent-500 px-4 py-3.5 text-sm font-semibold text-white shadow-glow transition-colors active:bg-accent-600"
         >
-          Free Quote
+          Compare Quotes
           <Icon name="arrowRight" className="h-4 w-4" />
         </Link>
       </div>

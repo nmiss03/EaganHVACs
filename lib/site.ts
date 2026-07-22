@@ -3,9 +3,9 @@ import type { IconName } from "@/components/ui/Icon";
 export const site = {
   name: "Eagan HVACs",
   legalName: "Eagan HVACs",
-  tagline: "Heating & cooling help you can count on in Eagan, MN",
+  tagline: "The Minnesota homeowner's HVAC platform — tools, costs, and trusted local quotes",
   description:
-    "Eagan HVACs connects Eagan homeowners with trusted local HVAC contractors for furnace repair, AC service, installations, and 24/7 emergency help.",
+    "Free HVAC tools, honest Minnesota cost guides, and side-by-side quotes from licensed local contractors. Eagan HVACs helps Twin Cities homeowners make smarter heating and cooling decisions.",
   // Canonical origin — must match the primary domain served by Vercel
   // (the apex eaganhvacs.com 308-redirects to www).
   url: "https://www.eaganhvacs.com",
@@ -20,19 +20,19 @@ export const site = {
 } as const;
 
 export const navLinks = [
-  { label: "Services", href: "/services" },
-  { label: "Service Area", href: "/locations" },
   { label: "Tools", href: "/tools" },
   { label: "Resources", href: "/resources" },
+  { label: "Services", href: "/services" },
+  { label: "Cities", href: "/locations" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "FAQ", href: "/faq" },
 ] as const;
 
 export const trustBadges: ReadonlyArray<{ icon: IconName; label: string }> = [
-  { icon: "bolt", label: "Fast Local Response" },
-  { icon: "shield", label: "Trusted Local Contractors" },
-  { icon: "clock", label: "Emergency Service Available" },
-  { icon: "mapPin", label: "Serving Eagan & Nearby Communities" },
+  { icon: "dollar", label: "100% Free for Homeowners" },
+  { icon: "shield", label: "Licensed & Insured Contractor Network" },
+  { icon: "sparkles", label: "Free Planning Tools & Cost Guides" },
+  { icon: "mapPin", label: "Built for Minnesota Homes" },
 ];
 
 export interface Service {
@@ -135,53 +135,28 @@ export interface Step {
 
 export const steps: readonly Step[] = [
   {
+    icon: "gauge",
+    title: "Start With Our Free Tools",
+    description:
+      "Estimate costs, check your system's lifespan, or run the repair-vs-replace numbers — in under a minute, no phone number required.",
+  },
+  {
     icon: "clipboard",
-    title: "Tell Us What's Going On",
+    title: "Learn Your Options",
     description:
-      "Fill out the quick form or give us a call. Describe the issue — no heat, weak cooling, strange noises, or a system past its prime.",
+      "Honest Minnesota cost guides, rebate breakdowns, and troubleshooting help — so you understand the decision before anyone quotes you.",
   },
   {
-    icon: "phoneCall",
-    title: "Get Matched With a Local Pro",
+    icon: "badgeCheck",
+    title: "Compare Licensed Local Pros",
     description:
-      "We connect you with a trusted, vetted HVAC contractor near you — usually with a callback within the hour.",
+      "When you're ready, request quotes from vetted, licensed contractors near you and compare them side by side — free, no obligation.",
   },
   {
-    icon: "thermometer",
-    title: "Enjoy a Comfortable Home",
+    icon: "check",
+    title: "Choose With Confidence",
     description:
-      "Your pro diagnoses the problem, gives an upfront estimate, and gets your home comfortable again — fast.",
-  },
-];
-
-export interface Review {
-  name: string;
-  location: string;
-  quote: string;
-  service: string;
-}
-
-export const reviews: readonly Review[] = [
-  {
-    name: "Karen M.",
-    location: "Eagan — Cedar Grove",
-    quote:
-      "Our furnace died on the coldest night of the year. I submitted the form at 9 PM and had a technician at my door by 7 the next morning. Absolute lifesavers.",
-    service: "Emergency furnace repair",
-  },
-  {
-    name: "David & Priya S.",
-    location: "Eagan — Lexington South",
-    quote:
-      "We got three quotes for a full AC replacement, and the contractor they matched us with was the most honest and thorough by far. Install was clean and on schedule.",
-    service: "AC replacement",
-  },
-  {
-    name: "Tom R.",
-    location: "Apple Valley",
-    quote:
-      "No upselling, no games. The tech explained exactly what was wrong, showed me the failed part, and had it fixed in under an hour. This is how service should work.",
-    service: "AC repair",
+      "Pick the contractor and price that's right for your home. The work is done by the pro you choose — we're here to make choosing easy.",
   },
 ];
 

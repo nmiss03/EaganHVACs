@@ -23,16 +23,17 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Trusted HVAC Repair & Installation in Eagan, MN`,
+    default: `${site.name} — HVAC Costs, Free Tools & Trusted Local Quotes in Eagan, MN`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
   keywords: [
     "HVAC Eagan MN",
+    "HVAC cost estimator Minnesota",
     "furnace repair Eagan",
     "AC repair Eagan",
+    "compare HVAC quotes",
     "heating and cooling Eagan",
-    "emergency HVAC Eagan",
     "HVAC contractors Dakota County",
   ],
   openGraph: {
@@ -40,12 +41,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — Trusted HVAC Repair & Installation in Eagan, MN`,
+    title: `${site.name} — HVAC Costs, Free Tools & Trusted Local Quotes in Eagan, MN`,
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Trusted HVAC Repair & Installation in Eagan, MN`,
+    title: `${site.name} — HVAC Costs, Free Tools & Trusted Local Quotes in Eagan, MN`,
     description: site.description,
   },
   robots: {

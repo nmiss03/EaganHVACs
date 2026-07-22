@@ -39,9 +39,9 @@ export function InquirySection() {
             <Reveal>
               <SectionTitle
                 align="left"
-                eyebrow="Get Started"
-                title="Request your free quote"
-                description="Tell us what's going on with your system and a trusted local pro will reach out — usually within the hour during business hours."
+                eyebrow="When You're Ready"
+                title="Compare local quotes — free"
+                description="Used the tools? Read the guides? The logical next step is real numbers. Tell us what's going on and a vetted local pro will reach out — usually within the hour during business hours."
               />
             </Reveal>
             <ul className="mt-10 space-y-6">
