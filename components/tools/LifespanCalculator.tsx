@@ -64,7 +64,7 @@ export function LifespanCalculator() {
 
         <div>
           <label htmlFor="ls-age" className="mb-2 flex items-center justify-between text-sm font-semibold text-navy-900">
-            Current age <span className="text-accent-600">{age} years</span>
+            Current age <span className="text-accent-700">{age} years</span>
           </label>
           <input
             id="ls-age"
@@ -90,7 +90,7 @@ export function LifespanCalculator() {
         <button
           type="button"
           onClick={handleCheck}
-          className="flex items-center justify-center gap-2 rounded-xl bg-accent-500 px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-all hover:-translate-y-0.5 hover:bg-accent-600"
+          className="flex items-center justify-center gap-2 rounded-xl bg-accent-500 px-6 py-3.5 text-sm font-semibold text-navy-950 shadow-glow transition-all hover:-translate-y-0.5 hover:bg-accent-600"
         >
           Estimate remaining life
           <Icon name="arrowRight" className="h-4 w-4" />

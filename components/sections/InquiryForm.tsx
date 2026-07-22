@@ -103,7 +103,7 @@ export function InquiryForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="inquiry-name" className={labelClasses}>
-            Full name <span className="text-accent-600">*</span>
+            Full name <span className="text-accent-700">*</span>
           </label>
           <input
             id="inquiry-name"
@@ -124,7 +124,7 @@ export function InquiryForm() {
         </div>
         <div>
           <label htmlFor="inquiry-phone" className={labelClasses}>
-            Phone <span className="text-accent-600">*</span>
+            Phone <span className="text-accent-700">*</span>
           </label>
           <input
             id="inquiry-phone"
@@ -147,7 +147,7 @@ export function InquiryForm() {
 
       <div className="mt-5">
         <label htmlFor="inquiry-email" className={labelClasses}>
-          Email <span className="font-normal text-slate-400">(optional)</span>
+          Email <span className="font-normal text-slate-500">(optional)</span>
         </label>
         <input
           id="inquiry-email"
@@ -168,7 +168,7 @@ export function InquiryForm() {
 
       <div className="mt-5">
         <label htmlFor="inquiry-service" className={labelClasses}>
-          What do you need help with? <span className="text-accent-600">*</span>
+          What do you need help with? <span className="text-accent-700">*</span>
         </label>
         <select
           id="inquiry-service"
@@ -197,7 +197,7 @@ export function InquiryForm() {
 
       <div className="mt-5">
         <label htmlFor="inquiry-message" className={labelClasses}>
-          Tell us more <span className="font-normal text-slate-400">(optional)</span>
+          Tell us more <span className="font-normal text-slate-500">(optional)</span>
         </label>
         <textarea
           id="inquiry-message"
@@ -227,12 +227,12 @@ export function InquiryForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="mt-7 flex w-full items-center justify-center gap-2.5 rounded-xl bg-accent-500 px-7 py-4 text-base font-semibold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 disabled:pointer-events-none disabled:opacity-70"
+        className="mt-7 flex w-full items-center justify-center gap-2.5 rounded-xl bg-accent-500 px-7 py-4 text-base font-semibold text-navy-950 shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 disabled:pointer-events-none disabled:opacity-70"
       >
         {submitting ? (
           <>
             <span
-              className="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white"
+              className="h-5 w-5 animate-spin rounded-full border-2 border-navy-950/30 border-t-navy-950"
               aria-hidden="true"
             />
             Sending your request…

@@ -144,7 +144,7 @@ export function CostEstimator() {
         <button
           type="button"
           onClick={handleEstimate}
-          className="flex items-center justify-center gap-2 rounded-xl bg-accent-500 px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-all hover:-translate-y-0.5 hover:bg-accent-600"
+          className="flex items-center justify-center gap-2 rounded-xl bg-accent-500 px-6 py-3.5 text-sm font-semibold text-navy-950 shadow-glow transition-all hover:-translate-y-0.5 hover:bg-accent-600"
         >
           Estimate my project cost
           <Icon name="arrowRight" className="h-4 w-4" />
@@ -181,7 +181,7 @@ export function CostEstimator() {
             <Link
               href="/#inquiry"
               onClick={() => track("cta_from_tool", { tool: "cost_estimator" })}
-              className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-accent-500 px-5 py-3 text-sm font-semibold text-white shadow-glow transition-colors hover:bg-accent-600"
+              className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-accent-500 px-5 py-3 text-sm font-semibold text-navy-950 shadow-glow transition-colors hover:bg-accent-600"
             >
               Compare real quotes free
               <Icon name="arrowRight" className="h-4 w-4" />

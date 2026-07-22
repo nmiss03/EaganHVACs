@@ -79,7 +79,7 @@ export const articles: readonly Article[] = [
       {
         heading: "Full replacement costs",
         paragraphs: [
-          "In the Twin Cities, a new furnace typically runs $4,000–$9,000 installed, central AC $4,500–$9,500, and a cold-climate heat pump $8,000–$18,000 before rebates. High-efficiency equipment sits at the top of each range but earns utility rebates and lower bills every month.",
+          "In the Twin Cities, a new furnace typically runs $4,000–$9,000 installed, central AC $4,500–$9,500, and a cold-climate heat pump $8,000–$18,000 before rebates. You can narrow these down for your own home with our [HVAC cost estimator](/tools/hvac-cost-estimator). High-efficiency equipment sits at the top of each range but earns [utility rebates and federal tax credits](/resources/minnesota-hvac-rebates) and lower bills every month.",
           "Installation quality moves these numbers more than brand does. A properly sized, properly installed mid-tier system outperforms a premium unit installed badly.",
         ],
       },
@@ -133,6 +133,7 @@ export const articles: readonly Article[] = [
     readMinutes: 6,
     intro: [
       "The difference between a great HVAC experience and an expensive mistake usually comes down to questions asked before any work starts. Print this list, or keep it open during your quote appointments — good contractors will happily answer every one.",
+      "For a step-by-step framework that puts these questions in context, our [guide to choosing an HVAC company](/locations/eagan/best-hvac-companies) walks through how to evaluate and compare contractors side by side.",
     ],
     sections: [
       {
@@ -214,7 +215,7 @@ export const articles: readonly Article[] = [
     updated: "July 2026",
     readMinutes: 5,
     intro: [
-      "Minnesota homeowners leave real money on the table every year by not claiming HVAC incentives. Between utility rebates and federal tax credits, a high-efficiency upgrade can come in thousands of dollars cheaper than sticker price — if you know what to claim and who files it.",
+      "Minnesota homeowners leave real money on the table every year by not claiming HVAC incentives. Between utility rebates and federal tax credits, a high-efficiency upgrade can come in thousands of dollars cheaper than sticker price — you can see how the pre-rebate numbers look with our [HVAC cost estimator](/tools/hvac-cost-estimator) — if you know what to claim and who files it.",
       "Program amounts change yearly, so treat the figures below as a map of what exists and verify current amounts with your utility or contractor before buying.",
     ],
     sections: [
@@ -234,7 +235,7 @@ export const articles: readonly Article[] = [
       {
         heading: "Federal tax credits (Energy Efficient Home Improvement Credit)",
         paragraphs: [
-          "The federal 25C credit covers 30% of qualifying project costs, with caps per equipment type: up to $600 for qualifying ACs and furnaces, and up to $2,000 per year for qualifying heat pumps. This is a tax credit — it reduces what you owe dollar-for-dollar — and it resets annually, which rewards phasing projects across tax years.",
+          "The federal 25C credit covers 30% of qualifying project costs, with caps per equipment type: up to $600 for qualifying ACs and furnaces, and up to $2,000 per year for qualifying [cold-climate heat pumps](/services/heat-pumps). This is a tax credit — it reduces what you owe dollar-for-dollar — and it resets annually, which rewards phasing projects across tax years.",
         ],
       },
       {
@@ -280,7 +281,7 @@ export const articles: readonly Article[] = [
     updated: "July 2026",
     readMinutes: 5,
     intro: [
-      "Minnesota is one of the hardest climates in America on HVAC equipment: -20°F stretches in January, 95°F humidity in July, and a system that never really gets a season off. A little seasonal discipline prevents most emergency breakdowns — here's the calendar we'd give any Twin Cities homeowner.",
+      "Minnesota is one of the hardest climates in America on HVAC equipment: -20°F stretches in January, 95°F humidity in July, and a system that never really gets a season off. A little seasonal discipline plus a professional [seasonal tune-up](/services/maintenance-tune-ups) prevents most emergency breakdowns — here's the calendar we'd give any Twin Cities homeowner.",
     ],
     sections: [
       {
@@ -389,7 +390,7 @@ export const articles: readonly Article[] = [
           "You've done all seven checks and still have no heat",
         ],
         paragraphs: [
-          "In sub-zero weather, no heat is an emergency — pipes can freeze within hours. Contractors in our network run 24/7 emergency service across the south metro, and an after-hours call costs far less than a burst pipe.",
+          "In sub-zero weather, no heat is an emergency — pipes can freeze within hours. Contractors in our network run [24/7 emergency service](/services/emergency-hvac) across the south metro, and an after-hours call costs far less than a burst pipe. If your furnace is aging and no-heat calls are becoming routine, it may be time to [weigh repair against replacement](/tools/repair-or-replace).",
         ],
       },
     ],

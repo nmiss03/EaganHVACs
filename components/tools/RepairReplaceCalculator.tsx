@@ -103,7 +103,7 @@ export function RepairReplaceCalculator() {
 
         <div>
           <label htmlFor="rr-age" className="mb-2 flex items-center justify-between text-sm font-semibold text-navy-900">
-            System age <span className="text-accent-600">{age} years</span>
+            System age <span className="text-accent-700">{age} years</span>
           </label>
           <input
             id="rr-age"
@@ -121,7 +121,7 @@ export function RepairReplaceCalculator() {
             Estimated repair cost
           </label>
           <div className="relative">
-            <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">$</span>
+            <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">$</span>
             <input
               id="rr-cost"
               type="number"
@@ -137,7 +137,7 @@ export function RepairReplaceCalculator() {
         <button
           type="button"
           onClick={handleCalculate}
-          className="flex items-center justify-center gap-2 rounded-xl bg-accent-500 px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-all hover:-translate-y-0.5 hover:bg-accent-600"
+          className="flex items-center justify-center gap-2 rounded-xl bg-accent-500 px-6 py-3.5 text-sm font-semibold text-navy-950 shadow-glow transition-all hover:-translate-y-0.5 hover:bg-accent-600"
         >
           See my recommendation
           <Icon name="arrowRight" className="h-4 w-4" />

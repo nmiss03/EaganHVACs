@@ -5,6 +5,7 @@ import { CTABand } from "@/components/landing/CTABand";
 import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
+import { LastUpdated } from "@/components/ui/LastUpdated";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { allServiceDetails } from "@/lib/content";
 
@@ -182,6 +183,12 @@ export default function FaqPage() {
           "Straight answers to the questions Eagan homeowners ask us most — costs, common problems, repair-or-replace decisions, and how to get the most from your system. Don't see yours? Call and ask a real local person.",
         ]}
       />
+
+      <div className="border-b border-navy-900/[0.06] bg-white">
+        <Container className="py-3.5">
+          <LastUpdated updated="July 2026" />
+        </Container>
+      </div>
 
       {faqGroups.map((group, gi) => (
         <section

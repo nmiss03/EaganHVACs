@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/Container";
-import { Icon } from "@/components/ui/Icon";
+import { LastUpdated } from "@/components/ui/LastUpdated";
 
 export interface TocSection {
   id: string;
@@ -28,14 +28,9 @@ export function StickyToc({
     >
       <Container className="flex items-center gap-4 py-3">
         {meta ? (
-          <p className="hidden shrink-0 items-center gap-2 border-r border-navy-900/10 pr-4 text-xs font-medium text-slate-500 md:flex">
-            <span className="inline-flex items-center gap-1.5">
-              <Icon name="clock" className="h-3.5 w-3.5" />
-              {meta.readMinutes} min read
-            </span>
-            <span aria-hidden="true">·</span>
-            <span>Updated {meta.updated}</span>
-          </p>
+          <div className="hidden shrink-0 border-r border-navy-900/10 pr-4 md:block">
+            <LastUpdated updated={meta.updated} readMinutes={meta.readMinutes} />
+          </div>
         ) : null}
         <div className="flex items-center gap-2 overflow-x-auto">
           <span className="hidden shrink-0 text-xs font-bold uppercase tracking-[0.12em] text-navy-400 sm:inline">

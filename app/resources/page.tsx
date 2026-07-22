@@ -40,7 +40,7 @@ export default function ResourcesIndexPage() {
             const inCategory = articles.filter((a) => a.category === category);
             return (
               <div key={category} className="mb-12 last:mb-0">
-                <h2 className="font-display text-sm font-bold uppercase tracking-[0.14em] text-accent-600">
+                <h2 className="font-display text-sm font-bold uppercase tracking-[0.14em] text-accent-700">
                   {category}
                 </h2>
                 <div className="mt-4 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

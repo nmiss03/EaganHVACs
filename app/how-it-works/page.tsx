@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/landing/Breadcrumbs";
 import { CTABand } from "@/components/landing/CTABand";
 import { PageHero } from "@/components/landing/PageHero";
@@ -154,6 +155,16 @@ export default function HowItWorksPage() {
               licensed contractors in our network. We don&rsquo;t dispatch our own
               technicians or perform installations — our role is to help you find and
               compare trustworthy local pros with confidence.
+            </p>
+            <p className="mt-4 text-sm text-slate-600">
+              Want the full picture?{" "}
+              <Link
+                href="/about#methodology"
+                className="font-semibold text-navy-900 underline decoration-accent-400 decoration-2 underline-offset-4 transition-colors hover:text-accent-600"
+              >
+                Read about who we are and how we research our guides
+              </Link>
+              .
             </p>
           </div>
         </Container>

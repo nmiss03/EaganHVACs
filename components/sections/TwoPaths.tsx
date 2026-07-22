@@ -28,7 +28,7 @@ export function TwoPaths() {
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/#inquiry"
-                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-accent-500 px-5 py-3 text-sm font-semibold text-white shadow-glow transition-colors hover:bg-accent-600"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-accent-500 px-5 py-3 text-sm font-semibold text-navy-950 shadow-glow transition-colors hover:bg-accent-600"
                 >
                   Compare Local Quotes
                   <Icon name="arrowRight" className="h-4 w-4" />

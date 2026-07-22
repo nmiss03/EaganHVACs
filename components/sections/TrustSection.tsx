@@ -77,12 +77,19 @@ export function TrustSection() {
             </Reveal>
           ))}
         </div>
-        <Reveal className="mt-10 text-center">
+        <Reveal className="mt-10 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-center sm:gap-8">
           <Link
             href="/how-it-works"
             className="inline-flex items-center gap-2 text-sm font-semibold text-navy-100 underline decoration-accent-400 decoration-2 underline-offset-4 transition-colors hover:text-accent-300"
           >
             See exactly what happens after you request quotes
+            <Icon name="arrowRight" className="h-4 w-4" />
+          </Link>
+          <Link
+            href="/about#methodology"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-navy-100 underline decoration-accent-400 decoration-2 underline-offset-4 transition-colors hover:text-accent-300"
+          >
+            How we research our guides
             <Icon name="arrowRight" className="h-4 w-4" />
           </Link>
         </Reveal>

@@ -30,6 +30,7 @@ export function Header() {
   }, [open]);
 
   return (
+    <>
     <header
       className={`sticky top-0 z-50 border-b transition-all duration-300 ${
         scrolled
@@ -48,7 +49,7 @@ export function Header() {
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy-900 text-accent-400">
             <Icon name="flame" className="h-5 w-5" strokeWidth={2} />
           </span>
-          <span className="font-display text-lg font-extrabold tracking-tight text-navy-900">
+          <span className="font-display text-xl font-extrabold tracking-tight text-navy-900">
             Eagan<span className="text-accent-500">HVACs</span>
           </span>
         </Link>
@@ -76,7 +77,7 @@ export function Header() {
           </a>
           <Link
             href="/#inquiry"
-            className="hidden rounded-xl bg-accent-500 px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-all hover:-translate-y-0.5 hover:bg-accent-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 sm:inline-flex"
+            className="hidden rounded-xl bg-accent-500 px-5 py-2.5 text-sm font-semibold text-navy-950 shadow-glow transition-all hover:-translate-y-0.5 hover:bg-accent-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 sm:inline-flex"
           >
             Compare Quotes
           </Link>
@@ -92,11 +93,18 @@ export function Header() {
           </button>
         </div>
       </nav>
+    </header>
 
-      {/* Mobile slide-out menu */}
+      {/* Mobile slide-out menu — rendered as a SIBLING of <header>, not a
+          child. When scrolled, the header uses backdrop-blur, and a
+          backdrop-filter establishes a containing block for fixed-position
+          descendants. Nested here, this overlay was being clamped to the
+          header's 64px bar (transparent, unreadable). As a sibling under
+          <body> it correctly covers the full viewport. */}
       <div
         className={`fixed inset-0 z-50 lg:hidden ${open ? "" : "pointer-events-none"}`}
         aria-hidden={!open}
+        inert={!open || undefined}
       >
         <div
           className={`absolute inset-0 bg-navy-950/60 backdrop-blur-sm transition-opacity duration-300 ${
@@ -114,7 +122,7 @@ export function Header() {
           }`}
         >
           <div className="flex h-16 items-center justify-between border-b border-navy-900/10 px-5">
-            <span className="font-display text-lg font-extrabold tracking-tight text-navy-900">
+            <span className="font-display text-xl font-extrabold tracking-tight text-navy-900">
               Eagan<span className="text-accent-500">HVACs</span>
             </span>
             <button
@@ -146,7 +154,7 @@ export function Header() {
             <Link
               href="/#inquiry"
               onClick={() => setOpen(false)}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent-500 px-5 py-4 text-base font-semibold text-white shadow-glow transition-colors hover:bg-accent-600"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent-500 px-5 py-4 text-base font-semibold text-navy-950 shadow-glow transition-colors hover:bg-accent-600"
             >
               Compare Quotes
               <Icon name="arrowRight" className="h-4 w-4" />
@@ -161,6 +169,6 @@ export function Header() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }

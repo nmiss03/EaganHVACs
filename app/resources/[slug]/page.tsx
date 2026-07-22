@@ -6,7 +6,9 @@ import { CTABand } from "@/components/landing/CTABand";
 import { FaqList } from "@/components/landing/FaqList";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
+import { LastUpdated } from "@/components/ui/LastUpdated";
 import { articles, getArticle } from "@/lib/articles";
+import { renderInline } from "@/lib/render-inline";
 import { absoluteUrl, getServiceDetail } from "@/lib/content";
 import { site } from "@/lib/site";
 import { getTool } from "@/lib/tools";
@@ -86,14 +88,12 @@ export default async function ArticlePage({
             <h1 className="mt-3 max-w-3xl font-display text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
               {article.title}
             </h1>
-            <p className="mt-4 flex items-center gap-3 text-sm text-navy-100/70">
-              <span className="inline-flex items-center gap-1.5">
-                <Icon name="clock" className="h-4 w-4" />
-                {article.readMinutes} min read
-              </span>
-              <span aria-hidden="true">·</span>
-              <span>Updated {article.updated}</span>
-            </p>
+            <LastUpdated
+              updated={article.updated}
+              readMinutes={article.readMinutes}
+              tone="dark"
+              className="mt-4"
+            />
           </Container>
         </header>
 
@@ -102,7 +102,7 @@ export default async function ArticlePage({
             <div className="mx-auto max-w-3xl">
               {article.intro.map((p) => (
                 <p key={p.slice(0, 24)} className="mb-4 text-lg leading-relaxed text-slate-700">
-                  {p}
+                  {renderInline(p)}
                 </p>
               ))}
 
@@ -113,7 +113,7 @@ export default async function ArticlePage({
                   </h2>
                   {section.paragraphs?.map((p) => (
                     <p key={p.slice(0, 24)} className="mt-3 text-[15px] leading-relaxed text-slate-700">
-                      {p}
+                      {renderInline(p)}
                     </p>
                   ))}
                   {section.list ? (
@@ -226,7 +226,7 @@ export default async function ArticlePage({
                     href={`/resources/${a.slug}`}
                     className="group flex flex-col rounded-xl border border-navy-900/[0.07] bg-white p-5 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
                   >
-                    <span className="text-xs font-semibold uppercase tracking-[0.12em] text-accent-600">
+                    <span className="text-xs font-semibold uppercase tracking-[0.12em] text-accent-700">
                       {a.category}
                     </span>
                     <span className="mt-1.5 font-display text-base font-bold leading-snug text-navy-900 group-hover:text-accent-700">

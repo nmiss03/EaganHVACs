@@ -9,6 +9,8 @@ export interface ToolMeta {
   metaDescription: string;
   h1: string;
   intro: string[];
+  /** Human-readable last-reviewed date, shown via <LastUpdated>. */
+  updated: string;
 }
 
 export const tools: readonly ToolMeta[] = [
@@ -25,6 +27,7 @@ export const tools: readonly ToolMeta[] = [
     intro: [
       "Most HVAC websites won't show you a price until you're on the phone. This free estimator gives you an honest, Twin Cities-specific installed price range for a new furnace, air conditioner, or heat pump in seconds — so you walk into your quotes already knowing the ballpark and can spot a fair one.",
     ],
+    updated: "July 2026",
   },
   {
     slug: "repair-or-replace",
@@ -38,6 +41,7 @@ export const tools: readonly ToolMeta[] = [
     intro: [
       "One of the hardest calls a homeowner faces is whether to keep repairing an aging furnace or air conditioner — or invest in a replacement. This free tool applies the industry rules of thumb (system age, repair cost, and typical lifespan) to give you a clear, unbiased starting point in about 30 seconds.",
     ],
+    updated: "July 2026",
   },
   {
     slug: "system-lifespan",
@@ -51,6 +55,7 @@ export const tools: readonly ToolMeta[] = [
     intro: [
       "Knowing roughly how much life your equipment has left turns a stressful surprise into a plan. This estimator uses typical Minnesota lifespans and your maintenance history to show where your system stands — so you can budget for replacement on your terms instead of during an emergency.",
     ],
+    updated: "July 2026",
   },
 ];
 

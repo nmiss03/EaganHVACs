@@ -6,7 +6,9 @@ import { CTABand } from "@/components/landing/CTABand";
 import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
+import { LastUpdated } from "@/components/ui/LastUpdated";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { site } from "@/lib/site";
 import { CostEstimator } from "@/components/tools/CostEstimator";
 import { LifespanCalculator } from "@/components/tools/LifespanCalculator";
 import { RepairReplaceCalculator } from "@/components/tools/RepairReplaceCalculator";
@@ -53,9 +55,10 @@ export default async function ToolPage({
     "@type": "WebApplication",
     name: tool.title,
     url: absoluteUrl(`/tools/${tool.slug}`),
-    applicationCategory: "UtilityApplication",
+    applicationCategory: "UtilitiesApplication",
     operatingSystem: "Web",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    provider: { "@id": `${site.url}/#business` },
     description: tool.metaDescription,
   };
 
@@ -73,6 +76,7 @@ export default async function ToolPage({
       <section className="bg-white py-14 lg:py-16">
         <Container>
           <div className="mx-auto max-w-2xl">
+            <LastUpdated updated={tool.updated} className="mb-6" />
             {tool.slug === "hvac-cost-estimator" ? <CostEstimator /> : null}
             {tool.slug === "repair-or-replace" ? <RepairReplaceCalculator /> : null}
             {tool.slug === "system-lifespan" ? <LifespanCalculator /> : null}

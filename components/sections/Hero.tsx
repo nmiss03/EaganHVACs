@@ -142,7 +142,7 @@ export function Hero() {
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="flex items-center justify-between gap-2">
-                        <span className="text-xs font-bold uppercase tracking-[0.1em] text-slate-400">
+                        <span className="text-xs font-bold uppercase tracking-[0.1em] text-slate-500">
                           {p.tool}
                         </span>
                         <Icon

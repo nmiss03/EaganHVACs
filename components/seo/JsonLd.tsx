@@ -1,6 +1,9 @@
 import { locations } from "@/lib/content";
 import { faqs, site } from "@/lib/site";
 
+/** E.164 telephone from the tel: href, e.g. "+16124245423". */
+const telephoneE164 = site.phoneHref.replace("tel:", "");
+
 /**
  * LocalBusiness + FAQPage structured data for local-search visibility.
  */
@@ -12,10 +15,20 @@ export function JsonLd() {
     name: site.name,
     description: site.description,
     url: site.url,
-    telephone: site.phoneHref.replace("tel:", ""),
+    telephone: telephoneE164,
     email: site.email,
     priceRange: "$$",
+    slogan: site.tagline,
+    foundingDate: "2026",
+    logo: `${site.url}/icon.svg`,
     image: `${site.url}/opengraph-image`,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: telephoneE164,
+      email: site.email,
+      contactType: "customer service",
+      areaServed: "US-MN",
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: site.address.city,

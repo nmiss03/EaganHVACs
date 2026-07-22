@@ -55,7 +55,7 @@ export function FeaturedTools() {
                 <p className="mt-4 rounded-lg bg-slate-50 px-3 py-2 text-xs font-semibold text-navy-700">
                   {preview[tool.slug]?.example}
                 </p>
-                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">
+                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
                   Under a minute · Free
                 </p>
                 <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 transition-colors group-hover:text-accent-600">
@@ -83,7 +83,7 @@ export function FeaturedTools() {
                 next on our list — built the same way: free, honest, and
                 no phone number required.
               </p>
-              <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">
+              <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
                 In development
               </p>
             </div>

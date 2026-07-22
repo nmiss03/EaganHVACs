@@ -112,7 +112,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <p className="mt-12 border-t border-white/10 pt-8 text-xs leading-relaxed text-navy-100/50">
+        <p className="mt-12 border-t border-white/10 pt-8 text-xs leading-relaxed text-navy-100/70">
           {site.name} is a free service that helps homeowners compare and
           connect with independent, licensed HVAC contractors. All heating and
           cooling work is performed by the contractors in our network — not by{" "}
@@ -123,6 +123,11 @@ export function Footer() {
             © {year} {site.legalName}. All rights reserved.
           </p>
           <ul className="flex items-center gap-6">
+            <li>
+              <Link href="/about" className="transition-colors hover:text-accent-300">
+                About &amp; Methodology
+              </Link>
+            </li>
             <li>
               <Link href="/privacy" className="transition-colors hover:text-accent-300">
                 Privacy Policy
