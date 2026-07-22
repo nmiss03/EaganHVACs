@@ -6,9 +6,17 @@
 
 export interface ArticleSection {
   heading: string;
+  /** Optional short label for the on-page table of contents (defaults to heading). */
+  tocLabel?: string;
   paragraphs?: string[];
   list?: string[];
   table?: { headers: string[]; rows: string[][] };
+  /** Highlighted advisory box. */
+  callout?: { tone: "tip" | "warning" | "note"; title?: string; text: string };
+  /** Two-column pros & cons block. */
+  prosCons?: { pros: string[]; cons: string[] };
+  /** Placeholder image container (ready for real photography). */
+  image?: { label: string };
 }
 
 export interface Article {
@@ -20,6 +28,8 @@ export interface Article {
   updated: string;
   readMinutes: number;
   intro: string[];
+  /** Optional TL;DR shown before the body. */
+  keyTakeaways?: string[];
   sections: ArticleSection[];
   faqs: { question: string; answer: string }[];
   /** Slugs of related articles for cross-linking. */
@@ -413,6 +423,271 @@ export const articles: readonly Article[] = [
     ],
     related: ["minnesota-hvac-maintenance-calendar", "hvac-cost-guide-minnesota"],
     relatedServices: ["furnace-repair", "emergency-hvac"],
+  },
+  {
+    slug: "furnace-replacement-cost",
+    category: "Cost Guides",
+    title: "Furnace Replacement Cost in Minnesota: What You'll Really Pay",
+    metaTitle: "Furnace Replacement Cost Minnesota (2026) | Real Price Ranges",
+    metaDescription:
+      "What a new furnace really costs in the Twin Cities in 2026 — by efficiency and home size — plus the rebates that lower it and how to compare quotes fairly.",
+    updated: "July 2026",
+    readMinutes: 8,
+    intro: [
+      "A new furnace is one of the largest single purchases a Minnesota homeowner makes, and it almost always happens under pressure — usually the week the old one dies in January. The goal of this guide is to take the pressure off: to show you what a furnace replacement actually costs in the Twin Cities, what moves the price up or down, and how to tell a fair quote from a padded one.",
+      "These are real planning ranges, not a sales pitch. The only exact number is a written quote after a contractor has seen your home — which is exactly why comparing two or three quotes is worth the effort. When you want a personalized figure in seconds, the [HVAC cost estimator](/tools/hvac-cost-estimator) turns these ranges into a number for your specific home.",
+    ],
+    keyTakeaways: [
+      "Most Twin Cities furnace replacements run **$4,000–$9,000** installed, depending on efficiency and home size.",
+      "High-efficiency (96%+ AFUE) furnaces cost more up front but qualify for [Minnesota rebates and tax credits](/resources/minnesota-hvac-rebates) and lower your gas bill every winter.",
+      "The quality of the installation affects lifespan and efficiency as much as the brand — a great furnace installed poorly won't last.",
+      "If your furnace is under ~15 years old, run the numbers before replacing — the [repair-or-replace tool](/tools/repair-or-replace) gives a quick, unbiased read.",
+    ],
+    sections: [
+      {
+        heading: "What a new furnace costs in the Twin Cities",
+        tocLabel: "Cost ranges",
+        paragraphs: [
+          "Installed price — meaning equipment, labor, permit, and removal of the old unit — is what matters, not the sticker price of the furnace itself. Here's how the ranges typically break down by efficiency in the Minnesota market.",
+        ],
+        table: {
+          headers: ["Furnace type", "Efficiency (AFUE)", "Typical installed range"],
+          rows: [
+            ["Standard efficiency", "80%", "$4,000 – $6,000"],
+            ["High efficiency", "90–96%", "$5,500 – $8,000"],
+            ["Premium / modulating", "96–98%+", "$7,000 – $9,000+"],
+          ],
+        },
+        callout: {
+          tone: "note",
+          title: "Why Minnesota leans high-efficiency",
+          text: "With our long heating season, the monthly savings from a 96%+ furnace add up faster here than almost anywhere in the country — which is why high-efficiency models are the common recommendation for MN homes, and why the rebates exist.",
+        },
+      },
+      {
+        heading: "What drives your price up or down",
+        tocLabel: "Price factors",
+        list: [
+          "Efficiency rating (AFUE) — higher efficiency equipment costs more but lowers operating cost",
+          "Furnace size (BTU) — correctly sized for your home via a load calculation, not a rule of thumb",
+          "Single-stage vs. two-stage vs. modulating burners — more comfort and efficiency, higher cost",
+          "Existing ductwork, gas line, and venting — modifications add labor",
+          "Whether it's paired with a new AC or coil at the same time (often cheaper together)",
+          "Emergency vs. planned timing — mid-winter no-heat replacements can carry a premium",
+        ],
+      },
+      {
+        heading: "Should you repair instead?",
+        tocLabel: "Repair vs replace",
+        paragraphs: [
+          "Replacement isn't always the right call. A useful rule of thumb: if the furnace is under 15 years old and the repair costs less than about a third of a new system, repair usually wins. Past 15 years — or facing a cracked heat exchanger — replacement is typically the sounder investment.",
+        ],
+        callout: {
+          tone: "tip",
+          title: "Get an unbiased read in 30 seconds",
+          text: "The [repair-or-replace calculator](/tools/repair-or-replace) applies the age-and-cost math for you, so you walk into quotes already knowing which direction makes financial sense.",
+        },
+      },
+      {
+        heading: "Rebates and tax credits that lower the cost",
+        tocLabel: "Rebates",
+        paragraphs: [
+          "A high-efficiency furnace's higher price is partly offset by incentives. CenterPoint Energy offers rebates on qualifying high-efficiency gas furnaces, and federal tax credits may apply to the most efficient models. Amounts change, so verify current figures — our [Minnesota rebates guide](/resources/minnesota-hvac-rebates) tracks what's typically available and who qualifies.",
+        ],
+      },
+      {
+        heading: "Replace now, or wait?",
+        tocLabel: "Now vs. wait",
+        prosCons: {
+          pros: [
+            "Planned (off-season) replacements avoid the mid-winter emergency premium",
+            "You have time to gather and compare multiple quotes",
+            "A new high-efficiency system starts lowering your gas bill immediately",
+            "You can capture current rebates before programs change",
+          ],
+          cons: [
+            "Up-front cost is significant if the current furnace still works",
+            "Financing means monthly payments (though often less than the energy savings)",
+            "Prices and rebates can shift year to year in either direction",
+          ],
+        },
+      },
+      {
+        heading: "How to compare furnace quotes fairly",
+        tocLabel: "Compare quotes",
+        paragraphs: [
+          "The single biggest mistake is comparing a low number against a high number without checking what's inside each. Make the quotes apples-to-apples:",
+        ],
+        list: [
+          "Same efficiency (AFUE) and comparable equipment tier on every quote",
+          "A load calculation to justify the size — not just 'same size as the old one'",
+          "Permit included (required in Minnesota) and who pulls it",
+          "Written scope: venting, gas line, thermostat, and old-unit removal",
+          "Labor warranty length, not just the manufacturer's parts warranty",
+        ],
+        callout: {
+          tone: "warning",
+          title: "A price far below the rest is a red flag",
+          text: "When one bid is dramatically cheaper, look for what's missing — a smaller or lower-efficiency unit, no permit, reused parts, or a short labor warranty. Cheap and comparable are rarely the same quote.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does a new furnace cost in Minnesota?",
+        answer:
+          "Most Twin Cities furnace replacements fall between $4,000 and $9,000 installed. Standard 80% AFUE units sit at the low end; high-efficiency 96%+ modulating furnaces reach the top. Home size, ductwork, and installation complexity move you within that range.",
+      },
+      {
+        question: "Is a 96% high-efficiency furnace worth it in Minnesota?",
+        answer:
+          "For most Minnesota homes, yes. Our long heating season means the monthly savings recover the price difference faster than in warmer states, and high-efficiency models qualify for rebates and tax credits that narrow the up-front gap.",
+      },
+      {
+        question: "How long does furnace installation take?",
+        answer:
+          "A straightforward furnace swap is usually a one-day job. Adding or modifying ductwork, venting, or a gas line — or installing a furnace and AC together — can extend it to a second day.",
+      },
+      {
+        question: "Should I replace my furnace and AC at the same time?",
+        answer:
+          "If both are near end of life, replacing them together often saves on labor and ensures the two systems are matched for efficiency. If your AC is significantly newer, replacing just the furnace usually makes more sense.",
+      },
+    ],
+    related: ["hvac-cost-guide-minnesota", "minnesota-hvac-rebates", "questions-to-ask-hvac-contractor"],
+    relatedServices: ["installation-replacement", "furnace-repair"],
+    relatedTools: ["hvac-cost-estimator", "repair-or-replace"],
+  },
+  {
+    slug: "ac-replacement-cost",
+    category: "Cost Guides",
+    title: "AC Replacement Cost in Minnesota: 2026 Price Guide",
+    metaTitle: "AC Replacement Cost Minnesota (2026) | Central Air Prices",
+    metaDescription:
+      "What a new central air conditioner costs in the Twin Cities in 2026 — by SEER2 efficiency and home size — plus rebates, SEER2 rules, and how to compare quotes.",
+    updated: "July 2026",
+    readMinutes: 8,
+    intro: [
+      "Central air is easy to take for granted until the first 90-degree, high-humidity stretch of a Minnesota July — and then a failing AC becomes urgent fast. This guide lays out what a new central air conditioner actually costs in the Twin Cities, how the new SEER2 efficiency standard affects price, and how to compare quotes without overpaying.",
+      "As with any big HVAC decision, these are honest planning ranges rather than a quote. For a number tailored to your home, the [HVAC cost estimator](/tools/hvac-cost-estimator) takes about a minute and asks for no phone number.",
+    ],
+    keyTakeaways: [
+      "Most Twin Cities central AC replacements run **$4,500–$9,500** installed, depending on size and efficiency.",
+      "SEER2 is the current efficiency rating — higher SEER2 costs more up front but lowers summer electric bills and can unlock [Xcel Energy rebates](/resources/minnesota-hvac-rebates).",
+      "AC and furnace share the indoor coil and blower, so replacing a very old furnace at the same time is often more cost-effective than doing them separately.",
+      "If your system still uses discontinued R-22 refrigerant, repairs are expensive and getting worse — replacement is usually the better path.",
+    ],
+    sections: [
+      {
+        heading: "What a new central AC costs",
+        tocLabel: "Cost ranges",
+        paragraphs: [
+          "Installed price includes the outdoor condenser, indoor coil, refrigerant, labor, permit, and old-unit removal. Ranges vary mainly by system size (measured in tons) and SEER2 efficiency.",
+        ],
+        table: {
+          headers: ["Efficiency (SEER2)", "Typical use", "Installed range"],
+          rows: [
+            ["Standard (~14–15 SEER2)", "Budget-conscious replacement", "$4,500 – $6,500"],
+            ["Mid efficiency (16–17 SEER2)", "Best balance for most homes", "$6,000 – $8,000"],
+            ["High efficiency (18+ SEER2)", "Lowest bills, rebate-eligible", "$7,500 – $9,500+"],
+          ],
+        },
+        callout: {
+          tone: "note",
+          title: "What is SEER2?",
+          text: "SEER2 is the efficiency rating that replaced SEER in 2023 — higher numbers mean lower operating cost. You don't need the highest number available; a mid-range SEER2 is the sweet spot for most Minnesota homes, since our cooling season is shorter than our heating season.",
+        },
+      },
+      {
+        heading: "What drives your price up or down",
+        tocLabel: "Price factors",
+        list: [
+          "System size (tons) — set by a load calculation for your home, not guesswork",
+          "SEER2 efficiency rating — higher efficiency costs more but lowers electric bills",
+          "Single-stage vs. two-stage compressor — better comfort and humidity control at higher cost",
+          "Condition of your existing coil, line set, and electrical",
+          "Whether the furnace/air handler is being replaced at the same time",
+          "Emergency mid-heat-wave replacement vs. a planned off-season install",
+        ],
+      },
+      {
+        heading: "Repair or replace your AC?",
+        tocLabel: "Repair vs replace",
+        paragraphs: [
+          "If your AC is under about 12 years old and the repair is modest, fixing it usually makes sense. But two situations tip strongly toward replacement: a failed compressor (often nearly the cost of a new system) and any system still running on R-22 refrigerant, which was phased out in 2020 and is now expensive and scarce.",
+        ],
+        callout: {
+          tone: "tip",
+          title: "Not sure which way to go?",
+          text: "The [repair-or-replace calculator](/tools/repair-or-replace) weighs your system's age against the repair cost and gives you a clear, unbiased starting point before you talk to anyone.",
+        },
+      },
+      {
+        heading: "Rebates that lower the cost",
+        tocLabel: "Rebates",
+        paragraphs: [
+          "Xcel Energy offers rebates on qualifying high-efficiency central air conditioners, and federal tax credits may apply to the most efficient systems. These can meaningfully narrow the gap between a mid- and high-efficiency unit. Because amounts change each program year, confirm current figures — the [Minnesota rebates guide](/resources/minnesota-hvac-rebates) covers what's typically available.",
+        ],
+      },
+      {
+        heading: "Standard vs. high-efficiency AC",
+        tocLabel: "Efficiency tradeoff",
+        prosCons: {
+          pros: [
+            "High-efficiency units noticeably lower summer electric bills",
+            "Two-stage compressors dehumidify better — a real comfort gain in humid MN summers",
+            "Higher-efficiency systems qualify for utility rebates and tax credits",
+            "Quieter operation than older single-stage units",
+          ],
+          cons: [
+            "Higher up-front cost than a standard-efficiency unit",
+            "Payback period is longer here than in hot climates (shorter cooling season)",
+            "The very highest SEER2 tiers rarely pay off for an average Minnesota home",
+          ],
+        },
+      },
+      {
+        heading: "How to compare AC quotes fairly",
+        tocLabel: "Compare quotes",
+        list: [
+          "Same SEER2 rating and comparable equipment tier across all quotes",
+          "A load calculation justifying the tonnage — an oversized AC short-cycles and dehumidifies poorly",
+          "Matched indoor coil included (a new condenser on an old coil underperforms)",
+          "Permit included and who pulls it",
+          "Labor warranty length, plus how the manufacturer's parts warranty gets registered",
+        ],
+        callout: {
+          tone: "warning",
+          title: "Beware the mismatched-coil quote",
+          text: "A cheap quote that reuses your old indoor coil can cost you efficiency and reliability. For a comparable system, the coil should be replaced or matched — make sure every quote states it.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does a new AC cost in Minnesota?",
+        answer:
+          "Most Twin Cities central AC replacements run $4,500 to $9,500 installed. Standard-efficiency units sit at the low end; high-efficiency, rebate-eligible systems reach the top. Size (tonnage), SEER2 rating, and whether the coil is replaced move you within that range.",
+      },
+      {
+        question: "What SEER2 rating should I choose in Minnesota?",
+        answer:
+          "A mid-range SEER2 (around 16–17) is the sweet spot for most Minnesota homes. Because our cooling season is relatively short, the highest SEER2 tiers usually take too long to pay back — though they may still make sense if you're staying long-term or want maximum comfort.",
+      },
+      {
+        question: "My AC uses R-22 refrigerant — should I replace it?",
+        answer:
+          "Likely yes. R-22 was phased out in 2020, so recharging an R-22 system is expensive and gets worse every year. Rather than sink money into a discontinued refrigerant, most homeowners are better off replacing the system.",
+      },
+      {
+        question: "Should I replace my AC and furnace together?",
+        answer:
+          "They share the indoor coil and blower, so if your furnace is also near end of life, replacing both together saves on labor and ensures the systems are matched. If your furnace is newer, replacing just the AC usually makes more sense.",
+      },
+    ],
+    related: ["hvac-cost-guide-minnesota", "minnesota-hvac-rebates", "questions-to-ask-hvac-contractor"],
+    relatedServices: ["installation-replacement", "ac-repair"],
+    relatedTools: ["hvac-cost-estimator", "repair-or-replace"],
   },
 ];
 
