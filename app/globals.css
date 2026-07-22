@@ -56,3 +56,22 @@
     }
   }
 }
+
+/* Print treatment — used by the printable city-guide checklist.
+   Hides the site chrome so printed pages come out clean, and keeps
+   grouped blocks from splitting awkwardly across pages. */
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  .print-avoid-break {
+    break-inside: avoid;
+  }
+
+  body {
+    background: #fff;
+  }
+}

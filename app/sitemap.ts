@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/lib/articles";
+import { cityGuides } from "@/lib/city-guides";
 import { allServiceDetails, locations } from "@/lib/content";
 import { site } from "@/lib/site";
 import { tools } from "@/lib/tools";
@@ -73,6 +74,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const cityGuidePages: MetadataRoute.Sitemap = cityGuides.map((guide) => ({
+    url: `${site.url}/locations/${guide.slug}/best-hvac-companies`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   const toolPages: MetadataRoute.Sitemap = tools.map((tool) => ({
     url: `${site.url}/tools/${tool.slug}`,
     lastModified: now,
@@ -91,6 +99,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...servicePages,
     ...locationPages,
+    ...cityGuidePages,
     ...toolPages,
     ...articlePages,
   ];

@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export function StickyCTA() {
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-navy-900/10 bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-md lg:hidden"
+      className="no-print fixed inset-x-0 bottom-0 z-40 border-t border-navy-900/10 bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-md lg:hidden"
       role="region"
       aria-label="Quick contact"
     >

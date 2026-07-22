@@ -8,6 +8,7 @@ import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { getCityGuide } from "@/lib/city-guides";
 import { absoluteUrl, getLocation, locations } from "@/lib/content";
 import { services, site, whyUs } from "@/lib/site";
 
@@ -83,6 +84,8 @@ export default async function LocationDetailPage({
     .map((name) => locations.find((l) => l.name === name))
     .filter((l): l is (typeof locations)[number] => Boolean(l));
 
+  const cityGuide = getCityGuide(location.slug);
+
   return (
     <>
       <Breadcrumbs
@@ -98,6 +101,40 @@ export default async function LocationDetailPage({
         title={`HVAC Repair & Installation in ${location.name}, MN`}
         intro={[location.intro]}
       />
+
+      {/* City buyer's guide feature card */}
+      {cityGuide ? (
+        <section className="bg-white pt-16 lg:pt-20">
+          <Container>
+            <Link
+              href={`/locations/${location.slug}/best-hvac-companies`}
+              className="group flex flex-col gap-5 rounded-2xl border border-accent-200 bg-accent-50/50 p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover sm:flex-row sm:items-center sm:gap-6 sm:p-8"
+            >
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-accent-400 shadow-glow">
+                <Icon name="clipboard" className="h-7 w-7" />
+              </span>
+              <div className="flex-1">
+                <p className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-accent-700">
+                  <Icon name="sparkles" className="h-3.5 w-3.5" />
+                  New guide
+                </p>
+                <h2 className="mt-2 font-display text-xl font-bold text-navy-900 sm:text-2xl">
+                  How to choose an HVAC company in {location.name}
+                </h2>
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                  A free homeowner's guide to evaluating and comparing local
+                  contractors honestly — what to check, how to compare quotes,
+                  red flags, and a printable interview checklist.
+                </p>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-navy-900 px-5 py-3 text-sm font-semibold text-white transition-colors group-hover:bg-navy-800">
+                Read the guide
+                <Icon name="arrowRight" className="h-4 w-4 text-accent-400" />
+              </span>
+            </Link>
+          </Container>
+        </section>
+      ) : null}
 
       {/* Services offered locally */}
       <section className="bg-white py-16 lg:py-20">
