@@ -66,6 +66,7 @@ export async function generateMetadata({
 }
 
 const RELATED_TOOLS = [
+  { href: "/tools/hvac-quote-analyzer", icon: "clipboard", label: "HVAC Quote Analyzer" },
   { href: "/tools/hvac-cost-estimator", icon: "dollar", label: "HVAC Cost Estimator" },
   { href: "/tools/repair-or-replace", icon: "gauge", label: "Repair or Replace Calculator" },
   { href: "/tools/system-lifespan", icon: "clock", label: "HVAC Lifespan Estimator" },

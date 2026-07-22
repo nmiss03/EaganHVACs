@@ -214,6 +214,7 @@ export const articles: readonly Article[] = [
     ],
     related: ["hvac-cost-guide-minnesota", "minnesota-hvac-rebates"],
     relatedServices: ["installation-replacement", "maintenance-tune-ups"],
+    relatedTools: ["hvac-quote-analyzer", "hvac-cost-estimator"],
   },
   {
     slug: "minnesota-hvac-rebates",
@@ -556,7 +557,7 @@ export const articles: readonly Article[] = [
     ],
     related: ["hvac-cost-guide-minnesota", "minnesota-hvac-rebates", "questions-to-ask-hvac-contractor"],
     relatedServices: ["installation-replacement", "furnace-repair"],
-    relatedTools: ["hvac-cost-estimator", "hvac-financing-calculator", "repair-or-replace"],
+    relatedTools: ["hvac-quote-analyzer", "hvac-cost-estimator", "hvac-financing-calculator"],
   },
   {
     slug: "ac-replacement-cost",
@@ -687,7 +688,7 @@ export const articles: readonly Article[] = [
     ],
     related: ["hvac-cost-guide-minnesota", "minnesota-hvac-rebates", "questions-to-ask-hvac-contractor"],
     relatedServices: ["installation-replacement", "ac-repair"],
-    relatedTools: ["hvac-cost-estimator", "hvac-financing-calculator", "repair-or-replace"],
+    relatedTools: ["hvac-quote-analyzer", "hvac-cost-estimator", "hvac-financing-calculator"],
   },
 ];
 

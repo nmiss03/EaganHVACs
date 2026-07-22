@@ -15,6 +15,21 @@ export interface ToolMeta {
 
 export const tools: readonly ToolMeta[] = [
   {
+    slug: "hvac-quote-analyzer",
+    icon: "clipboard",
+    title: "HVAC Quote Analyzer",
+    short:
+      "Paste in what your contractor's quote includes and get a completeness score plus the exact questions to ask before you sign.",
+    metaTitle: "HVAC Quote Analyzer | Is Your Furnace/AC Quote Complete?",
+    metaDescription:
+      "Free HVAC quote analyzer. Check whether a furnace, AC, or heat pump quote is complete and comparable, get a completeness score, and see the exact questions to ask.",
+    h1: "HVAC Quote Analyzer",
+    intro: [
+      "Got a quote for a new furnace, AC, or heat pump? Before you sign, find out whether it actually gives you enough to compare fairly. This free analyzer scores your quote's completeness and hands you the exact questions to ask the contractor about anything that's missing.",
+    ],
+    updated: "July 2026",
+  },
+  {
     slug: "hvac-cost-estimator",
     icon: "dollar",
     title: "HVAC Cost Estimator",
