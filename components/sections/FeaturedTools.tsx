@@ -5,6 +5,23 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { tools } from "@/lib/tools";
 
+/** Per-tool "answers this question" + example output, so the showcase
+ * demonstrates value instead of only naming the tool. */
+const preview: Record<string, { answers: string; example: string }> = {
+  "hvac-cost-estimator": {
+    answers: "What will a new system cost me?",
+    example: "e.g. $6,400 – $9,200 installed",
+  },
+  "repair-or-replace": {
+    answers: "Should I fix it or replace it?",
+    example: "e.g. “Lean toward replacement”",
+  },
+  "system-lifespan": {
+    answers: "How many years do I have left?",
+    example: "e.g. ~3 years remaining",
+  },
+};
+
 export function FeaturedTools() {
   return (
     <section id="tools" className="scroll-mt-24 bg-white py-20 lg:py-28">
@@ -29,10 +46,16 @@ export function FeaturedTools() {
                 <h3 className="mt-4 font-display text-lg font-bold text-navy-900">
                   {tool.title}
                 </h3>
+                <p className="mt-1.5 text-sm font-medium text-accent-700">
+                  {preview[tool.slug]?.answers}
+                </p>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">
                   {tool.short}
                 </p>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">
+                <p className="mt-4 rounded-lg bg-slate-50 px-3 py-2 text-xs font-semibold text-navy-700">
+                  {preview[tool.slug]?.example}
+                </p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">
                   Under a minute · Free
                 </p>
                 <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 transition-colors group-hover:text-accent-600">

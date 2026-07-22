@@ -8,6 +8,7 @@ import { InquirySection } from "@/components/sections/InquirySection";
 import { ServiceArea } from "@/components/sections/ServiceArea";
 import { ServicesStrip } from "@/components/sections/ServicesStrip";
 import { TrustSection } from "@/components/sections/TrustSection";
+import { TwoPaths } from "@/components/sections/TwoPaths";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function HomePage() {
     <>
       <JsonLd />
       <Hero />
+      <TwoPaths />
       <FeaturedTools />
       <FeaturedResources />
       <HowItWorks />
