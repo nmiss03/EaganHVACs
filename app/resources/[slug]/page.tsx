@@ -1,0 +1,226 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/landing/Breadcrumbs";
+import { CTABand } from "@/components/landing/CTABand";
+import { FaqList } from "@/components/landing/FaqList";
+import { Container } from "@/components/ui/Container";
+import { Icon } from "@/components/ui/Icon";
+import { articles, getArticle } from "@/lib/articles";
+import { absoluteUrl, getServiceDetail } from "@/lib/content";
+import { site } from "@/lib/site";
+
+export function generateStaticParams() {
+  return articles.map((article) => ({ slug: article.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticle(slug);
+  if (!article) return {};
+  return {
+    title: article.metaTitle,
+    description: article.metaDescription,
+    alternates: { canonical: `/resources/${article.slug}` },
+    openGraph: {
+      type: "article",
+      title: article.metaTitle,
+      description: article.metaDescription,
+      url: absoluteUrl(`/resources/${article.slug}`),
+    },
+  };
+}
+
+export default async function ArticlePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const article = getArticle(slug);
+  if (!article) notFound();
+
+  const related = article.related
+    .map((s) => getArticle(s))
+    .filter((a): a is NonNullable<typeof a> => Boolean(a));
+  const relatedServices = article.relatedServices
+    .map((s) => getServiceDetail(s))
+    .filter((s): s is NonNullable<typeof s> => Boolean(s));
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.metaDescription,
+    url: absoluteUrl(`/resources/${article.slug}`),
+    dateModified: "2026-07-01",
+    author: { "@type": "Organization", name: site.name, url: site.url },
+    publisher: { "@id": `${site.url}/#business` },
+    mainEntityOfPage: absoluteUrl(`/resources/${article.slug}`),
+  };
+
+  return (
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Resources", href: "/resources" },
+          { label: article.title, href: `/resources/${article.slug}` },
+        ]}
+      />
+
+      <article>
+        <header className="bg-navy-900 py-14 lg:py-16">
+          <Container>
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent-300">
+              {article.category}
+            </p>
+            <h1 className="mt-3 max-w-3xl font-display text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+              {article.title}
+            </h1>
+            <p className="mt-4 flex items-center gap-3 text-sm text-navy-100/70">
+              <span className="inline-flex items-center gap-1.5">
+                <Icon name="clock" className="h-4 w-4" />
+                {article.readMinutes} min read
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>Updated {article.updated}</span>
+            </p>
+          </Container>
+        </header>
+
+        <div className="bg-white py-14 lg:py-16">
+          <Container>
+            <div className="mx-auto max-w-3xl">
+              {article.intro.map((p) => (
+                <p key={p.slice(0, 24)} className="mb-4 text-lg leading-relaxed text-slate-700">
+                  {p}
+                </p>
+              ))}
+
+              {article.sections.map((section) => (
+                <section key={section.heading} className="mt-10">
+                  <h2 className="font-display text-2xl font-bold text-navy-900">
+                    {section.heading}
+                  </h2>
+                  {section.paragraphs?.map((p) => (
+                    <p key={p.slice(0, 24)} className="mt-3 text-[15px] leading-relaxed text-slate-700">
+                      {p}
+                    </p>
+                  ))}
+                  {section.list ? (
+                    <ul className="mt-4 space-y-2.5">
+                      {section.list.map((item) => (
+                        <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-slate-700">
+                          <Icon name="check" className="mt-1 h-4 w-4 shrink-0 text-accent-500" strokeWidth={2.4} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  {section.table ? (
+                    <div className="mt-5 overflow-x-auto">
+                      <table className="w-full border-collapse text-left text-sm">
+                        <thead>
+                          <tr className="border-b-2 border-navy-900/10">
+                            {section.table.headers.map((h) => (
+                              <th key={h} className="py-2.5 pr-4 font-display font-bold text-navy-900">
+                                {h}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row) => (
+                            <tr key={row.join("|")} className="border-b border-navy-900/[0.06]">
+                              {row.map((cell, ci) => (
+                                <td
+                                  key={ci}
+                                  className={`py-2.5 pr-4 ${ci === 0 ? "font-medium text-navy-800" : "text-slate-600"}`}
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : null}
+                </section>
+              ))}
+
+              {/* Inline CTA */}
+              <div className="mt-12 rounded-xl border border-navy-900/[0.08] bg-slate-50 p-6">
+                <p className="font-display text-lg font-bold text-navy-900">
+                  Ready to compare real quotes?
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  {site.name} connects you with vetted local contractors so you can compare
+                  multiple estimates — free, and with no obligation.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  {relatedServices.slice(0, 3).map((s) => (
+                    <Link
+                      key={s.slug}
+                      href={`/services/${s.slug}`}
+                      className="inline-flex items-center gap-1.5 rounded-xl border border-navy-900/15 bg-white px-4 py-2 text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-50"
+                    >
+                      <Icon name={s.icon} className="h-4 w-4 text-accent-500" />
+                      {s.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Container>
+        </div>
+
+        <FaqList
+          title="Related questions"
+          faqs={article.faqs}
+        />
+
+        {related.length > 0 ? (
+          <section className="bg-slate-50 py-14 lg:py-16">
+            <Container>
+              <h2 className="text-center font-display text-2xl font-bold text-navy-900">
+                Keep reading
+              </h2>
+              <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-2">
+                {related.map((a) => (
+                  <Link
+                    key={a.slug}
+                    href={`/resources/${a.slug}`}
+                    className="group flex flex-col rounded-xl border border-navy-900/[0.07] bg-white p-5 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+                  >
+                    <span className="text-xs font-semibold uppercase tracking-[0.12em] text-accent-600">
+                      {a.category}
+                    </span>
+                    <span className="mt-1.5 font-display text-base font-bold leading-snug text-navy-900 group-hover:text-accent-700">
+                      {a.title}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </Container>
+          </section>
+        ) : null}
+      </article>
+
+      <CTABand
+        heading="Learn first. Compare quotes when you're ready."
+        sub={`${site.name} is a free service that connects Twin Cities homeowners with trusted local HVAC contractors.`}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+    </>
+  );
+}

@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
+import { articles } from "@/lib/articles";
 import { allServiceDetails, locations } from "@/lib/content";
 import { site } from "@/lib/site";
+import { tools } from "@/lib/tools";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -24,6 +26,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,
+    },
+    {
+      url: `${site.url}/how-it-works`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${site.url}/tools`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${site.url}/resources`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7,
     },
     {
       url: `${site.url}/privacy`,
@@ -53,5 +73,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...servicePages, ...locationPages];
+  const toolPages: MetadataRoute.Sitemap = tools.map((tool) => ({
+    url: `${site.url}/tools/${tool.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  const articlePages: MetadataRoute.Sitemap = articles.map((article) => ({
+    url: `${site.url}/resources/${article.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...locationPages,
+    ...toolPages,
+    ...articlePages,
+  ];
 }

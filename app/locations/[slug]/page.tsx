@@ -104,7 +104,7 @@ export default async function LocationDetailPage({
         <Container>
           <SectionTitle
             eyebrow="Local services"
-            title={`HVAC services we offer in ${location.name}`}
+            title={`HVAC services available in ${location.name}`}
             description={`From emergency furnace repair to full system replacement, here's how local pros keep ${location.name} homes comfortable year-round.`}
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">

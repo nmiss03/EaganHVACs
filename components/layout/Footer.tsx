@@ -112,7 +112,13 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-navy-100/60 sm:flex-row">
+        <p className="mt-12 border-t border-white/10 pt-8 text-xs leading-relaxed text-navy-100/50">
+          {site.name} is a free service that helps homeowners compare and
+          connect with independent, licensed HVAC contractors. All heating and
+          cooling work is performed by the contractors in our network — not by{" "}
+          {site.name}. We never charge homeowners for quotes or referrals.
+        </p>
+        <div className="mt-6 flex flex-col items-center justify-between gap-4 text-sm text-navy-100/60 sm:flex-row">
           <p>
             © {year} {site.legalName}. All rights reserved.
           </p>

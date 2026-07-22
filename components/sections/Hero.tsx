@@ -36,9 +36,9 @@ export function Hero() {
             </p>
 
             <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
-              Heating & cooling help,{" "}
+              Compare local HVAC quotes,{" "}
               <span className="relative inline-block text-accent-400">
-                fast
+                free
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 120 12"
@@ -54,13 +54,14 @@ export function Hero() {
                   />
                 </svg>
               </span>{" "}
-              — from pros who live here too.
+              — from trusted local pros.
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-100/85">
-              Furnace out in January? AC struggling in July? We connect Eagan
-              homeowners with trusted, vetted local HVAC contractors — with
-              upfront pricing and response times measured in hours, not days.
+              Furnace out in January? AC struggling in July? We help Eagan
+              homeowners compare quotes from vetted, licensed local HVAC
+              contractors — so you get the right price and the right pro without
+              the guesswork. Free, no obligation.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
