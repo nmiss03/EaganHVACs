@@ -1,18 +1,18 @@
 import Script from "next/script";
 
 /**
- * Analytics loaders using next/script. Google Analytics 4 is active by
- * default via the measurement ID below; it can be overridden per
- * environment with NEXT_PUBLIC_GA_ID (e.g. a separate staging property).
- * Microsoft Clarity stays gated behind NEXT_PUBLIC_CLARITY_ID and ships
- * nothing until that is set. A GA measurement ID is not a secret — it is
- * exposed in the browser by design — so hardcoding a default is safe.
+ * Analytics loaders using next/script. Google Analytics 4 and Microsoft
+ * Clarity are both active by default via the IDs below, and each can be
+ * overridden per environment with NEXT_PUBLIC_GA_ID / NEXT_PUBLIC_CLARITY_ID
+ * (e.g. a separate staging property). Neither ID is a secret — both are
+ * exposed in the browser by design — so hardcoding defaults is safe.
  */
 const DEFAULT_GA_ID = "G-WBT4606L80";
+const DEFAULT_CLARITY_ID = "xq6y1q9iec";
 
 export function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID ?? DEFAULT_GA_ID;
-  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
+  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID ?? DEFAULT_CLARITY_ID;
 
   return (
     <>
