@@ -9,6 +9,7 @@ import { Icon } from "@/components/ui/Icon";
 import { articles, getArticle } from "@/lib/articles";
 import { absoluteUrl, getServiceDetail } from "@/lib/content";
 import { site } from "@/lib/site";
+import { getTool } from "@/lib/tools";
 
 export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
@@ -50,6 +51,9 @@ export default async function ArticlePage({
   const relatedServices = article.relatedServices
     .map((s) => getServiceDetail(s))
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
+  const relatedTools = (article.relatedTools ?? [])
+    .map((s) => getTool(s))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t));
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -154,8 +158,32 @@ export default async function ArticlePage({
                 </section>
               ))}
 
+              {/* Inline: related interactive tools */}
+              {relatedTools.length > 0 ? (
+                <div className="mt-12 rounded-xl border border-accent-200 bg-accent-50/50 p-6">
+                  <p className="font-display text-lg font-bold text-navy-900">
+                    Try the interactive version
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    Turn this guide into a personalized answer in seconds.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {relatedTools.map((t) => (
+                      <Link
+                        key={t.slug}
+                        href={`/tools/${t.slug}`}
+                        className="inline-flex items-center gap-1.5 rounded-xl bg-navy-900 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
+                      >
+                        <Icon name={t.icon} className="h-4 w-4 text-accent-400" />
+                        {t.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
               {/* Inline CTA */}
-              <div className="mt-12 rounded-xl border border-navy-900/[0.08] bg-slate-50 p-6">
+              <div className="mt-8 rounded-xl border border-navy-900/[0.08] bg-slate-50 p-6">
                 <p className="font-display text-lg font-bold text-navy-900">
                   Ready to compare real quotes?
                 </p>

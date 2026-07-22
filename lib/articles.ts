@@ -26,6 +26,8 @@ export interface Article {
   related: string[];
   /** Service slugs this article should funnel toward. */
   relatedServices: string[];
+  /** Tool slugs this article naturally pairs with (same intent, deeper). */
+  relatedTools?: string[];
 }
 
 export const articles: readonly Article[] = [
@@ -118,6 +120,7 @@ export const articles: readonly Article[] = [
     ],
     related: ["questions-to-ask-hvac-contractor", "minnesota-hvac-rebates"],
     relatedServices: ["installation-replacement", "furnace-repair", "ac-repair"],
+    relatedTools: ["hvac-cost-estimator", "repair-or-replace"],
   },
   {
     slug: "questions-to-ask-hvac-contractor",
@@ -264,7 +267,9 @@ export const articles: readonly Article[] = [
     ],
     related: ["hvac-cost-guide-minnesota", "questions-to-ask-hvac-contractor"],
     relatedServices: ["heat-pumps", "installation-replacement", "thermostats"],
+    relatedTools: ["hvac-cost-estimator"],
   },
+  // (remaining articles below)
   {
     slug: "minnesota-hvac-maintenance-calendar",
     category: "Maintenance",
@@ -340,6 +345,7 @@ export const articles: readonly Article[] = [
     ],
     related: ["furnace-not-working-troubleshooting", "hvac-cost-guide-minnesota"],
     relatedServices: ["maintenance-tune-ups", "furnace-repair", "duct-cleaning"],
+    relatedTools: ["system-lifespan"],
   },
   {
     slug: "furnace-not-working-troubleshooting",

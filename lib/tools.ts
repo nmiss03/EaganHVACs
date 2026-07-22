@@ -13,6 +13,20 @@ export interface ToolMeta {
 
 export const tools: readonly ToolMeta[] = [
   {
+    slug: "hvac-cost-estimator",
+    icon: "dollar",
+    title: "HVAC Cost Estimator",
+    short:
+      "See a real Twin Cities price range for a new furnace, AC, or heat pump before you talk to anyone.",
+    metaTitle: "HVAC Cost Estimator | Furnace & AC Replacement Prices MN",
+    metaDescription:
+      "Free HVAC cost estimator for the Twin Cities. Get a real installed price range for a new furnace, AC, or heat pump by home size and efficiency — no phone call required.",
+    h1: "HVAC Cost Estimator for the Twin Cities",
+    intro: [
+      "Most HVAC websites won't show you a price until you're on the phone. This free estimator gives you an honest, Twin Cities-specific installed price range for a new furnace, air conditioner, or heat pump in seconds — so you walk into your quotes already knowing the ballpark and can spot a fair one.",
+    ],
+  },
+  {
     slug: "repair-or-replace",
     icon: "gauge",
     title: "Repair or Replace Calculator",
