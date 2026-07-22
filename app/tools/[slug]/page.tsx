@@ -10,6 +10,8 @@ import { LastUpdated } from "@/components/ui/LastUpdated";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { site } from "@/lib/site";
 import { CostEstimator } from "@/components/tools/CostEstimator";
+import { FinancingCalculator } from "@/components/tools/FinancingCalculator";
+import { HeatPumpVsFurnace } from "@/components/tools/HeatPumpVsFurnace";
 import { LifespanCalculator } from "@/components/tools/LifespanCalculator";
 import { RepairReplaceCalculator } from "@/components/tools/RepairReplaceCalculator";
 import { absoluteUrl } from "@/lib/content";
@@ -80,6 +82,8 @@ export default async function ToolPage({
             {tool.slug === "hvac-cost-estimator" ? <CostEstimator /> : null}
             {tool.slug === "repair-or-replace" ? <RepairReplaceCalculator /> : null}
             {tool.slug === "system-lifespan" ? <LifespanCalculator /> : null}
+            {tool.slug === "hvac-financing-calculator" ? <FinancingCalculator /> : null}
+            {tool.slug === "heat-pump-vs-furnace" ? <HeatPumpVsFurnace /> : null}
           </div>
         </Container>
       </section>

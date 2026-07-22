@@ -57,6 +57,36 @@ export const tools: readonly ToolMeta[] = [
     ],
     updated: "July 2026",
   },
+  {
+    slug: "hvac-financing-calculator",
+    icon: "dollar",
+    title: "HVAC Financing Calculator",
+    short:
+      "Estimate the monthly payment on a new furnace, AC, or heat pump — and see how term and rate change it.",
+    metaTitle: "HVAC Financing Calculator | Monthly Payment Estimator",
+    metaDescription:
+      "Free HVAC financing calculator. Estimate your monthly payment on a new furnace, AC, or heat pump by amount, term, and rate — and see total interest before you finance.",
+    h1: "HVAC Financing & Monthly Payment Calculator",
+    intro: [
+      "A new system is a big number, but most homeowners don't pay it all at once — they finance it, and what actually matters is the monthly payment. This free calculator shows your estimated payment by amount, term, and rate, so you can see what fits your budget before you talk to anyone.",
+    ],
+    updated: "July 2026",
+  },
+  {
+    slug: "heat-pump-vs-furnace",
+    icon: "gauge",
+    title: "Heat Pump vs. Furnace Tool",
+    short:
+      "Answer a few questions and get a clear, Minnesota-specific lean between a heat pump, a furnace, or a dual-fuel system.",
+    metaTitle: "Heat Pump vs Furnace Minnesota | Free Decision Tool",
+    metaDescription:
+      "Should you get a heat pump or a furnace in Minnesota? Answer a few questions and get an honest, cold-climate-specific recommendation — plus rebates and next steps.",
+    h1: "Heat Pump vs. Furnace: Minnesota Decision Tool",
+    intro: [
+      "Heat pumps have become a genuinely good option for Minnesota homes — but they aren't right for every home or every priority. This tool asks a few quick questions and gives you an honest, cold-climate-specific lean, with the reasoning spelled out so you can talk to contractors with confidence.",
+    ],
+    updated: "July 2026",
+  },
 ];
 
 export function getTool(slug: string): ToolMeta | undefined {
