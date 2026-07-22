@@ -1,16 +1,17 @@
 import Script from "next/script";
 
 /**
- * Analytics loaders, gated behind environment variables so nothing ships
- * until credentials exist. To activate, set in Vercel and redeploy:
- *
- *   NEXT_PUBLIC_GA_ID       - Google Analytics 4 measurement ID (G-XXXXXXX)
- *   NEXT_PUBLIC_CLARITY_ID  - Microsoft Clarity project ID
- *
- * With neither set, this renders nothing and adds zero bytes of JS.
+ * Analytics loaders using next/script. Google Analytics 4 is active by
+ * default via the measurement ID below; it can be overridden per
+ * environment with NEXT_PUBLIC_GA_ID (e.g. a separate staging property).
+ * Microsoft Clarity stays gated behind NEXT_PUBLIC_CLARITY_ID and ships
+ * nothing until that is set. A GA measurement ID is not a secret — it is
+ * exposed in the browser by design — so hardcoding a default is safe.
  */
+const DEFAULT_GA_ID = "G-WBT4606L80";
+
 export function Analytics() {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const gaId = process.env.NEXT_PUBLIC_GA_ID ?? DEFAULT_GA_ID;
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 
   return (
