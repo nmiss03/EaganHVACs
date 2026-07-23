@@ -422,7 +422,7 @@ export const articles: readonly Article[] = [
           "For no-heat emergencies in winter, contractors in our network offer same-day and 24/7 dispatch across Eagan and the south metro — most homeowners get a callback within the hour.",
       },
     ],
-    related: ["minnesota-hvac-maintenance-calendar", "hvac-cost-guide-minnesota"],
+    related: ["furnace-repair-cost", "minnesota-hvac-maintenance-calendar", "hvac-cost-guide-minnesota"],
     relatedServices: ["furnace-repair", "emergency-hvac"],
   },
   {
@@ -689,6 +689,303 @@ export const articles: readonly Article[] = [
     related: ["hvac-cost-guide-minnesota", "minnesota-hvac-rebates", "questions-to-ask-hvac-contractor"],
     relatedServices: ["installation-replacement", "ac-repair"],
     relatedTools: ["hvac-quote-analyzer", "hvac-cost-estimator", "hvac-financing-calculator"],
+  },
+  {
+    slug: "ac-not-cooling",
+    category: "Troubleshooting",
+    title: "AC Not Cooling? A Twin Cities Homeowner's Troubleshooting Guide",
+    metaTitle: "AC Not Cooling? 8 Causes & Fixes (Before You Call a Pro)",
+    metaDescription:
+      "Your AC is running but not cooling? Work through the quick checks a Twin Cities homeowner can do safely, the common causes, and when to call a pro — before you overpay.",
+    updated: "July 2026",
+    readMinutes: 7,
+    intro: [
+      "When your air conditioner runs but the house won't cool — usually on the first 90-degree day of a Minnesota summer — a few minutes of checking can save you a service call, or at least tell you what you're dealing with. This guide walks through what you can safely check yourself, the most common causes, and when it's genuinely time to call a pro.",
+      "If it turns out you do need a repair, our [AC repair cost guide](/resources/ac-repair-cost) shows what common fixes run in the Twin Cities so you're not caught off guard.",
+    ],
+    keyTakeaways: [
+      "Start with the three free checks: **thermostat setting, air filter, and the breaker** — they solve a surprising share of no-cooling calls.",
+      "A **frozen indoor coil** (ice on the copper lines) is common — turn the system off and let it thaw before running it again.",
+      "Warm air plus a running outdoor unit often points to **low refrigerant, a failed capacitor, or a dirty condenser** — those need a technician.",
+      "Never keep running an AC that's iced up or short-cycling — you can damage the compressor, which is the most expensive part to replace.",
+    ],
+    sections: [
+      {
+        heading: "First, the quick checks you can do safely",
+        tocLabel: "Quick checks",
+        list: [
+          "Thermostat: set to COOL and a few degrees below room temperature; set the fan to AUTO, not ON (ON runs the blower without cooling, which feels like warm air).",
+          "Air filter: a clogged filter chokes airflow and is the single most common cause of weak cooling. Replace it if it's dirty.",
+          "Breaker: check that the AC's breaker hasn't tripped; a heat pump/AC often has both an indoor and outdoor disconnect.",
+          "Outdoor unit: make sure it's running and not buried in cottonwood fluff, grass clippings, or debris — it needs clear airflow.",
+          "Vents & registers: confirm supply registers are open and returns aren't blocked by furniture.",
+        ],
+        callout: {
+          tone: "warning",
+          title: "See ice on the unit? Shut it off.",
+          text: "Ice on the refrigerant lines or indoor coil means the system is frozen. Running it that way risks the compressor. Switch the system OFF (fan to ON to help it thaw), give it a few hours, and replace the filter — if it freezes again, it needs a technician.",
+        },
+      },
+      {
+        heading: "The common causes when the quick checks don't fix it",
+        tocLabel: "Common causes",
+        table: {
+          headers: ["Symptom", "Likely cause", "Who fixes it"],
+          rows: [
+            ["Running, blowing warm air", "Low refrigerant (leak), failed capacitor", "Technician"],
+            ["Weak airflow / ice on lines", "Dirty filter or coil, frozen evaporator", "You + technician"],
+            ["Outdoor unit won't start / hums", "Failed capacitor or contactor", "Technician"],
+            ["Cools some rooms, not others", "Ductwork, sizing, or airflow balance", "Technician"],
+            ["Short cycles on and off", "Oversized system, refrigerant, or controls", "Technician"],
+          ],
+        },
+        paragraphs: [
+          "Low refrigerant is worth calling out: an AC doesn't 'use up' refrigerant, so if it's low, there's a leak. Simply topping it off without finding the leak is a temporary and increasingly expensive fix — ask any technician to locate the leak first.",
+        ],
+      },
+      {
+        heading: "When to call a pro (and what it costs)",
+        tocLabel: "When to call",
+        paragraphs: [
+          "If the free checks don't restore cooling — or you see ice, hear the outdoor unit humming without starting, or smell anything electrical — it's time for a technician. Most no-cooling repairs are diagnosed with a standard service fee, and common fixes like a capacitor are inexpensive. See typical prices in the [AC repair cost guide](/resources/ac-repair-cost), and if your system is old, the [repair-or-replace calculator](/tools/repair-or-replace) helps you decide whether to fix it at all.",
+        ],
+        callout: {
+          tone: "tip",
+          title: "Got a repair quote already?",
+          text: "Run it through the [HVAC quote analyzer](/tools/hvac-quote-analyzer) to check it's complete and see what to ask before you approve the work.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        question: "Why is my AC running but not cooling the house?",
+        answer:
+          "The most common reasons are a dirty air filter choking airflow, a frozen evaporator coil, low refrigerant from a leak, or a failed run capacitor. Check and replace the filter first; if that doesn't fix it within a few hours, it likely needs a technician.",
+      },
+      {
+        question: "Why is my AC freezing up?",
+        answer:
+          "Ice forms when airflow drops or refrigerant is low — often a clogged filter, a dirty coil, or a leak. Turn the system off, set the fan to ON to thaw it, replace the filter, and if it freezes again, have a pro check the coil and refrigerant.",
+      },
+      {
+        question: "Should I add refrigerant to my AC myself?",
+        answer:
+          "No. Refrigerant handling requires EPA certification, and low refrigerant means there's a leak that needs to be found and repaired — not just topped off. It's also easy to overcharge a system and cause damage. This one's for a licensed technician.",
+      },
+      {
+        question: "How much does it cost to fix an AC that isn't cooling?",
+        answer:
+          "It depends on the cause: a capacitor is often a few hundred dollars, while a refrigerant leak repair or compressor issue costs more. See the AC repair cost guide for typical Twin Cities ranges, and always get the diagnosis in writing.",
+      },
+    ],
+    related: ["ac-repair-cost", "furnace-not-working-troubleshooting", "minnesota-hvac-maintenance-calendar"],
+    relatedServices: ["ac-repair", "emergency-hvac", "maintenance-tune-ups"],
+    relatedTools: ["repair-or-replace", "hvac-quote-analyzer"],
+  },
+  {
+    slug: "ac-repair-cost",
+    category: "Cost Guides",
+    title: "AC Repair Cost in Minnesota: What Common Fixes Really Run",
+    metaTitle: "AC Repair Cost Minnesota | Capacitor, Refrigerant & More",
+    metaDescription:
+      "What common AC repairs cost in the Twin Cities — capacitor, refrigerant leak, fan motor, coil, compressor — plus how to avoid overpaying and when repair beats replacement.",
+    updated: "July 2026",
+    readMinutes: 6,
+    intro: [
+      "When your AC quits, the first question is \"what's this going to cost?\" Most repairs are far less dramatic than the worst-case number in your head — but a few are expensive enough that replacement becomes the smarter move. Here's what common central-AC repairs actually run in the Twin Cities, and how to make sure you're paying a fair price.",
+      "If your system is older, don't fix it on autopilot — run the numbers with the [repair-or-replace calculator](/tools/repair-or-replace) first.",
+    ],
+    keyTakeaways: [
+      "Most common AC repairs run **$150–$700**; refrigerant, coil, and compressor jobs cost more.",
+      "A **capacitor** — one of the most frequent failures — is usually one of the cheapest fixes.",
+      "**Low refrigerant means a leak.** Pay to find and fix the leak, not just to top it off.",
+      "If a repair costs more than about a third of a new system and your AC is 12+ years old, replacement usually wins.",
+    ],
+    sections: [
+      {
+        heading: "Typical AC repair costs in the Twin Cities",
+        tocLabel: "Repair costs",
+        table: {
+          headers: ["Repair", "Typical range"],
+          rows: [
+            ["Capacitor", "$150 – $400"],
+            ["Contactor", "$150 – $400"],
+            ["Condenser fan motor", "$300 – $700"],
+            ["Refrigerant leak find & recharge", "$400 – $1,500"],
+            ["Evaporator coil", "$1,000 – $2,500"],
+            ["Compressor (often replace system instead)", "$1,500 – $3,000"],
+          ],
+        },
+        paragraphs: [
+          "These include parts and labor. The diagnostic fee (typically quoted upfront) is often applied toward the repair if you proceed.",
+        ],
+      },
+      {
+        heading: "What drives the price",
+        tocLabel: "Price factors",
+        list: [
+          "The part itself — a capacitor is cheap; a coil or compressor is not",
+          "Refrigerant type — older R-22 systems are expensive to recharge and getting worse",
+          "Whether the leak is found and repaired vs. a temporary top-off",
+          "Emergency, evening, or weekend timing",
+          "Your system's age and parts availability",
+        ],
+        callout: {
+          tone: "note",
+          title: "The R-22 trap",
+          text: "If your AC uses discontinued R-22 refrigerant, a leak repair plus recharge can cost more than the system is worth. If a technician mentions R-22, ask directly whether repair still makes financial sense.",
+        },
+      },
+      {
+        heading: "Repair or replace?",
+        tocLabel: "Repair vs replace",
+        paragraphs: [
+          "A failed compressor or a leaking evaporator coil on an older system is usually the tipping point toward replacement, because you're spending half the cost of a new unit on one part of an aging system. The [repair-or-replace calculator](/tools/repair-or-replace) weighs your system's age against the repair cost, and the [AC replacement cost guide](/resources/ac-replacement-cost) shows what a new system runs if you go that way.",
+        ],
+      },
+      {
+        heading: "How to avoid overpaying",
+        tocLabel: "Avoid overpaying",
+        list: [
+          "Get the diagnosis and price in writing before approving the work",
+          "For anything over ~$1,000, get a second opinion",
+          "Ask whether the quote finds and fixes a refrigerant leak or just recharges",
+          "On big repairs, ask for the replacement number too, so you can compare",
+        ],
+        callout: {
+          tone: "tip",
+          title: "Check any repair quote in 60 seconds",
+          text: "Paste your quote's details into the [HVAC quote analyzer](/tools/hvac-quote-analyzer) to see whether it's complete and what to ask before you sign off.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does AC repair cost in Minnesota?",
+        answer:
+          "Most common central-AC repairs run $150–$700 — a capacitor or contactor at the low end, a fan motor in the middle. Refrigerant leak repairs, evaporator coils, and compressors cost more, often $1,000–$3,000, which is when replacement starts to make more sense.",
+      },
+      {
+        question: "Why is my AC repair so expensive?",
+        answer:
+          "Big AC repair bills usually involve refrigerant work, a coil, or a compressor — expensive parts and labor on their own, and worse if your system uses discontinued R-22 refrigerant. For repairs over about a third of a new system's cost on an older unit, replacement is often the better value.",
+      },
+      {
+        question: "Is a capacitor replacement expensive?",
+        answer:
+          "No — a run capacitor is one of the most common and least expensive AC repairs, typically a few hundred dollars including labor. It's also one of the most frequent causes of an outdoor unit that hums but won't start.",
+      },
+      {
+        question: "Should I repair or replace my air conditioner?",
+        answer:
+          "If your AC is under about 12 years old and the repair is modest, fixing it usually makes sense. A failed compressor, a leaking coil, or an R-22 system tips the decision toward replacement — run your numbers through the repair-or-replace calculator.",
+      },
+    ],
+    related: ["ac-not-cooling", "ac-replacement-cost", "hvac-cost-guide-minnesota"],
+    relatedServices: ["ac-repair", "installation-replacement"],
+    relatedTools: ["repair-or-replace", "hvac-quote-analyzer", "hvac-cost-estimator"],
+  },
+  {
+    slug: "furnace-repair-cost",
+    category: "Cost Guides",
+    title: "Furnace Repair Cost in Minnesota: Common Repairs & Prices",
+    metaTitle: "Furnace Repair Cost Minnesota | Ignitor, Blower & More",
+    metaDescription:
+      "What common furnace repairs cost in the Twin Cities — flame sensor, ignitor, blower motor, control board, heat exchanger — plus no-heat pricing and when to replace instead.",
+    updated: "July 2026",
+    readMinutes: 6,
+    intro: [
+      "A furnace that quits in a Minnesota winter feels like an emergency — and the price uncertainty makes it worse. The good news: many furnace repairs are inexpensive and same-day. Here's what common furnace repairs actually cost in the Twin Cities, so you can tell a fair price from a padded one, even at 10 PM in January.",
+      "If your furnace is getting on in years, check whether repair even makes sense with the [repair-or-replace calculator](/tools/repair-or-replace) before you commit.",
+    ],
+    keyTakeaways: [
+      "Most furnace repairs run **$150–$600**; blower motors, control boards, and heat exchangers cost more.",
+      "A dirty **flame sensor** or a failed **ignitor** — both cheap — cause a large share of no-heat calls.",
+      "A **cracked heat exchanger** is a safety issue that usually means replacement, not repair.",
+      "No-heat emergency visits on nights and weekends carry a premium — ask about it upfront.",
+    ],
+    sections: [
+      {
+        heading: "Typical furnace repair costs in the Twin Cities",
+        tocLabel: "Repair costs",
+        table: {
+          headers: ["Repair", "Typical range"],
+          rows: [
+            ["Flame sensor cleaning/replacement", "$80 – $250"],
+            ["Hot surface ignitor", "$150 – $350"],
+            ["Draft inducer motor", "$300 – $900"],
+            ["Control/circuit board", "$400 – $1,200"],
+            ["Blower motor", "$400 – $1,500"],
+            ["Heat exchanger (usually replace furnace)", "$1,500+"],
+          ],
+        },
+        paragraphs: [
+          "Parts and labor included. The diagnostic fee is usually quoted upfront and often credited toward the repair.",
+        ],
+      },
+      {
+        heading: "What drives the price",
+        tocLabel: "Price factors",
+        list: [
+          "The failed part — a flame sensor is cheap; a blower motor or board is not",
+          "No-heat emergency timing (nights, weekends, holidays)",
+          "Your furnace's age and whether parts are still available",
+          "High-efficiency (condensing) furnaces have more parts that can fail",
+        ],
+        callout: {
+          tone: "warning",
+          title: "A gas smell is not a repair — it's an emergency",
+          text: "If you smell gas near the furnace, leave the house, don't touch switches, and call your gas utility and 911 from outside first. Only address the furnace itself once you're safe.",
+        },
+      },
+      {
+        heading: "Repair or replace?",
+        tocLabel: "Repair vs replace",
+        paragraphs: [
+          "A cracked heat exchanger is the clearest replacement trigger — it's a carbon-monoxide safety issue, and the part costs so much that a new furnace is usually the better spend. Beyond that, the rule of thumb holds: if the repair is more than about a third of a new furnace and yours is past 15 years, replace it. The [furnace replacement cost guide](/resources/furnace-replacement-cost) shows what new systems run.",
+        ],
+      },
+      {
+        heading: "How to avoid overpaying",
+        tocLabel: "Avoid overpaying",
+        list: [
+          "Get the diagnosis and price in writing before work begins",
+          "Ask what the emergency/after-hours premium is before booking, if it's not a true emergency",
+          "For repairs over ~$800 on an older furnace, get the replacement number too",
+          "Be wary of a heat-exchanger 'crack' diagnosis with no photo — ask to see it",
+        ],
+        callout: {
+          tone: "tip",
+          title: "Sanity-check any repair quote",
+          text: "Run the details through the [HVAC quote analyzer](/tools/hvac-quote-analyzer) to confirm it's complete and see the questions to ask before you approve it.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does furnace repair cost in Minnesota?",
+        answer:
+          "Most furnace repairs run $150–$600 — a flame sensor or ignitor at the low end, a blower motor or control board higher. A cracked heat exchanger is the exception: it's a safety issue that usually means replacing the furnace rather than repairing it.",
+      },
+      {
+        question: "Why won't my furnace stay lit?",
+        answer:
+          "A furnace that lights then shuts off is often a dirty flame sensor — a cheap, common fix. It can also be a failing ignitor or a safety switch doing its job. A technician can pinpoint it quickly, and it's usually an inexpensive repair.",
+      },
+      {
+        question: "Is it worth repairing a 20-year-old furnace?",
+        answer:
+          "Often not, especially for a major part. Past 15–20 years, if the repair runs more than about a third of a new furnace, replacement usually makes more financial sense — and a new high-efficiency unit lowers your gas bill. Run the numbers with the repair-or-replace tool.",
+      },
+      {
+        question: "How fast can someone fix a no-heat furnace?",
+        answer:
+          "For no-heat emergencies in winter, contractors in our network offer same-day and 24/7 service across Eagan and the south metro. Common parts like ignitors and flame sensors are usually carried on the truck for on-the-spot repairs.",
+      },
+    ],
+    related: ["furnace-not-working-troubleshooting", "furnace-replacement-cost", "hvac-cost-guide-minnesota"],
+    relatedServices: ["furnace-repair", "emergency-hvac", "installation-replacement"],
+    relatedTools: ["repair-or-replace", "hvac-quote-analyzer", "hvac-cost-estimator"],
   },
 ];
 
