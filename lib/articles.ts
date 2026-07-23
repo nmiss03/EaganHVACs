@@ -227,7 +227,7 @@ export const articles: readonly Article[] = [
     readMinutes: 5,
     intro: [
       "Minnesota homeowners leave real money on the table every year by not claiming HVAC incentives. Between utility rebates and federal tax credits, a high-efficiency upgrade can come in thousands of dollars cheaper than sticker price — you can see how the pre-rebate numbers look with our [HVAC cost estimator](/tools/hvac-cost-estimator) — if you know what to claim and who files it.",
-      "Program amounts change yearly, so treat the figures below as a map of what exists and verify current amounts with your utility or contractor before buying.",
+      "Program amounts change yearly, so treat the figures below as a map of what exists and verify current amounts with your utility or contractor before buying. Not sure which ones apply to you? Our [Minnesota rebate checker](/tools/minnesota-hvac-rebate-checker) matches your utility and equipment to the programs you likely qualify for in about 20 seconds.",
     ],
     sections: [
       {
@@ -279,7 +279,7 @@ export const articles: readonly Article[] = [
     ],
     related: ["hvac-cost-guide-minnesota", "questions-to-ask-hvac-contractor"],
     relatedServices: ["heat-pumps", "installation-replacement", "thermostats"],
-    relatedTools: ["hvac-cost-estimator"],
+    relatedTools: ["minnesota-hvac-rebate-checker", "hvac-cost-estimator"],
   },
   // (remaining articles below)
   {

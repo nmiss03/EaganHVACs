@@ -14,6 +14,7 @@ import { FinancingCalculator } from "@/components/tools/FinancingCalculator";
 import { HeatPumpVsFurnace } from "@/components/tools/HeatPumpVsFurnace";
 import { LifespanCalculator } from "@/components/tools/LifespanCalculator";
 import { QuoteAnalyzer } from "@/components/tools/QuoteAnalyzer";
+import { RebateChecker } from "@/components/tools/RebateChecker";
 import { RepairReplaceCalculator } from "@/components/tools/RepairReplaceCalculator";
 import { absoluteUrl } from "@/lib/content";
 import { getTool, tools } from "@/lib/tools";
@@ -86,6 +87,7 @@ export default async function ToolPage({
             {tool.slug === "hvac-financing-calculator" ? <FinancingCalculator /> : null}
             {tool.slug === "heat-pump-vs-furnace" ? <HeatPumpVsFurnace /> : null}
             {tool.slug === "hvac-quote-analyzer" ? <QuoteAnalyzer /> : null}
+            {tool.slug === "minnesota-hvac-rebate-checker" ? <RebateChecker /> : null}
           </div>
         </Container>
       </section>
