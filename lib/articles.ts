@@ -89,7 +89,7 @@ export const articles: readonly Article[] = [
       {
         heading: "Full replacement costs",
         paragraphs: [
-          "In the Twin Cities, a new furnace typically runs $4,000–$9,000 installed, central AC $4,500–$9,500, and a cold-climate heat pump $8,000–$18,000 before rebates. You can narrow these down for your own home with our [HVAC cost estimator](/tools/hvac-cost-estimator). High-efficiency equipment sits at the top of each range but earns [utility rebates and federal tax credits](/resources/minnesota-hvac-rebates) and lower bills every month.",
+          "In the Twin Cities, a new furnace typically runs $4,000–$9,000 installed, central AC $4,500–$9,500, and a cold-climate heat pump $8,000–$18,000 before rebates. You can narrow these down for your own home with our [HVAC cost estimator](/tools/hvac-cost-estimator). High-efficiency equipment sits at the top of each range but earns [Minnesota utility rebates](/resources/minnesota-hvac-rebates) and lower bills every month.",
           "Installation quality moves these numbers more than brand does. A properly sized, properly installed mid-tier system outperforms a premium unit installed badly.",
         ],
       },
@@ -101,7 +101,7 @@ export const articles: readonly Article[] = [
           "Ductwork condition — modifications add cost",
           "Accessibility: tight utility rooms and finished basements slow installs",
           "Season — emergency winter replacements price higher than shoulder-season ones",
-          "Rebates: Xcel and CenterPoint rebates plus federal credits can offset thousands",
+          "Rebates: Xcel and CenterPoint utility rebates can offset hundreds to thousands (the federal 25C credit expired at the end of 2025)",
         ],
       },
       {
@@ -222,11 +222,11 @@ export const articles: readonly Article[] = [
     title: "Minnesota HVAC Rebates & Tax Credits: What You Can Claim",
     metaTitle: "Minnesota HVAC Rebates & Tax Credits Guide",
     metaDescription:
-      "Xcel Energy and CenterPoint rebates, federal tax credits for heat pumps and high-efficiency systems — what Minnesota homeowners can claim and how to stack them.",
+      "Xcel Energy and CenterPoint Energy rebates for heat pumps and high-efficiency systems, the expired federal 25C credit, and Minnesota's pending state program — what homeowners can actually claim in 2026 and how to stack it.",
     updated: "July 2026",
     readMinutes: 5,
     intro: [
-      "Minnesota homeowners leave real money on the table every year by not claiming HVAC incentives. Between utility rebates and federal tax credits, a high-efficiency upgrade can come in thousands of dollars cheaper than sticker price — you can see how the pre-rebate numbers look with our [HVAC cost estimator](/tools/hvac-cost-estimator) — if you know what to claim and who files it.",
+      "Minnesota homeowners leave real money on the table every year by not claiming HVAC incentives. Utility rebates from Xcel Energy and CenterPoint Energy can knock hundreds to a few thousand dollars off a high-efficiency upgrade — you can see how the pre-rebate numbers look with our [HVAC cost estimator](/tools/hvac-cost-estimator) — if you know what to claim and who files it. (One big change for 2026: the federal 25C tax credit expired at the end of 2025 — details below.)",
       "Program amounts change yearly, so treat the figures below as a map of what exists and verify current amounts with your utility or contractor before buying. Not sure which ones apply to you? Our [Minnesota rebate checker](/tools/minnesota-hvac-rebate-checker) matches your utility and equipment to the programs you likely qualify for in about 20 seconds.",
     ],
     sections: [
@@ -244,19 +244,26 @@ export const articles: readonly Article[] = [
         ],
       },
       {
-        heading: "Federal tax credits (Energy Efficient Home Improvement Credit)",
+        heading: "Federal tax credit (25C) — expired at the end of 2025",
         paragraphs: [
-          "The federal 25C credit covers 30% of qualifying project costs, with caps per equipment type: up to $600 for qualifying ACs and furnaces, and up to $2,000 per year for qualifying [cold-climate heat pumps](/services/heat-pumps). This is a tax credit — it reduces what you owe dollar-for-dollar — and it resets annually, which rewards phasing projects across tax years.",
+          "**Important update:** the federal Energy Efficient Home Improvement Credit (25C) was ended early by 2025 legislation and is **no longer available for equipment placed in service after December 31, 2025**. Through 2025 it covered 30% of qualifying cost, capped at up to $600 for a qualifying AC or furnace and up to $2,000 for a qualifying [cold-climate heat pump](/services/heat-pumps).",
+          "If you installed qualifying equipment on or before December 31, 2025, you may still claim it on your 2025 federal return (IRS Form 5695) — a tax professional can confirm. For any 2026 project, do not count on a federal credit; focus on the utility rebates above and the pending state program below. Our [rebate database](/minnesota-hvac-rebate-database) tracks the current status of each program with links to the official source.",
         ],
       },
       {
-        heading: "How to stack incentives",
+        heading: "The pending Minnesota state program (HEAR)",
+        paragraphs: [
+          "Minnesota is expected to launch federally funded Home Energy Rebates (often called HEAR) for income-qualified households, which would add incentives for heat pumps and efficiency upgrades. As of this writing the program has not opened to applications in Minnesota and no start date has been announced, so treat it as pending — don't factor it into a purchase until the Department of Commerce opens it. Check the [rebate database](/minnesota-hvac-rebate-database) for the latest verified status.",
+        ],
+      },
+      {
+        heading: "How to stack what's available",
         list: [
-          "Utility rebate + federal credit can be combined on the same equipment",
+          "Combine an electric-utility rebate (Xcel) with a gas-utility rebate (CenterPoint) on a dual-fuel system",
           "Ask each contractor which specific model numbers qualify — 'high efficiency' isn't enough",
           "Confirm in writing who files the rebate paperwork (good contractors handle it)",
-          "Keep the AHRI certificate and invoice — you'll need them for the tax credit",
-          "Income-qualified households may have access to additional state programs — worth asking your utility",
+          "Keep the AHRI certificate and invoice for your records",
+          "Income-qualified households may qualify for enhanced utility rebates and the pending state program — worth asking your utility",
         ],
       },
     ],
@@ -269,12 +276,12 @@ export const articles: readonly Article[] = [
       {
         question: "Who files the rebate paperwork?",
         answer:
-          "Usually the installing contractor files utility rebates on your behalf; the federal tax credit you claim yourself with your tax return (IRS Form 5695), using the invoice and manufacturer certificate.",
+          "Usually the installing contractor files utility rebates on your behalf. The federal 25C credit — available only for equipment installed through the end of 2025 — was claimed by the homeowner on their own federal return using IRS Form 5695. It is not available for 2026 installations.",
       },
       {
         question: "Do heat pumps really get the biggest incentives?",
         answer:
-          "Yes — heat pumps currently draw the largest combined incentives (up to $2,000 federal plus utility rebates), which is a big part of why cold-climate heat pumps have surged in Minnesota.",
+          "Heat pumps still draw the largest utility rebates in Minnesota, which is a big part of why cold-climate heat pumps have surged here. Note that the federal credit that once added up to $2,000 expired at the end of 2025, so a 2026 heat pump relies on utility rebates (and the pending state program).",
       },
     ],
     related: ["hvac-cost-guide-minnesota", "questions-to-ask-hvac-contractor"],
@@ -494,7 +501,7 @@ export const articles: readonly Article[] = [
         heading: "Rebates and tax credits that lower the cost",
         tocLabel: "Rebates",
         paragraphs: [
-          "A high-efficiency furnace's higher price is partly offset by incentives. CenterPoint Energy offers rebates on qualifying high-efficiency gas furnaces, and federal tax credits may apply to the most efficient models. Amounts change, so verify current figures — our [Minnesota rebates guide](/resources/minnesota-hvac-rebates) tracks what's typically available and who qualifies.",
+          "A high-efficiency furnace's higher price is partly offset by incentives. CenterPoint Energy offers rebates on qualifying high-efficiency gas furnaces. (The federal 25C credit that once applied to the most efficient models expired at the end of 2025, so for 2026 the savings come from utility rebates.) Amounts change, so verify current figures — our [Minnesota rebates guide](/resources/minnesota-hvac-rebates) and [rebate database](/minnesota-hvac-rebate-database) track what's available and who qualifies.",
         ],
       },
       {
@@ -628,7 +635,7 @@ export const articles: readonly Article[] = [
         heading: "Rebates that lower the cost",
         tocLabel: "Rebates",
         paragraphs: [
-          "Xcel Energy offers rebates on qualifying high-efficiency central air conditioners, and federal tax credits may apply to the most efficient systems. These can meaningfully narrow the gap between a mid- and high-efficiency unit. Because amounts change each program year, confirm current figures — the [Minnesota rebates guide](/resources/minnesota-hvac-rebates) covers what's typically available.",
+          "Xcel Energy offers rebates on qualifying high-efficiency central air conditioners, which can meaningfully narrow the gap between a mid- and high-efficiency unit. (The federal 25C credit that once applied to the most efficient systems expired at the end of 2025.) Because amounts change each program year, confirm current figures — the [Minnesota rebates guide](/resources/minnesota-hvac-rebates) and [rebate database](/minnesota-hvac-rebate-database) cover what's available.",
         ],
       },
       {

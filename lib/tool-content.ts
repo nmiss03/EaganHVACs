@@ -74,7 +74,7 @@ export const toolContent: Record<string, ToolContent> = {
       "Professional installation by a licensed contractor, including removal of the old equipment and a permit.",
       "Twin Cities-area labor rates; costs in greater Minnesota can differ.",
       "Equipment sized correctly for the home; an oversized system costs more and performs worse.",
-      "Pricing before any utility rebate or federal tax credit is applied.",
+      "Pricing before any utility rebate is applied (the federal 25C tax credit expired at the end of 2025).",
     ],
     limitations: [
       "It cannot see your home. Difficult access, undersized returns, electrical upgrades for a heat pump, or new venting can add cost the tool doesn't know about.",
@@ -332,7 +332,7 @@ export const toolContent: Record<string, ToolContent> = {
     ],
     methodology: [
       "This is deterministic math, not an estimate — for the inputs you enter, the payment is exact. What you should treat as an assumption is the rate: promotional \"same-as-cash\" or deferred-interest offers can carry very different real costs if you don't pay them off in the promo window, so enter the true rate, not the teaser.",
-      "The calculator doesn't apply rebates or tax credits. Finance the net cost: subtract any [Minnesota rebates and the federal tax credit](/resources/minnesota-hvac-rebates) you expect to receive from the project total first, then finance what's left, so you're not borrowing money you'll get back.",
+      "The calculator doesn't apply rebates. Finance the net cost: subtract any [Minnesota utility rebates](/resources/minnesota-hvac-rebates) you expect to receive from the project total first, then finance what's left, so you're not borrowing money you'll get back. (Note the federal 25C credit expired at the end of 2025, so it no longer reduces the net cost of a 2026 install.)",
     ],
     assumptions: [
       "A standard fixed-rate installment loan with equal monthly payments.",
@@ -360,7 +360,7 @@ export const toolContent: Record<string, ToolContent> = {
     commonMistakes: [
       "Choosing a loan by monthly payment alone and ignoring the total interest over the term.",
       "Assuming a \"0% for 18 months\" offer is free without a plan to pay it off before interest kicks in.",
-      "Financing the gross price instead of the net cost after rebates and the federal tax credit.",
+      "Financing the gross price instead of the net cost after utility rebates.",
       "Stretching the term so long that you're still paying for a system near the end of its useful life.",
       "Not shopping the loan; contractor financing is convenient but not always the cheapest.",
     ],
@@ -379,7 +379,7 @@ export const toolContent: Record<string, ToolContent> = {
       },
       {
         q: "Should I finance before or after rebates?",
-        a: "After. Subtract expected rebates and the federal tax credit from the project cost first, then finance only the remaining balance.",
+        a: "After. Subtract expected utility rebates from the project cost first, then finance only the remaining balance. (The federal 25C credit expired at the end of 2025, so it no longer factors into a 2026 install.)",
       },
       {
         q: "Is contractor financing a good deal?",
@@ -415,7 +415,7 @@ export const toolContent: Record<string, ToolContent> = {
       "Because a heat pump both heats and cools, it's frequently compared against buying a furnace and an AC together — which is why the honest comparison, and the incentives, often look better than a first glance suggests.",
     ],
     methodology: [
-      "The recommendation logic reflects cold-climate HVAC guidance: cold-climate (ccASHP) heat pumps maintain useful heating output well below 0°F, and dual-fuel systems are a common Minnesota answer because they capture heat-pump efficiency in the shoulder seasons while keeping a furnace's brute-force heat for deep cold. We frame incentives qualitatively — heat pumps currently draw the largest combined utility and federal incentives — and send you to the [rebates guide](/resources/minnesota-hvac-rebates) and [rebate checker](/tools/minnesota-hvac-rebate-checker) for current amounts rather than quoting figures that change yearly.",
+      "The recommendation logic reflects cold-climate HVAC guidance: cold-climate (ccASHP) heat pumps maintain useful heating output well below 0°F, and dual-fuel systems are a common Minnesota answer because they capture heat-pump efficiency in the shoulder seasons while keeping a furnace's brute-force heat for deep cold. We frame incentives qualitatively — heat pumps still draw the largest utility rebates in Minnesota (the federal 25C credit that once added up to $2,000 expired at the end of 2025) — and send you to the [rebates guide](/resources/minnesota-hvac-rebates), [rebate database](/minnesota-hvac-rebate-database), and [rebate checker](/tools/minnesota-hvac-rebate-checker) for current amounts rather than quoting figures that change yearly.",
       "The tool doesn't model your exact energy bills, because that depends on your rates, usage, and insulation. It gives a directional recommendation and the reasoning; a contractor's load calculation and an energy model refine it.",
     ],
     assumptions: [
@@ -569,7 +569,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   "minnesota-hvac-rebate-checker": {
     overview: [
-      "Minnesota homeowners leave real money on the table every year, not because they don't qualify for rebates, but because the incentives are scattered across two utilities and the federal tax code and nobody hands you a single list. This checker fixes the discovery problem: tell it your electric and gas providers and what you're planning to install, and it routes you straight to the specific rebate and tax-credit programs you most likely qualify for.",
+      "Minnesota homeowners leave real money on the table every year, not because they don't qualify for rebates, but because the incentives are scattered across two utilities and a pending state program, and nobody hands you a single list. This checker fixes the discovery problem: tell it your electric and gas providers and what you're planning to install, and it routes you straight to the utility rebate programs you most likely qualify for — and flags what's expired or pending (including the now-ended federal credit) so you don't chase the wrong incentive.",
       "It's deliberately a **program router, not a dollar calculator**. Rebate amounts change every program year, so instead of quoting a figure that could be wrong next month, it names the programs that apply and sends you to the source to confirm the current amount. That keeps it accurate over time and means it never invents a number.",
     ],
     whatItDoes: [
@@ -580,18 +580,18 @@ export const toolContent: Record<string, ToolContent> = {
       "Use it before you buy any high-efficiency equipment — ideally while you're still choosing a system, because the incentives can change which option is the best value. Heat pumps in particular draw the largest combined incentives, which is often the deciding factor in the [heat-pump-vs-furnace decision](/tools/heat-pump-vs-furnace).",
     ],
     howItWorks: [
-      "The checker maps your utility and equipment selections to the programs that commonly apply in Minnesota: electric-side rebates from Xcel (central AC, heat pumps, smart thermostats), gas-side rebates from CenterPoint (high-efficiency furnaces), and the federal Energy Efficient Home Improvement Credit (25C) when you're installing qualifying equipment. It surfaces each relevant program with guidance on what it covers and who typically qualifies.",
+      "The checker maps your utility and equipment selections to the programs that commonly apply in Minnesota: electric-side rebates from Xcel (central AC, heat pumps, smart thermostats) and gas-side rebates from CenterPoint (high-efficiency furnaces). It also flags that the federal Energy Efficient Home Improvement Credit (25C) expired at the end of 2025, so you aren't sent chasing an incentive you can no longer use on a 2026 install.",
       "It intentionally stops short of quoting exact dollars. For each program it tells you where to confirm the current amount — because a rebate figure that's right today may be revised at the start of the next program year, and a stale number is worse than no number.",
     ],
     methodology: [
-      "Program routing is based on the published incentive structures of Xcel Energy, CenterPoint Energy, and the federal 25C credit, and mirrors the [Minnesota rebates guide](/resources/minnesota-hvac-rebates). The federal credit is structured as 30% of qualifying equipment cost up to annual caps, with heat pumps carrying a higher cap than furnaces or AC — but exact limits and eligibility should be confirmed with a tax professional, which is why the tool routes rather than quotes.",
-      "This design is a deliberate accuracy choice. When our [Rebate Database](/resources/minnesota-hvac-rebates) is published with verified, dated amounts transcribed directly from each source, the checker will link to those specific figures. Until then, it does the honest thing: name the program, explain it, and send you to the primary source.",
+      "Program routing is based on the published incentive structures of Xcel Energy and CenterPoint Energy, and mirrors the [Minnesota rebates guide](/resources/minnesota-hvac-rebates) and the [rebate database](/minnesota-hvac-rebate-database). The federal 25C credit that once applied (30% of cost up to annual caps) expired at the end of 2025; the tool notes this rather than routing you to an incentive you can no longer use.",
+      "This design is a deliberate accuracy choice. Our [Rebate Database](/minnesota-hvac-rebate-database) tracks each program's status and links to the primary source. Because utility amounts change often — and can't always be verified from those sources on demand — the checker names the program and sends you to the official page rather than quoting a figure that might be stale.",
     ],
     assumptions: [
       "You're installing qualifying high-efficiency equipment; base-efficiency models often don't qualify.",
       "Your utilities are correctly identified — programs are utility-specific.",
       "Rebate and credit amounts are confirmed at the source before you rely on them.",
-      "The federal tax credit requires a tax liability to offset and is claimed on your return, not paid upfront.",
+      "The federal 25C tax credit expired December 31, 2025 and is not available for 2026 installations (only claimable for qualifying equipment installed on or before that date).",
       "Programs and amounts change by program year; the router reflects what commonly applies, not a locked figure.",
     ],
     limitations: [
@@ -603,11 +603,11 @@ export const toolContent: Record<string, ToolContent> = {
     examples: [
       {
         title: "Xcel + CenterPoint home installing a heat pump and smart thermostat",
-        body: "The checker returns the Xcel air-source heat pump rebate, a smart-thermostat rebate, and the federal 25C credit (largest for heat pumps). The homeowner confirms current amounts via the [rebates guide](/resources/minnesota-hvac-rebates), subtracts them from the [cost estimate](/tools/hvac-cost-estimator), and finances only the net.",
+        body: "The checker returns the Xcel air-source heat pump rebate and a smart-thermostat rebate, and notes that the federal 25C credit expired at the end of 2025. The homeowner confirms current amounts via the [rebate database](/minnesota-hvac-rebate-database), subtracts them from the [cost estimate](/tools/hvac-cost-estimator), and finances only the net.",
       },
       {
         title: "Gas furnace replacement, CenterPoint customer",
-        body: "For a high-efficiency (95%+ AFUE) furnace, the checker surfaces the CenterPoint furnace rebate and, for the most efficient models, the federal credit. The homeowner asks the installer to confirm the qualifying model numbers and who files the utility paperwork — a question straight from the [contractor questions guide](/resources/questions-to-ask-hvac-contractor).",
+        body: "For a high-efficiency (95%+ AFUE) furnace, the checker surfaces the CenterPoint furnace rebate. The homeowner asks the installer to confirm the qualifying model numbers and who files the utility paperwork — a question straight from the [contractor questions guide](/resources/questions-to-ask-hvac-contractor).",
       },
     ],
     commonMistakes: [
@@ -624,19 +624,19 @@ export const toolContent: Record<string, ToolContent> = {
       },
       {
         q: "What HVAC rebates are available in Minnesota?",
-        a: "Broadly: Xcel Energy rebates on qualifying AC, heat pumps, and smart thermostats; CenterPoint Energy rebates on high-efficiency furnaces; and the federal 25C tax credit on qualifying equipment, with the largest cap for heat pumps.",
+        a: "Broadly: Xcel Energy rebates on qualifying AC, heat pumps, and smart thermostats, and CenterPoint Energy rebates on high-efficiency furnaces. The federal 25C tax credit expired at the end of 2025 and isn't available for 2026 installs; watch for Minnesota's pending state program. See the rebate database for each program's current status.",
       },
       {
-        q: "Can I combine a utility rebate with the federal tax credit?",
-        a: "Generally yes — a utility rebate and the federal credit can often be claimed on the same qualifying equipment. Confirm the specifics with your utility and a tax professional.",
+        q: "Is there still a federal tax credit for HVAC?",
+        a: "No — the federal 25C Energy Efficient Home Improvement Credit expired December 31, 2025 and isn't available for equipment installed in 2026 or later. It can only be claimed for qualifying equipment installed on or before that date, on your 2025 return. For 2026, focus on Xcel and CenterPoint utility rebates and the pending state program.",
       },
       {
         q: "Who files the rebate paperwork?",
-        a: "Usually your installing contractor files utility rebates on your behalf. The federal tax credit you claim yourself on your tax return using the equipment documentation.",
+        a: "Usually your installing contractor files utility rebates on your behalf. (The federal 25C credit — for equipment installed through 2025 only — was claimed by the homeowner on their own tax return using the equipment documentation.)",
       },
       {
         q: "Do heat pumps really get the biggest incentives?",
-        a: "Yes — heat pumps currently draw the largest combined utility and federal incentives, which is a big reason cold-climate heat pumps have surged in Minnesota.",
+        a: "Heat pumps still draw the largest utility rebates in Minnesota, a big reason cold-climate heat pumps have surged here. (The federal credit that once added up to $2,000 expired at the end of 2025, so a 2026 heat pump relies on utility rebates and the pending state program.)",
       },
     ],
     nextSteps: [

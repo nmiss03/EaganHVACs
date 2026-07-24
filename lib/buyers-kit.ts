@@ -52,7 +52,7 @@ export const kitRebates: { program: string; covers: string }[] = [
     covers: "Rebates on qualifying high-efficiency (95%+ AFUE) furnaces and boilers.",
   },
   {
-    program: "Federal tax credit (25C)",
-    covers: "30% of qualifying equipment cost, up to annual caps — heat pumps have the highest cap (up to $2,000).",
+    program: "Federal tax credit (25C) — EXPIRED end of 2025",
+    covers: "No longer available for equipment installed in 2026 or later (ended Dec 31, 2025). Only claimable for qualifying equipment installed on or before that date, on your 2025 return.",
   },
 ];

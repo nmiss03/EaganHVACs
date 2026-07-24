@@ -38,7 +38,7 @@ const faqGroups: FaqGroup[] = [
       {
         question: "How much does a new furnace or AC cost in Minnesota?",
         answer:
-          "A full system replacement typically runs several thousand dollars depending on size, efficiency rating, and installation complexity. High-efficiency equipment costs more upfront but qualifies for Xcel Energy and CenterPoint rebates plus federal incentives, and lowers bills every month. Replacement quotes are always free.",
+          "A full system replacement typically runs several thousand dollars depending on size, efficiency rating, and installation complexity. High-efficiency equipment costs more upfront but qualifies for Xcel Energy and CenterPoint rebates and lowers bills every month. (The federal 25C tax credit expired at the end of 2025.) Replacement quotes are always free.",
       },
       {
         question: "Are HVAC estimates free?",
@@ -48,7 +48,7 @@ const faqGroups: FaqGroup[] = [
       {
         question: "Are there rebates for high-efficiency HVAC in Minnesota?",
         answer:
-          "Yes. Xcel Energy and CenterPoint Energy offer rebates for qualifying high-efficiency furnaces, air conditioners, heat pumps, and smart thermostats, and federal tax credits apply to many heat pump installations. Local installers help you claim everything you qualify for.",
+          "Yes. Xcel Energy and CenterPoint Energy offer rebates for qualifying high-efficiency furnaces, air conditioners, heat pumps, and smart thermostats. (The federal 25C tax credit expired at the end of 2025, so 2026 savings come from utility rebates and the pending state program.) A good local installer helps you claim what you qualify for.",
       },
     ],
   },

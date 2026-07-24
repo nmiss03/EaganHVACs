@@ -258,7 +258,7 @@ export const MINNESOTA_CONSIDERATIONS: MinnesotaConsideration[] = [
   },
   {
     title: "Rebates & tax credits",
-    body: "Xcel Energy (electric) and CenterPoint Energy (gas) offer rebates on qualifying high-efficiency equipment, and the federal Energy Efficient Home Improvement Credit (25C) covers 30% of qualifying costs up to annual caps — with the largest incentives currently going to heat pumps. Program amounts change yearly, so verify current amounts with your utility and confirm which specific models qualify.",
+    body: "Xcel Energy (electric) and CenterPoint Energy (gas) offer rebates on qualifying high-efficiency equipment, with the largest utility incentives going to heat pumps. Note that the federal Energy Efficient Home Improvement Credit (25C) expired at the end of 2025 and is not available for 2026 installs. Program amounts change often, so verify current amounts with your utility and confirm which specific models qualify.",
   },
 ];
 

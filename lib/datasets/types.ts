@@ -39,6 +39,8 @@ export interface DatasetMeta {
   lastReviewed: string;
   /** How the values are gathered and verified — always shown to the reader. */
   methodology: string;
+  /** Plain-language guidance on when a reader should re-check the source. */
+  recheckGuidance?: string;
   /** Where the numbers come from. */
   sources: DatasetSource[];
 }
@@ -72,23 +74,49 @@ export interface Dataset<Row> {
 /* Domain row shapes — empty-ready. Populate in a later sprint.        */
 /* ------------------------------------------------------------------ */
 
-/** One rebate or tax-credit program (Rebate Database). */
+/**
+ * Program lifecycle status.
+ *  - active: program exists and is currently offered by the provider.
+ *  - pending: announced/expected but not yet launched.
+ *  - expired: no longer available (kept for historical context).
+ *  - requires_verification: existence or amount not confirmed from a primary source.
+ */
+export type RebateStatus = "active" | "pending" | "expired" | "requires_verification";
+
+/**
+ * One rebate or tax-credit program (Rebate Database). Designed for ongoing
+ * maintenance: every row carries its own effective/expiration/last-verified
+ * dates and its official source, so a maintainer can re-verify one program
+ * without touching the rest, and readers can see exactly how fresh each entry
+ * is. The `amount` is null unless it has been confirmed from a primary source
+ * — a null renders as "verify current amount," never as an invented number.
+ */
 export interface RebateProgramRow {
   id: string;
   /** Program provider, e.g. "Xcel Energy", "CenterPoint Energy", "Federal (IRS)". */
   provider: string;
+  /** Provider category, used for grouping and icons. */
+  providerType: "electric-utility" | "gas-utility" | "state" | "federal";
   /** Equipment the program applies to, e.g. "Cold-climate heat pump". */
   equipment: string;
   program: string;
-  /**
-   * Current incentive. Left null until verified against the source — a null
-   * renders as "verify current amount," never as an invented number.
-   */
+  /** Confirmed amount from a primary source, else null (requires verification). */
   amount: string | null;
   /** Eligibility summary in plain language. */
   eligibility?: string;
-  status: "active" | "seasonal" | "ended" | "unverified";
-  source?: DatasetSource;
+  /** Income restriction / income-qualified enhancement, if any. */
+  incomeRestriction?: string | null;
+  status: RebateStatus;
+  /** When the program took effect, if known. */
+  effectiveDate?: string | null;
+  /** When the program ends, if known/applicable. */
+  expirationDate?: string | null;
+  /** Date this specific row was last checked against its source. */
+  lastVerified: string;
+  /** Official source for this program — always present so readers can confirm. */
+  source: DatasetSource;
+  /** Any caveat a reader must know (uncertainty, pending status, etc.). */
+  notes?: string;
 }
 
 /** One installed-price data point (Price Index). */

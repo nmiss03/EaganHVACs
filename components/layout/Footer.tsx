@@ -72,6 +72,14 @@ export function Footer() {
                   Buyer&rsquo;s Kit
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/minnesota-hvac-rebate-database"
+                  className="text-navy-100/70 transition-colors hover:text-accent-300"
+                >
+                  Rebate Database
+                </Link>
+              </li>
             </ul>
           </nav>
 

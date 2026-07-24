@@ -77,9 +77,9 @@ function matchPrograms(
 
   if (federal) {
     out.push({
-      name: "Federal tax credit (Energy Efficient Home Improvement Credit, 25C)",
+      name: "Federal tax credit (25C) — expired for 2026 installs",
       detail:
-        "Covers 30% of the cost of qualifying high-efficiency equipment up to annual IRS limits — heat pumps have a higher cap than furnaces or AC. Confirm current limits and eligibility with a tax professional.",
+        "The federal Energy Efficient Home Improvement Credit (25C) ended December 31, 2025 and is not available for equipment installed in 2026 or later. If you installed on or before that date, you may still claim it on your 2025 return (confirm with a tax professional). For 2026 projects, rely on the utility rebates above and watch for Minnesota's pending state program — see our rebate database for current status.",
     });
   }
   return out;
@@ -204,10 +204,10 @@ export function RebateChecker() {
       ) : null}
 
       <p className="mt-4 text-xs leading-relaxed text-slate-500">
-        This tool routes you to the rebate and tax-credit programs that commonly
-        apply in Minnesota — it doesn&rsquo;t quote exact amounts, which change each
-        program year. Always confirm current rebate values and eligibility directly
-        with your utility and a tax professional before you count on them.
+        This tool routes you to the utility rebate programs that commonly apply in
+        Minnesota (and flags what&rsquo;s expired or pending) — it doesn&rsquo;t quote exact
+        amounts, which change each program year. Always confirm current rebate values
+        and eligibility directly with your utility before you count on them.
       </p>
     </div>
   );

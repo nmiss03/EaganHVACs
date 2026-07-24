@@ -404,7 +404,7 @@ export const extraServiceDetails: readonly ServiceDetail[] = [
       {
         title: "Rebate & incentive guidance",
         description:
-          "Cold-climate heat pumps qualify for significant utility and federal incentives — a good installer will help you capture them, and our rebates guide shows what typically applies.",
+          "Cold-climate heat pumps qualify for significant Minnesota utility rebates — a good installer will help you capture them, and our rebates guide shows what applies. (The federal 25C credit that once added to this expired at the end of 2025.)",
       },
     ],
     faqs: [

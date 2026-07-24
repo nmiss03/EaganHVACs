@@ -194,7 +194,7 @@ export const faqs: readonly Faq[] = [
   {
     question: "Is financing available for new HVAC systems?",
     answer:
-      "Many HVAC contractors offer financing on new installations, and Minnesota utility rebates (Xcel Energy, CenterPoint Energy) plus the federal 25C tax credit can meaningfully lower the cost. Our rebates guide and financing calculator help you plan what a new system will actually cost per month.",
+      "Many HVAC contractors offer financing on new installations, and Minnesota utility rebates (Xcel Energy, CenterPoint Energy) can meaningfully lower the cost. (The federal 25C tax credit expired at the end of 2025 and isn't available for 2026 installs.) Our rebates guide and financing calculator help you plan what a new system will actually cost per month.",
   },
 ];
 

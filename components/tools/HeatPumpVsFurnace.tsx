@@ -40,7 +40,7 @@ function recommend(priority: Priority, cooling: Cooling, heating: Heating): Reco
       why: [
         "Because you don't rely on gas heat, a single cold-climate heat pump can handle both heating and cooling — and it's dramatically cheaper to run than electric resistance heat.",
         "Modern cold-climate models are rated to heat efficiently well below 0°F, which matters in Minnesota.",
-        "Heat pumps qualify for significant utility rebates and federal tax credits that offset the higher upfront cost.",
+        "Heat pumps qualify for significant Minnesota utility rebates that offset the higher upfront cost. (The federal 25C tax credit that once helped expired at the end of 2025.)",
         "A contractor may add a small backup heat source sized for extreme cold snaps — worth asking about.",
       ],
     };
@@ -70,7 +70,7 @@ function recommend(priority: Priority, cooling: Cooling, heating: Heating): Reco
       why: [
         "A cold-climate heat pump handles most of the heating season efficiently, and your gas furnace takes over automatically on the coldest days — the best of both.",
         "The heat pump cools in summer too, so it replaces your AC — you get heating and cooling from one upgrade.",
-        "Dual-fuel systems typically qualify for the largest stack of utility rebates plus the federal tax credit.",
+        "Dual-fuel systems typically qualify for the largest stack of Minnesota utility rebates — an electric-utility rebate on the heat pump plus a gas-utility rebate on the furnace. (The federal 25C credit expired at the end of 2025.)",
         "You get lower bills and lower carbon without giving up reliable gas heat when it's -20°F.",
       ],
     };

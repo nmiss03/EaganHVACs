@@ -110,10 +110,10 @@ export const tools: readonly ToolMeta[] = [
       "Tell us your utility and what you're installing, and see the Xcel, CenterPoint, and federal rebate programs you likely qualify for.",
     metaTitle: "Minnesota HVAC Rebate Checker | Xcel & CenterPoint Rebates",
     metaDescription:
-      "Free Minnesota HVAC rebate checker. Pick your utility and equipment to see the Xcel Energy, CenterPoint Energy, and federal tax-credit programs you likely qualify for on a new furnace, AC, or heat pump.",
+      "Free Minnesota HVAC rebate checker. Pick your utility and equipment to see the Xcel Energy and CenterPoint Energy rebate programs you likely qualify for on a new furnace, AC, or heat pump — plus what's expired or pending.",
     h1: "Minnesota HVAC Rebate Checker",
     intro: [
-      "Minnesota homeowners leave real money on the table because rebates are scattered across utilities and the federal tax code. Tell us who your electric and gas providers are and what you're planning to install, and this free tool routes you straight to the Xcel Energy, CenterPoint Energy, and federal programs that most likely apply — so you know what to ask about before you sign.",
+      "Minnesota homeowners leave real money on the table because rebates are scattered across utilities and a pending state program. Tell us who your electric and gas providers are and what you're planning to install, and this free tool routes you straight to the Xcel Energy and CenterPoint Energy programs that most likely apply — and flags what's expired or pending — so you know what to ask about before you sign.",
     ],
     updated: "July 2026",
   },
