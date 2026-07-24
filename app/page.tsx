@@ -3,6 +3,8 @@ import { Faq } from "@/components/sections/Faq";
 import { FeaturedResources } from "@/components/sections/FeaturedResources";
 import { FeaturedTools } from "@/components/sections/FeaturedTools";
 import { Hero } from "@/components/sections/Hero";
+import { HomeRibbon } from "@/components/sections/HomeRibbon";
+import { HomeVisual } from "@/components/sections/HomeVisual";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { InquirySection } from "@/components/sections/InquirySection";
 import { ServiceArea } from "@/components/sections/ServiceArea";
@@ -21,8 +23,10 @@ export default function HomePage() {
   return (
     <>
       <JsonLd />
+      <HomeRibbon />
       <Hero />
       <TwoPaths />
+      <HomeVisual />
       <FeaturedTools />
       <FeaturedResources />
       <section className="bg-white py-14 lg:py-16">
