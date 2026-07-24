@@ -11,7 +11,7 @@ import { cityGuides } from "@/lib/city-guides";
 export const metadata: Metadata = {
   title: "HVAC Service Area | Eagan, MN & South Metro Cities We Serve",
   description:
-    "Eagan HVACs serves Eagan and the surrounding south metro, including Apple Valley, Burnsville, Rosemount, Lakeville, Inver Grove Heights, and more. Find your city.",
+    "Independent HVAC guides for homeowners in Eagan and the surrounding south metro, including Apple Valley, Burnsville, Rosemount, Lakeville, Inver Grove Heights, and more — costs, rebates, and how to hire. Find your city.",
   alternates: { canonical: "/locations" },
 };
 

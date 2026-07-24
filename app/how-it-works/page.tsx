@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "How It Works | Compare Local HVAC Quotes Free",
   description:
-    "How Eagan HVACs works: tell us what you need, we match you with vetted local HVAC contractors, and you compare multiple free quotes. No cost, no obligation, no spam.",
+    "How Eagan HVACs works: use free tools and honest cost guides to understand your options, then get and compare quotes from local HVAC contractors yourself. No cost, no obligation, no spam.",
   alternates: { canonical: "/how-it-works" },
 };
 

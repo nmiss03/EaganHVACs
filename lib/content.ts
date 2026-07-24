@@ -37,7 +37,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
     h1: "Furnace Repair in Eagan, MN & the South Metro",
     metaTitle: "Furnace Repair Eagan MN | 24/7 Heating Repair Near You",
     metaDescription:
-      "Furnace not heating? Get fast, honest furnace and heating repair in Eagan, MN and the south metro. Same-day and 24/7 emergency service from vetted local pros.",
+      "Furnace not heating in Eagan, MN? Learn what's likely wrong, what furnace and heating repair costs in the south metro, and how to find same-day or 24/7 emergency help from a licensed local contractor.",
     tagline: "No heat is an emergency in a Minnesota winter — and we treat it like one.",
     intro: [
       "When your furnace quits on a sub-zero January night, you need to know what's wrong and what a fair fix costs before you call anyone. This guide covers the common causes of a no-heat furnace, what heating repairs typically run in the Twin Cities, and how to find a licensed local contractor who offers same-day and 24/7 emergency service for every make and model.",
@@ -93,7 +93,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
     h1: "Air Conditioning Repair in Eagan, MN & the South Metro",
     metaTitle: "AC Repair Eagan MN | Same-Day Air Conditioning Service",
     metaDescription:
-      "AC not cooling? Get same-day air conditioning repair in Eagan, MN and nearby cities. Vetted local techs, all makes & models, upfront pricing. Call today.",
+      "AC not cooling in Eagan, MN? Learn the common causes, what same-day air conditioning repair costs across all makes and models, and how to find a licensed local contractor with upfront pricing.",
     tagline: "When a heat wave hits, a warm house gets miserable fast. We move quickly.",
     intro: [
       "Minnesota summers swing from mild to sweltering in a matter of hours, and a failed air conditioner turns a comfortable home into a sauna. This guide explains what usually goes wrong, what a fair AC repair costs in the Twin Cities, and how to find a licensed local contractor offering same-day service across Eagan and the surrounding communities.",
@@ -149,7 +149,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
     h1: "Furnace & AC Installation in Eagan, MN",
     metaTitle: "Furnace & AC Installation Eagan MN | Free Replacement Quotes",
     metaDescription:
-      "Replacing your furnace or AC in Eagan, MN? Get free quotes on right-sized, high-efficiency systems from vetted local installers. Financing and rebate guidance.",
+      "Replacing your furnace or AC in Eagan, MN? Learn what a right-sized, high-efficiency system should cost and include, plus financing and rebate guidance — so you can compare installer quotes with confidence.",
     tagline: "A new system installed right the first time — sized for your home, not upsold.",
     intro: [
       "A new furnace or air conditioner is a major investment, and the quality of the installation matters as much as the equipment itself. An oversized or poorly installed system wastes energy and wears out early. This guide explains what a proper, right-sized installation should include — so you can tell whether a local installer's quote is doing it correctly with a real load calculation.",
@@ -317,7 +317,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
     h1: "24/7 Emergency HVAC Repair in Eagan, MN",
     metaTitle: "Emergency HVAC Repair Eagan MN | 24/7 Heating & Cooling",
     metaDescription:
-      "No heat or no cooling emergency in Eagan, MN? Get 24/7 emergency HVAC repair from local, licensed technicians. Nights, weekends, and holidays. Call now.",
+      "No heat or no cooling emergency in Eagan, MN? Learn what counts as an HVAC emergency, the safety steps to take first, and how to find 24/7 emergency repair from a licensed local contractor — nights, weekends, and holidays.",
     tagline: "Furnaces don't fail at convenient times. Neither do we.",
     intro: [
       "HVAC emergencies rarely happen during business hours. A furnace that dies at 2 AM in January or an AC that quits during a July heat wave can't wait until Monday — especially with kids, older family members, or pets at home. This guide explains what counts as a true emergency, the safety steps to take first, and how after-hours pricing works so a late-night call doesn't mean getting overcharged.",
@@ -376,7 +376,7 @@ export const extraServiceDetails: readonly ServiceDetail[] = [
     h1: "Heat Pump Repair & Installation in Eagan, MN",
     metaTitle: "Heat Pump Repair & Installation Eagan MN | Cold-Climate Experts",
     metaDescription:
-      "Heat pump repair and cold-climate heat pump installation in Eagan, MN. Dual-fuel systems, rebate guidance, and honest advice from vetted local pros.",
+      "Heat pump repair and cold-climate heat pump installation in Eagan, MN: how dual-fuel systems work, what they cost, which rebates apply, and how to choose an experienced local installer.",
     tagline: "Modern cold-climate heat pumps heat Minnesota homes — when they're set up right.",
     intro: [
       "Heat pumps have come a long way: today's cold-climate models heat efficiently well below zero, and paired with a furnace in a dual-fuel setup they can cut heating costs significantly. But they only perform when they're sized, installed, and configured correctly for Minnesota winters — which is why choosing an experienced local installer matters so much.",
