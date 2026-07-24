@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { FaqList } from "@/components/landing/FaqList";
 import { Icon } from "@/components/ui/Icon";
 import { StickyToc, type TocSection } from "@/components/cityguide/StickyToc";
+import { ResearchSnapshot } from "@/components/ui/ResearchSnapshot";
 import { renderInline } from "@/lib/render-inline";
 import { getTool, type ToolMeta } from "@/lib/tools";
 import type { ToolContent } from "@/lib/tool-content";
@@ -70,6 +71,7 @@ export function ToolPillar({ tool, content }: { tool: ToolMeta; content: ToolCon
       <section className="bg-white py-14 lg:py-16">
         <Container>
           <div className="mx-auto max-w-3xl">
+            <ResearchSnapshot updated={tool.updated} className="mb-10" />
             <Heading id="overview">Overview</Heading>
             <Prose paragraphs={content.overview} />
 

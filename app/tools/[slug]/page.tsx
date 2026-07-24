@@ -6,7 +6,6 @@ import { CTABand } from "@/components/landing/CTABand";
 import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
-import { LastUpdated } from "@/components/ui/LastUpdated";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { site } from "@/lib/site";
 import { CostEstimator } from "@/components/tools/CostEstimator";
@@ -84,7 +83,6 @@ export default async function ToolPage({
       <section className="bg-white py-14 lg:py-16">
         <Container>
           <div className="mx-auto max-w-2xl">
-            <LastUpdated updated={tool.updated} className="mb-6" />
             {tool.slug === "hvac-cost-estimator" ? <CostEstimator /> : null}
             {tool.slug === "repair-or-replace" ? <RepairReplaceCalculator /> : null}
             {tool.slug === "system-lifespan" ? <LifespanCalculator /> : null}
