@@ -9,7 +9,7 @@ import { KitCapture } from "@/components/sections/KitCapture";
 import { Container } from "@/components/ui/Container";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { LastUpdated } from "@/components/ui/LastUpdated";
+import { ResearchSnapshot } from "@/components/ui/ResearchSnapshot";
 import { articles, getArticle, type ArticleSection } from "@/lib/articles";
 import { renderInline } from "@/lib/render-inline";
 import { absoluteUrl, getServiceDetail } from "@/lib/content";
@@ -121,16 +121,6 @@ export default async function ArticlePage({
             <h1 className="mt-3 max-w-3xl font-display text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
               {article.title}
             </h1>
-            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <LastUpdated
-                updated={article.updated}
-                readMinutes={article.readMinutes}
-                tone="dark"
-              />
-              <span className="text-sm text-navy-100/70">
-                By the {site.name} Editorial Team
-              </span>
-            </div>
           </Container>
         </header>
 
@@ -139,6 +129,11 @@ export default async function ArticlePage({
         <div className="bg-white py-14 lg:py-16">
           <Container>
             <div className="mx-auto max-w-3xl">
+              <ResearchSnapshot
+                updated={article.updated}
+                readMinutes={article.readMinutes}
+                className="mb-8"
+              />
               {article.intro.map((p) => (
                 <p key={p.slice(0, 24)} className="mb-4 text-lg leading-relaxed text-slate-700">
                   {renderInline(p)}
