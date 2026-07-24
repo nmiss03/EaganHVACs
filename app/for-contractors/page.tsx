@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description:
     "Exclusive, un-shared HVAC leads from local Minnesota homeowners — never resold to your competitors. No long contracts. Your first leads free. Claim your south-metro city.",
   alternates: { canonical: "/for-contractors" },
+  // Kept live at its URL as a ready asset for outreach later, but not
+  // indexed or surfaced publicly until the site has real traffic/proof.
+  robots: { index: false, follow: true },
   openGraph: {
     title: "Get Exclusive HVAC Leads in the Twin Cities | Eagan HVACs",
     description:
