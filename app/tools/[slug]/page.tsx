@@ -17,8 +17,10 @@ import { QuoteAnalyzer } from "@/components/tools/QuoteAnalyzer";
 import { RebateChecker } from "@/components/tools/RebateChecker";
 import { RepairReplaceCalculator } from "@/components/tools/RepairReplaceCalculator";
 import { KitCapture } from "@/components/sections/KitCapture";
+import { ToolPillar } from "@/components/tools/ToolPillar";
 import { absoluteUrl } from "@/lib/content";
 import { getTool, tools } from "@/lib/tools";
+import { getToolContent } from "@/lib/tool-content";
 
 export function generateStaticParams() {
   return tools.map((tool) => ({ slug: tool.slug }));
@@ -54,6 +56,7 @@ export default async function ToolPage({
   if (!tool) notFound();
 
   const otherTools = tools.filter((t) => t.slug !== tool.slug);
+  const pillar = getToolContent(tool.slug);
 
   const appSchema = {
     "@context": "https://schema.org",
@@ -89,7 +92,16 @@ export default async function ToolPage({
             {tool.slug === "heat-pump-vs-furnace" ? <HeatPumpVsFurnace /> : null}
             {tool.slug === "hvac-quote-analyzer" ? <QuoteAnalyzer /> : null}
             {tool.slug === "minnesota-hvac-rebate-checker" ? <RebateChecker /> : null}
-            <KitCapture source={`tool-${tool.slug}`} className="mt-8" />
+          </div>
+        </Container>
+      </section>
+
+      {pillar ? <ToolPillar tool={tool} content={pillar} /> : null}
+
+      <section className="bg-white pb-14 lg:pb-16">
+        <Container>
+          <div className="mx-auto max-w-3xl">
+            <KitCapture source={`tool-${tool.slug}`} />
           </div>
         </Container>
       </section>

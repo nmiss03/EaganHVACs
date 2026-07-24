@@ -424,6 +424,7 @@ export const articles: readonly Article[] = [
     ],
     related: ["furnace-repair-cost", "minnesota-hvac-maintenance-calendar", "hvac-cost-guide-minnesota"],
     relatedServices: ["furnace-repair", "emergency-hvac"],
+    relatedTools: ["repair-or-replace", "system-lifespan", "hvac-cost-estimator"],
   },
   {
     slug: "furnace-replacement-cost",
