@@ -6,11 +6,12 @@ import { CTABand } from "@/components/landing/CTABand";
 import { FaqList } from "@/components/landing/FaqList";
 import { StickyToc } from "@/components/cityguide/StickyToc";
 import { KitCapture } from "@/components/sections/KitCapture";
+import { Callout } from "@/components/ui/Callout";
 import { Container } from "@/components/ui/Container";
-import { Icon, type IconName } from "@/components/ui/Icon";
+import { Icon } from "@/components/ui/Icon";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { ResearchSnapshot } from "@/components/ui/ResearchSnapshot";
-import { articles, getArticle, type ArticleSection } from "@/lib/articles";
+import { articles, getArticle } from "@/lib/articles";
 import { renderInline } from "@/lib/render-inline";
 import { absoluteUrl, getServiceDetail } from "@/lib/content";
 import { site } from "@/lib/site";
@@ -23,26 +24,6 @@ export function generateStaticParams() {
 const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-const callouts: Record<
-  NonNullable<ArticleSection["callout"]>["tone"],
-  { wrap: string; icon: IconName; iconColor: string }
-> = {
-  tip: {
-    wrap: "border-accent-200 bg-accent-50/60",
-    icon: "sparkles",
-    iconColor: "text-accent-600",
-  },
-  warning: {
-    wrap: "border-red-200 bg-red-50/60",
-    icon: "bolt",
-    iconColor: "text-red-600",
-  },
-  note: {
-    wrap: "border-navy-200 bg-navy-50",
-    icon: "clipboard",
-    iconColor: "text-navy-600",
-  },
-};
 
 export async function generateMetadata({
   params,
@@ -254,24 +235,13 @@ export default async function ArticlePage({
                     />
                   ) : null}
                   {section.callout ? (
-                    <div
-                      className={`mt-5 flex gap-3.5 rounded-xl border p-5 ${callouts[section.callout.tone].wrap}`}
+                    <Callout
+                      tone={section.callout.tone}
+                      title={section.callout.title}
+                      className="mt-5"
                     >
-                      <Icon
-                        name={callouts[section.callout.tone].icon}
-                        className={`mt-0.5 h-5 w-5 shrink-0 ${callouts[section.callout.tone].iconColor}`}
-                      />
-                      <div>
-                        {section.callout.title ? (
-                          <p className="font-display text-sm font-bold text-navy-900">
-                            {section.callout.title}
-                          </p>
-                        ) : null}
-                        <p className="text-[15px] leading-relaxed text-slate-700">
-                          {renderInline(section.callout.text)}
-                        </p>
-                      </div>
-                    </div>
+                      {renderInline(section.callout.text)}
+                    </Callout>
                   ) : null}
                 </section>
               ))}

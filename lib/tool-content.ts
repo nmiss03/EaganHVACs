@@ -45,6 +45,17 @@ export interface ToolContent {
   relatedTools: string[];
   /** When true, the renderer surfaces a rebate cross-link. */
   relatedRebates?: boolean;
+  /**
+   * Optional at-a-glance range visualization (shared-scale cost bands),
+   * rendered near the top of the pillar. Only presents figures the page's
+   * prose already states — a visual summary, not new data.
+   */
+  costSnapshot?: {
+    title: string;
+    note?: string;
+    scaleMax: number;
+    bars: { label: string; low: number; high: number }[];
+  };
 }
 
 export const toolContent: Record<string, ToolContent> = {
@@ -135,6 +146,17 @@ export const toolContent: Record<string, ToolContent> = {
     ],
     relatedTools: ["hvac-quote-analyzer", "minnesota-hvac-rebate-checker", "hvac-financing-calculator", "heat-pump-vs-furnace"],
     relatedRebates: true,
+    costSnapshot: {
+      title: "Typical Twin Cities installed ranges",
+      note: "Before rebates. Bars share one scale, so you can compare systems at a glance.",
+      scaleMax: 18000,
+      bars: [
+        { label: "Furnace", low: 4000, high: 9000 },
+        { label: "Central AC", low: 4500, high: 9500 },
+        { label: "Furnace + AC together", low: 8000, high: 16500 },
+        { label: "Cold-climate heat pump", low: 8000, high: 18000 },
+      ],
+    },
   },
 
   "repair-or-replace": {

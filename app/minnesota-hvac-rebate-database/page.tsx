@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/landing/Breadcrumbs";
 import { DatasetTrustPanel } from "@/components/data/DatasetTrustPanel";
 import { RebateTable } from "@/components/data/RebateTable";
+import { Callout } from "@/components/ui/Callout";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { getRebateDataset, datasetJsonLd } from "@/lib/datasets";
@@ -59,22 +60,14 @@ export default function RebateDatabasePage() {
       <section className="bg-white pt-10 lg:pt-14">
         <Container>
           <div className="mx-auto max-w-3xl">
-            <div className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50/60 p-5">
-              <Icon name="bolt" className="mt-0.5 h-5 w-5 shrink-0 text-red-600" strokeWidth={2.4} />
-              <div>
-                <p className="font-display text-base font-bold text-navy-900">
-                  Important 2026 update: the federal HVAC tax credit has expired
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                  The federal Energy Efficient Home Improvement Credit (25C) — which offered up to
-                  $2,000 toward a qualifying heat pump — was ended early by 2025 legislation and is{" "}
-                  <strong>no longer available for equipment placed in service after December 31, 2025</strong>.
-                  If you installed qualifying equipment on or before that date, you may still claim it
-                  on your 2025 federal return; a tax professional can confirm. For 2026 projects, focus
-                  on the Minnesota utility rebates below and watch for the pending state program.
-                </p>
-              </div>
-            </div>
+            <Callout tone="warning" title="Important 2026 update: the federal HVAC tax credit has expired">
+              The federal Energy Efficient Home Improvement Credit (25C) — which offered up to
+              $2,000 toward a qualifying heat pump — was ended early by 2025 legislation and is{" "}
+              <strong>no longer available for equipment placed in service after December 31, 2025</strong>.
+              If you installed qualifying equipment on or before that date, you may still claim it
+              on your 2025 federal return; a tax professional can confirm. For 2026 projects, focus
+              on the Minnesota utility rebates below and watch for the pending state program.
+            </Callout>
           </div>
         </Container>
       </section>

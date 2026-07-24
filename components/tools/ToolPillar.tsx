@@ -5,6 +5,7 @@ import { FaqList } from "@/components/landing/FaqList";
 import { Icon } from "@/components/ui/Icon";
 import { StickyToc, type TocSection } from "@/components/cityguide/StickyToc";
 import { ResearchSnapshot } from "@/components/ui/ResearchSnapshot";
+import { RangeBar } from "@/components/ui/RangeBar";
 import { renderInline } from "@/lib/render-inline";
 import { getTool, type ToolMeta } from "@/lib/tools";
 import type { ToolContent } from "@/lib/tool-content";
@@ -72,6 +73,29 @@ export function ToolPillar({ tool, content }: { tool: ToolMeta; content: ToolCon
         <Container>
           <div className="mx-auto max-w-3xl">
             <ResearchSnapshot updated={tool.updated} className="mb-10" />
+
+            {content.costSnapshot ? (
+              <figure className="mb-10 rounded-xl border border-navy-900/[0.08] bg-white p-5 shadow-card sm:p-6">
+                <figcaption className="font-display text-base font-bold text-navy-900">
+                  {content.costSnapshot.title}
+                </figcaption>
+                {content.costSnapshot.note ? (
+                  <p className="mt-1 text-xs text-slate-500">{content.costSnapshot.note}</p>
+                ) : null}
+                <div className="mt-4 space-y-3.5">
+                  {content.costSnapshot.bars.map((b) => (
+                    <RangeBar
+                      key={b.label}
+                      label={b.label}
+                      low={b.low}
+                      high={b.high}
+                      scaleMax={content.costSnapshot!.scaleMax}
+                    />
+                  ))}
+                </div>
+              </figure>
+            ) : null}
+
             <Heading id="overview">Overview</Heading>
             <Prose paragraphs={content.overview} />
 
