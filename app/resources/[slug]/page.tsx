@@ -6,6 +6,7 @@ import { CTABand } from "@/components/landing/CTABand";
 import { FaqList } from "@/components/landing/FaqList";
 import { StickyToc } from "@/components/cityguide/StickyToc";
 import { KitCapture } from "@/components/sections/KitCapture";
+import { ToolCard } from "@/components/tools/ToolCard";
 import { Callout } from "@/components/ui/Callout";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
@@ -144,6 +145,10 @@ export default async function ArticlePage({
                 </div>
               ) : null}
 
+              {relatedTools[0] ? (
+                <ToolCard tool={relatedTools[0]} featured className="mt-8" />
+              ) : null}
+
               {article.sections.map((section) => (
                 <section
                   key={section.heading}
@@ -248,23 +253,16 @@ export default async function ArticlePage({
 
               {/* Inline: related interactive tools */}
               {relatedTools.length > 0 ? (
-                <div className="mt-12 rounded-xl border border-accent-200 bg-accent-50/50 p-6">
+                <div className="mt-12">
                   <p className="font-display text-lg font-bold text-navy-900">
-                    Try the interactive version
+                    Turn this guide into your own numbers
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    Turn this guide into a personalized answer in seconds.
+                    Free interactive tools that personalize everything above in seconds.
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-3">
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2">
                     {relatedTools.map((t) => (
-                      <Link
-                        key={t.slug}
-                        href={`/tools/${t.slug}`}
-                        className="inline-flex items-center gap-1.5 rounded-xl bg-navy-900 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
-                      >
-                        <Icon name={t.icon} className="h-4 w-4 text-accent-400" />
-                        {t.title}
-                      </Link>
+                      <ToolCard key={t.slug} tool={t} />
                     ))}
                   </div>
                 </div>

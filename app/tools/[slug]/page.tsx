@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/landing/Breadcrumbs";
 import { CTABand } from "@/components/landing/CTABand";
 import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
-import { Icon } from "@/components/ui/Icon";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { ToolCard } from "@/components/tools/ToolCard";
 import { site } from "@/lib/site";
 import { CostEstimator } from "@/components/tools/CostEstimator";
 import { FinancingCalculator } from "@/components/tools/FinancingCalculator";
@@ -110,17 +109,7 @@ export default async function ToolPage({
             <SectionTitle eyebrow="More tools" title="Keep exploring" />
             <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-2">
               {otherTools.map((t) => (
-                <Link
-                  key={t.slug}
-                  href={`/tools/${t.slug}`}
-                  className="group flex items-center gap-4 rounded-xl border border-navy-900/[0.07] bg-white p-5 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
-                >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-900/[0.05] text-navy-800 transition-colors group-hover:bg-navy-900 group-hover:text-accent-400">
-                    <Icon name={t.icon} className="h-5 w-5" />
-                  </span>
-                  <span className="font-display text-sm font-bold text-navy-900">{t.title}</span>
-                  <Icon name="arrowRight" className="ml-auto h-4 w-4 text-navy-300 transition-transform group-hover:translate-x-1" />
-                </Link>
+                <ToolCard key={t.slug} tool={t} />
               ))}
             </div>
           </Container>
