@@ -8,6 +8,7 @@ import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { ResearchSnapshot } from "@/components/ui/ResearchSnapshot";
 import { absoluteUrl, getServiceDetail, allServiceDetails } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -78,6 +79,9 @@ export default async function ServiceDetailPage({
       {/* Signs you need this service */}
       <section className="bg-white py-16 lg:py-20">
         <Container>
+          <div className="mx-auto mb-12 max-w-4xl">
+            <ResearchSnapshot updated="July 2026" />
+          </div>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <SectionTitle
