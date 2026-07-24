@@ -9,6 +9,8 @@ import { ServiceArea } from "@/components/sections/ServiceArea";
 import { ServicesStrip } from "@/components/sections/ServicesStrip";
 import { TrustSection } from "@/components/sections/TrustSection";
 import { TwoPaths } from "@/components/sections/TwoPaths";
+import { KitCapture } from "@/components/sections/KitCapture";
+import { Container } from "@/components/ui/Container";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
@@ -23,6 +25,13 @@ export default function HomePage() {
       <TwoPaths />
       <FeaturedTools />
       <FeaturedResources />
+      <section className="bg-white py-14 lg:py-16">
+        <Container>
+          <div className="mx-auto max-w-3xl">
+            <KitCapture source="home" />
+          </div>
+        </Container>
+      </section>
       <HowItWorks />
       <TrustSection />
       <ServiceArea />

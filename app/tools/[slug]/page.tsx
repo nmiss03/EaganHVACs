@@ -16,6 +16,7 @@ import { LifespanCalculator } from "@/components/tools/LifespanCalculator";
 import { QuoteAnalyzer } from "@/components/tools/QuoteAnalyzer";
 import { RebateChecker } from "@/components/tools/RebateChecker";
 import { RepairReplaceCalculator } from "@/components/tools/RepairReplaceCalculator";
+import { KitCapture } from "@/components/sections/KitCapture";
 import { absoluteUrl } from "@/lib/content";
 import { getTool, tools } from "@/lib/tools";
 
@@ -88,6 +89,7 @@ export default async function ToolPage({
             {tool.slug === "heat-pump-vs-furnace" ? <HeatPumpVsFurnace /> : null}
             {tool.slug === "hvac-quote-analyzer" ? <QuoteAnalyzer /> : null}
             {tool.slug === "minnesota-hvac-rebate-checker" ? <RebateChecker /> : null}
+            <KitCapture source={`tool-${tool.slug}`} className="mt-8" />
           </div>
         </Container>
       </section>

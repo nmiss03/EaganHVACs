@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/landing/Breadcrumbs";
 import { CTABand } from "@/components/landing/CTABand";
 import { FaqList } from "@/components/landing/FaqList";
 import { StickyToc } from "@/components/cityguide/StickyToc";
+import { KitCapture } from "@/components/sections/KitCapture";
 import { Container } from "@/components/ui/Container";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
@@ -326,6 +327,8 @@ export default async function ArticlePage({
                   ))}
                 </div>
               </div>
+
+              <KitCapture source={`article-${article.slug}`} className="mt-8" />
             </div>
           </Container>
         </div>
