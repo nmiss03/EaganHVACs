@@ -1,7 +1,6 @@
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
-import { site } from "@/lib/site";
 
 /** Reusable conversion band for the bottom of landing pages. */
 export function CTABand({ heading, sub }: { heading: string; sub: string }) {
@@ -21,13 +20,13 @@ export function CTABand({ heading, sub }: { heading: string; sub: string }) {
               {sub}
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <ButtonLink href="/#inquiry" size="lg">
-                Get a Free Quote
+              <ButtonLink href="/minnesota-hvac-buyers-kit" size="lg">
+                Get the Free Buyer&rsquo;s Kit
                 <Icon name="arrowRight" className="h-5 w-5" />
               </ButtonLink>
-              <ButtonLink href={site.phoneHref} variant="ghost" size="lg">
-                <Icon name="phone" className="h-5 w-5 text-accent-400" />
-                {site.phone}
+              <ButtonLink href="/tools" variant="ghost" size="lg">
+                <Icon name="gauge" className="h-5 w-5 text-accent-400" />
+                Browse the free tools
               </ButtonLink>
             </div>
           </div>

@@ -401,7 +401,7 @@ export const articles: readonly Article[] = [
           "You've done all seven checks and still have no heat",
         ],
         paragraphs: [
-          "In sub-zero weather, no heat is an emergency — pipes can freeze within hours. Contractors in our network run [24/7 emergency service](/services/emergency-hvac) across the south metro, and an after-hours call costs far less than a burst pipe. If your furnace is aging and no-heat calls are becoming routine, it may be time to [weigh repair against replacement](/tools/repair-or-replace).",
+          "In sub-zero weather, no heat is an emergency — pipes can freeze within hours. Most Twin Cities HVAC companies run [24/7 emergency service](/services/emergency-hvac), and an after-hours call costs far less than a burst pipe. If your furnace is aging and no-heat calls are becoming routine, it may be time to [weigh repair against replacement](/tools/repair-or-replace).",
         ],
       },
     ],
@@ -419,7 +419,7 @@ export const articles: readonly Article[] = [
       {
         question: "How fast can someone come for no heat?",
         answer:
-          "For no-heat emergencies in winter, contractors in our network offer same-day and 24/7 dispatch across Eagan and the south metro — most homeowners get a callback within the hour.",
+          "For no-heat emergencies in winter, most Twin Cities HVAC companies offer same-day and 24/7 service — call a licensed local contractor directly and they'll prioritize getting a technician to you.",
       },
     ],
     related: ["furnace-repair-cost", "minnesota-hvac-maintenance-calendar", "hvac-cost-guide-minnesota"],
@@ -980,7 +980,7 @@ export const articles: readonly Article[] = [
       {
         question: "How fast can someone fix a no-heat furnace?",
         answer:
-          "For no-heat emergencies in winter, contractors in our network offer same-day and 24/7 service across Eagan and the south metro. Common parts like ignitors and flame sensors are usually carried on the truck for on-the-spot repairs.",
+          "For no-heat emergencies in winter, most Twin Cities HVAC companies offer same-day and 24/7 service. Common parts like ignitors and flame sensors are usually carried on the truck for on-the-spot repairs — ask when you call.",
       },
     ],
     related: ["furnace-not-working-troubleshooting", "furnace-replacement-cost", "hvac-cost-guide-minnesota"],

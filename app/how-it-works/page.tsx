@@ -17,50 +17,50 @@ export const metadata: Metadata = {
 
 const steps: { icon: IconName; title: string; body: string }[] = [
   {
-    icon: "clipboard",
-    title: "1. Tell us what you need",
-    body: "Answer a few quick questions about your home and the issue — a broken furnace, an aging AC, a new system, or just a tune-up. It takes about a minute, and there's no cost.",
+    icon: "gauge",
+    title: "1. Start with the free tools",
+    body: "Estimate your project cost, check how much life your system has left, run the repair-vs-replace numbers, or score a quote — in about a minute, with no signup.",
   },
   {
-    icon: "shield",
-    title: "2. We match you with vetted local pros",
-    body: "We connect your request with independent, licensed HVAC contractors in our network who serve your city and handle your type of job — so you're not cold-calling strangers.",
+    icon: "clipboard",
+    title: "2. Learn what's fair",
+    body: "Read honest Minnesota cost guides, rebate breakdowns, and troubleshooting help so you understand the decision — and a fair price — before anyone quotes you.",
   },
   {
     icon: "phoneCall",
-    title: "3. You compare multiple quotes",
-    body: "Contractors reach out — usually within the hour during business hours — so you can compare pricing, timelines, and approaches side by side. You choose who to work with, if anyone.",
+    title: "3. Get and compare your own quotes",
+    body: "Contact two or three local contractors, get written quotes, and compare them side by side using our checklist and quote analyzer. You stay in control the whole way.",
   },
   {
     icon: "home",
-    title: "4. Your chosen pro does the work",
-    body: "The contractor you pick performs the work directly. We're not in the truck — our job is done once you've got quotes you trust and the information to choose confidently.",
+    title: "4. Hire with confidence",
+    body: "Choose the contractor and price that's right for your home and hire them directly. We're independent — we're not in the truck and we take no cut.",
   },
 ];
 
 const vetting: string[] = [
-  "Licensed for HVAC work in Minnesota",
-  "Carries current insurance",
-  "Established local presence in the communities they serve",
-  "Track record of professional, quality workmanship",
-  "Willing to provide upfront, itemized quotes",
+  "Is licensed for HVAC work in Minnesota — ask for the license number",
+  "Carries current liability insurance (and workers' comp for crews)",
+  "Has an established local presence and genuine, verifiable reviews",
+  "Provides an upfront, itemized written quote before any work begins",
+  "Runs a proper load calculation (Manual J) for a replacement, not a rule-of-thumb guess",
 ];
 
 const promises: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "dollar",
-    title: "Always free for homeowners",
-    body: "We never charge you for quotes or referrals. There's no fee to use the service and no obligation to hire anyone.",
+    title: "Always free, no signup",
+    body: "Every tool and guide is free, and the calculators never require a phone number or email. There's nothing to buy here.",
   },
   {
     icon: "shield",
-    title: "Your information is protected",
-    body: "We share your request only with the contractors matched to your job, so they can reach out about your project — never sold to unrelated third parties.",
+    title: "Your privacy is protected",
+    body: "The tools run in your browser. If you download a guide and share your email, we never sell it — and there's no spam.",
   },
   {
-    icon: "bolt",
-    title: "Fast, real responses",
-    body: "Most homeowners hear back within the hour during business hours, with same-day and 24/7 options available for genuine emergencies.",
+    icon: "badgeCheck",
+    title: "Genuinely unbiased",
+    body: "We don't sell equipment, install systems, or take contractor commissions, so we have no reason to steer you toward any product or company.",
   },
 ];
 
@@ -76,9 +76,9 @@ export default function HowItWorksPage() {
       <PageHero
         eyebrow="How It Works"
         icon="clipboard"
-        title="Compare Trusted Local HVAC Quotes — Free"
+        title="How to Make a Confident HVAC Decision"
         intro={[
-          `${site.name} is a free service that helps Twin Cities homeowners compare quotes from independent, licensed HVAC contractors. We don't perform the work ourselves — we save you the time and uncertainty of finding trustworthy pros and comparing your options.`,
+          `${site.name} is a free, independent resource for Twin Cities homeowners. We don't sell, install, or repair anything — we give you the tools, honest cost data, and guides to understand your options and hire the right local contractor yourself. Here's how to use it.`,
         ]}
       />
 
@@ -111,9 +111,9 @@ export default function HowItWorksPage() {
             <div>
               <SectionTitle
                 align="left"
-                eyebrow="Our standards"
-                title="How we choose the contractors in our network"
-                description="We're selective about who we send to your door. Every contractor in our network meets these standards:"
+                eyebrow="Vetting checklist"
+                title="How to vet an HVAC contractor yourself"
+                description="You hire the contractor directly, so vet them before you sign. Make sure whoever you choose:"
               />
             </div>
             <ul className="space-y-3.5">
@@ -150,11 +150,11 @@ export default function HowItWorksPage() {
           <div className="mx-auto mt-12 max-w-3xl rounded-xl border border-navy-900/[0.08] bg-slate-50 p-6 text-center">
             <p className="text-sm leading-relaxed text-slate-600">
               <strong className="text-navy-900">A note on how we operate:</strong>{" "}
-              {site.name} is a free matching and comparison service, not an HVAC
-              contractor. All heating and cooling work is performed by the independent,
-              licensed contractors in our network. We don&rsquo;t dispatch our own
-              technicians or perform installations — our role is to help you find and
-              compare trustworthy local pros with confidence.
+              {site.name} is an independent information resource, not an HVAC
+              contractor. We don&rsquo;t sell, install, or repair equipment, we don&rsquo;t
+              dispatch technicians, and we&rsquo;re not affiliated with any contractor. Our
+              only role is to give you the tools and honest information to make a smart
+              decision and hire a qualified local pro yourself.
             </p>
             <p className="mt-4 text-sm text-slate-600">
               Want the full picture?{" "}
@@ -171,8 +171,8 @@ export default function HowItWorksPage() {
       </section>
 
       <CTABand
-        heading="Ready to compare your options?"
-        sub="Tell us what you need and start comparing free quotes from vetted local HVAC contractors — no cost, no obligation."
+        heading="Ready to start?"
+        sub="Grab the free Buyer's Kit or jump into the tools — everything you need to plan your project and hire the right local contractor with confidence."
       />
     </>
   );

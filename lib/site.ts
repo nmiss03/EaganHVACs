@@ -3,9 +3,9 @@ import type { IconName } from "@/components/ui/Icon";
 export const site = {
   name: "Eagan HVACs",
   legalName: "Eagan HVACs",
-  tagline: "The Minnesota homeowner's HVAC platform — tools, costs, and trusted local quotes",
+  tagline: "The independent HVAC decision platform for Minnesota homeowners — tools, costs, and unbiased guides",
   description:
-    "Free HVAC tools, honest Minnesota cost guides, and side-by-side quotes from licensed local contractors. Eagan HVACs helps Twin Cities homeowners make smarter heating and cooling decisions.",
+    "Free HVAC tools, honest Minnesota cost data, and unbiased homeowner guides. Eagan HVACs is an independent resource — we don't sell, install, or repair anything — that helps Twin Cities homeowners understand costs, compare options, and hire the right local contractor with confidence.",
   // Canonical origin — must match the primary domain served by Vercel
   // (the apex eaganhvacs.com 308-redirects to www).
   url: "https://www.eaganhvacs.com",
@@ -30,7 +30,7 @@ export const navLinks = [
 
 export const trustBadges: ReadonlyArray<{ icon: IconName; label: string }> = [
   { icon: "dollar", label: "100% Free for Homeowners" },
-  { icon: "shield", label: "Licensed & Insured Contractor Network" },
+  { icon: "shield", label: "Independent & Unbiased" },
   { icon: "sparkles", label: "Free Planning Tools & Cost Guides" },
   { icon: "mapPin", label: "Built for Minnesota Homes" },
 ];
@@ -49,48 +49,48 @@ export const services: readonly Service[] = [
     icon: "snowflake",
     title: "AC Repair & Service",
     description:
-      "Fast diagnosis and repair when your air conditioning quits in the middle of a Minnesota heat wave.",
-    features: ["Same-day appointments", "All makes & models", "Upfront estimates"],
+      "What a failed air conditioner usually needs during a Minnesota heat wave — and what a fair repair should cost.",
+    features: ["Common failure causes", "Typical repair costs", "Repair-vs-replace signs"],
   },
   {
     slug: "furnace-repair",
     icon: "flame",
     title: "Furnace & Heating Repair",
     description:
-      "Keep your home safe and warm through the coldest nights with dependable furnace and boiler repair.",
-    features: ["No-heat priority service", "Safety inspections", "Honest recommendations"],
+      "How to tell what's wrong when the heat quits, and what qualified contractors typically charge to fix it.",
+    features: ["Common no-heat causes", "Safety red flags", "Repair-vs-replace math"],
   },
   {
     slug: "installation-replacement",
     icon: "gauge",
     title: "Installation & Replacement",
     description:
-      "Right-sized, high-efficiency systems installed correctly the first time — with financing-friendly options.",
-    features: ["Free replacement quotes", "Energy-efficient systems", "Rebate guidance"],
+      "What a right-sized, high-efficiency install should include — so you can judge any replacement quote you receive.",
+    features: ["Proper sizing (Manual J)", "Efficiency & rebates", "What a fair quote covers"],
   },
   {
     slug: "maintenance-tune-ups",
     icon: "wrench",
     title: "Maintenance & Tune-Ups",
     description:
-      "Seasonal tune-ups that extend equipment life, lower utility bills, and catch small issues early.",
-    features: ["Spring AC tune-ups", "Fall furnace checks", "Multi-point inspections"],
+      "What a real tune-up actually covers, and when seasonal maintenance is genuinely worth paying for.",
+    features: ["What's included", "Spring vs. fall timing", "Warranty protection"],
   },
   {
     slug: "indoor-air-quality",
     icon: "wind",
     title: "Indoor Air Quality",
     description:
-      "Breathe easier with duct cleaning, whole-home humidifiers, and high-performance filtration.",
-    features: ["Duct cleaning", "Humidifiers & dehumidifiers", "Air purification"],
+      "Duct cleaning, humidifiers, and filtration — what genuinely helps a Minnesota home and what's oversold.",
+    features: ["What actually works", "Humidity control", "Filtration basics"],
   },
   {
     slug: "emergency-hvac",
     icon: "bolt",
-    title: "24/7 Emergency Service",
+    title: "Emergency HVAC Help",
     description:
-      "No heat at 2 AM in January? A local pro is on call around the clock for urgent HVAC failures.",
-    features: ["Nights & weekends", "Rapid dispatch", "Real local technicians"],
+      "No heat at 2 AM in January? What to do first, the safety steps that matter, and how emergency pricing works.",
+    features: ["What counts as an emergency", "Safety first steps", "After-hours pricing"],
   },
 ];
 
@@ -102,28 +102,28 @@ export interface WhyUsItem {
 
 export const whyUs: readonly WhyUsItem[] = [
   {
+    icon: "shield",
+    title: "Independent & Unbiased",
+    description:
+      "We don't sell equipment, install systems, or take contractor commissions — so our tools and guides just tell you the truth about your options.",
+  },
+  {
+    icon: "mapPin",
+    title: "Real Minnesota Numbers",
+    description:
+      "Cost ranges, rebates, and advice tuned to Twin Cities homes, climate, and utilities — not vague national averages.",
+  },
+  {
+    icon: "gauge",
+    title: "Free Decision Tools",
+    description:
+      "Estimate costs, check system lifespan, run repair-vs-replace, and analyze a quote — in under a minute, with no signup.",
+  },
+  {
     icon: "badgeCheck",
-    title: "Vetted Local Contractors",
+    title: "Know Before You Hire",
     description:
-      "Every contractor we work with is local to the south metro, background-checked, and held to a high standard of workmanship.",
-  },
-  {
-    icon: "bolt",
-    title: "Fast Response Times",
-    description:
-      "Minnesota weather doesn't wait, and neither do we. Most inquiries get a callback within the hour during business hours.",
-  },
-  {
-    icon: "dollar",
-    title: "Upfront, Honest Pricing",
-    description:
-      "Clear estimates before any work begins. No surprise fees, no pressure tactics — just straightforward answers.",
-  },
-  {
-    icon: "home",
-    title: "Neighbors, Not a Call Center",
-    description:
-      "We live here too. When you reach out, you're talking to people who know Eagan's homes, weather, and neighborhoods.",
+      "Walk into every quote already knowing the fair price range and the exact questions to ask, so you can choose a contractor with confidence.",
   },
 ];
 
@@ -148,15 +148,15 @@ export const steps: readonly Step[] = [
   },
   {
     icon: "badgeCheck",
-    title: "Compare Licensed Local Pros",
+    title: "Compare Quotes Like a Pro",
     description:
-      "When you're ready, request quotes from vetted, licensed contractors near you and compare them side by side — free, no obligation.",
+      "When you're ready, gather written quotes from local contractors you choose and compare them side by side using our checklist — so you can spot the fair one.",
   },
   {
     icon: "check",
-    title: "Choose With Confidence",
+    title: "Hire With Confidence",
     description:
-      "Pick the contractor and price that's right for your home. The work is done by the pro you choose — we're here to make choosing easy.",
+      "Pick the contractor and price that's right for your home and hire them directly. We're independent — we just make the decision easy.",
   },
 ];
 
@@ -167,24 +167,24 @@ export interface Faq {
 
 export const faqs: readonly Faq[] = [
   {
-    question: "How quickly can someone come out?",
+    question: "How fast can I get HVAC help in an emergency?",
     answer:
-      "For emergencies like no heat in winter or no cooling during a heat wave, contractors in our network offer same-day and 24/7 emergency service. For routine repairs and tune-ups, most appointments are available within 1–2 business days.",
+      "For a no-heat or no-cooling emergency, most Twin Cities HVAC companies offer same-day and 24/7 service — call a licensed local contractor directly and they'll prioritize it. For routine repairs and tune-ups, appointments are usually available within 1–2 business days.",
   },
   {
-    question: "Do you charge for estimates?",
+    question: "Are HVAC estimates free?",
     answer:
-      "Estimates for system replacements and new installations are free. For repair visits, most contractors charge a standard diagnostic fee, which is quoted upfront and often applied toward the cost of the repair.",
+      "Estimates for new installations and replacements are typically free from most contractors. Repair visits usually carry a diagnostic fee, quoted upfront and often applied toward the repair. Everything on Eagan HVACs — the tools, guides, and cost data — is always 100% free.",
   },
   {
-    question: "What areas do you serve?",
+    question: "What areas does Eagan HVACs cover?",
     answer:
-      "We serve Eagan and the surrounding south metro communities, including Apple Valley, Burnsville, Rosemount, Inver Grove Heights, Mendota Heights, Lakeville, and nearby neighborhoods.",
+      "Our guides, tools, and cost data focus on Eagan and the surrounding south metro — Apple Valley, Burnsville, Rosemount, Inver Grove Heights, Mendota Heights, Lakeville, and nearby cities — where local pricing, rebates, and permit rules apply.",
   },
   {
-    question: "Are the contractors licensed and insured?",
+    question: "How do I know an HVAC contractor is licensed and insured?",
     answer:
-      "Yes. Every contractor in our network is licensed, insured, and vetted for quality workmanship and professionalism before we ever send them to a homeowner's door.",
+      "In Minnesota, ask any contractor for their state license number and current proof of insurance before work begins, and confirm the license on the state's licensing lookup. Our contractor-questions guide walks you through exactly what to verify.",
   },
   {
     question: "My furnace is 15+ years old. Should I repair or replace it?",
@@ -192,9 +192,9 @@ export const faqs: readonly Faq[] = [
       "It depends on the repair cost, the system's condition, and your energy bills. A good rule of thumb: if the repair costs more than a third of a new system and your furnace is past 15 years, replacement usually makes more financial sense. A technician can walk you through both options with real numbers — no pressure.",
   },
   {
-    question: "Do you offer financing for new systems?",
+    question: "Is financing available for new HVAC systems?",
     answer:
-      "Many contractors in our network offer flexible financing options for new installations and replacements, along with guidance on utility rebates and energy-efficiency incentives available to Minnesota homeowners.",
+      "Many HVAC contractors offer financing on new installations, and Minnesota utility rebates (Xcel Energy, CenterPoint Energy) plus the federal 25C tax credit can meaningfully lower the cost. Our rebates guide and financing calculator help you plan what a new system will actually cost per month.",
   },
 ];
 

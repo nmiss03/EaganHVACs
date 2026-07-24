@@ -23,9 +23,9 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-navy-100/70">
-              Connecting Eagan homeowners with trusted local heating and cooling
-              professionals — fast response, honest pricing, and comfort you can
-              count on all year long.
+              An independent HVAC decision resource for Minnesota homeowners —
+              free tools, honest cost data, and unbiased guides to help you plan
+              your project and hire the right local contractor.
             </p>
             <div className="mt-6 space-y-3 text-sm">
               <a
@@ -66,10 +66,10 @@ export function Footer() {
               ))}
               <li>
                 <Link
-                  href="/#inquiry"
+                  href="/minnesota-hvac-buyers-kit"
                   className="text-navy-100/70 transition-colors hover:text-accent-300"
                 >
-                  Get a Quote
+                  Buyer&rsquo;s Kit
                 </Link>
               </li>
             </ul>
@@ -113,10 +113,12 @@ export function Footer() {
         </div>
 
         <p className="mt-12 border-t border-white/10 pt-8 text-xs leading-relaxed text-navy-100/70">
-          {site.name} is a free service that helps homeowners compare and
-          connect with independent, licensed HVAC contractors. All heating and
-          cooling work is performed by the contractors in our network — not by{" "}
-          {site.name}. We never charge homeowners for quotes or referrals.
+          {site.name} is an independent information resource for Minnesota
+          homeowners. We publish HVAC cost data, free tools, and educational
+          guides — we do not sell, install, or repair equipment, and we are not
+          a contractor or affiliated with any contractor. Cost figures are
+          estimates; always get written quotes and verify a contractor&rsquo;s
+          Minnesota license and insurance before hiring.
         </p>
         <div className="mt-6 flex flex-col items-center justify-between gap-4 text-sm text-navy-100/60 sm:flex-row">
           <p>

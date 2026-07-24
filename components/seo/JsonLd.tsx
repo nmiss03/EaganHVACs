@@ -1,57 +1,49 @@
-import { locations } from "@/lib/content";
 import { faqs, site } from "@/lib/site";
 
-/** E.164 telephone from the tel: href, e.g. "+16124245423". */
-const telephoneE164 = site.phoneHref.replace("tel:", "");
-
 /**
- * LocalBusiness + FAQPage structured data for local-search visibility.
+ * Organization + WebSite + FAQPage structured data.
+ *
+ * EaganHVACs is an independent information publisher — NOT an HVAC
+ * contractor — so the entity is modeled as an Organization/publisher, with
+ * no LocalBusiness/HVACBusiness type, no opening hours, no service-area
+ * dispatch, and no physical office coordinates.
  */
 export function JsonLd() {
-  const business = {
+  const organization = {
     "@context": "https://schema.org",
-    "@type": "HVACBusiness",
-    "@id": `${site.url}/#business`,
+    "@type": "Organization",
+    "@id": `${site.url}/#organization`,
     name: site.name,
-    description: site.description,
     url: site.url,
-    telephone: telephoneE164,
-    email: site.email,
-    priceRange: "$$",
-    slogan: site.tagline,
-    foundingDate: "2026",
     logo: `${site.url}/icon.svg`,
-    image: `${site.url}/opengraph-image`,
+    description: site.description,
+    email: site.email,
+    foundingDate: "2026",
+    knowsAbout: [
+      "HVAC costs",
+      "furnace replacement",
+      "air conditioner replacement",
+      "heat pumps",
+      "Minnesota HVAC rebates",
+      "home heating and cooling decisions",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: telephoneE164,
       email: site.email,
-      contactType: "customer service",
-      areaServed: "US-MN",
+      contactType: "customer support",
+      availableLanguage: "English",
     },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: site.address.city,
-      addressRegion: site.address.state,
-      addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 44.8041,
-      longitude: -93.1669,
-    },
-    areaServed: locations.map((location) => ({
-      "@type": "City",
-      name: `${location.name}, MN`,
-    })),
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "07:00",
-        closes: "19:00",
-      },
-    ],
+  };
+
+  const webSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    name: site.name,
+    url: site.url,
+    inLanguage: "en-US",
+    description: site.description,
+    publisher: { "@id": `${site.url}/#organization` },
   };
 
   const faqPage = {
@@ -67,28 +59,19 @@ export function JsonLd() {
     })),
   };
 
-  const webSite = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${site.url}/#website`,
-    name: site.name,
-    url: site.url,
-    publisher: { "@id": `${site.url}/#business` },
-  };
-
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(business) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSite) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
       />
     </>
   );

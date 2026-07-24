@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { TrustBadge } from "@/components/ui/TrustBadge";
-import { site, trustBadges } from "@/lib/site";
+import { trustBadges } from "@/lib/site";
 
 interface PageHeroProps {
   eyebrow: string;
@@ -47,13 +47,13 @@ export function PageHero({ eyebrow, icon, title, intro }: PageHeroProps) {
             </p>
           ))}
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <ButtonLink href="/#inquiry" size="lg">
-              Get a Free Quote
+            <ButtonLink href="/minnesota-hvac-buyers-kit" size="lg">
+              Get the Free Buyer&rsquo;s Kit
               <Icon name="arrowRight" className="h-5 w-5" />
             </ButtonLink>
-            <ButtonLink href={site.phoneHref} variant="ghost" size="lg">
-              <Icon name="phone" className="h-5 w-5 text-accent-400" />
-              Call {site.phone}
+            <ButtonLink href="/tools" variant="ghost" size="lg">
+              <Icon name="gauge" className="h-5 w-5 text-accent-400" />
+              Browse the free tools
             </ButtonLink>
           </div>
           <ul className="mt-9 grid grid-cols-1 gap-x-6 gap-y-3 border-t border-white/10 pt-7 sm:grid-cols-2">

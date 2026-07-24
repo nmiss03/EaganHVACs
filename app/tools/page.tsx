@@ -62,7 +62,7 @@ export default function ToolsIndexPage() {
 
       <CTABand
         heading="Know your options? Compare local quotes."
-        sub="When you're ready, get free quotes from vetted local HVAC contractors — no pressure, no obligation."
+        sub="Every tool here is free and unbiased — use them to understand your options, then hire the right local contractor with confidence."
       />
     </>
   );

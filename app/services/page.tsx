@@ -29,7 +29,7 @@ export default function ServicesIndexPage() {
         icon="wrench"
         title="HVAC Services in Eagan, MN & the South Metro"
         intro={[
-          "Whatever your home's heating and cooling needs, we connect you with trusted local pros who get it done right. Explore our services below — each links to details, common signs you need it, and answers to the questions homeowners ask most.",
+          "Whatever your home's heating and cooling needs, understanding the service is the first step to hiring well. Explore each topic below — you'll find what the work involves, common signs you need it, fair-cost context, and answers to the questions homeowners ask most.",
         ]}
       />
 

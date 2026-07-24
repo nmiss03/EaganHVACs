@@ -19,22 +19,22 @@ const pillars: ReadonlyArray<{ icon: IconName; title: string; description: strin
       "Every calculator works without a phone number or email. Use them as many times as you like — that's the point.",
   },
   {
-    icon: "badgeCheck",
-    title: "A vetted, licensed network",
+    icon: "clipboard",
+    title: "Written for the decision",
     description:
-      "Contractors we connect you with are licensed, insured, and screened for workmanship before they ever reach your door.",
+      "Checklists, questions to ask, and repair-vs-replace math — the practical stuff you actually need before spending thousands.",
   },
   {
     icon: "shield",
     title: "Your privacy, protected",
     description:
-      "Your details go only to the contractor matched to your request — never sold to call lists. No spam, ever.",
+      "The tools run in your browser and never require a phone number. If you download a guide, we never sell your email — no spam, ever.",
   },
   {
     icon: "home",
     title: "Independent by design",
     description:
-      "We don't perform HVAC work, so we have no reason to upsell you. The contractors do the work; we help you choose well.",
+      "We don't sell, install, or repair anything, so we have no reason to upsell you. You hire the contractor directly — we just help you choose well.",
   },
   {
     icon: "mapPin",
@@ -82,7 +82,7 @@ export function TrustSection() {
             href="/how-it-works"
             className="inline-flex items-center gap-2 text-sm font-semibold text-navy-100 underline decoration-accent-400 decoration-2 underline-offset-4 transition-colors hover:text-accent-300"
           >
-            See exactly what happens after you request quotes
+            See how this platform helps you decide
             <Icon name="arrowRight" className="h-4 w-4" />
           </Link>
           <Link

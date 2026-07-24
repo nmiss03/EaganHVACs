@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
-import { site } from "@/lib/site";
 
 /** Routes the two homeowner mindsets — "something's wrong now" vs
  * "planning ahead" — to the right path immediately, near the top. */
@@ -22,24 +21,24 @@ export function TwoPaths() {
               </h2>
               <p className="mt-2 flex-1 text-[15px] leading-relaxed text-slate-600">
                 Furnace out, AC not cooling, or a strange noise you can&rsquo;t
-                ignore? Get matched with a licensed local pro and compare quotes
-                fast — 24/7 for real emergencies.
+                ignore? Figure out what&rsquo;s likely wrong and what a fair repair
+                costs — so you can call a local pro knowing what to expect.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/#inquiry"
+                  href="/resources/furnace-not-working-troubleshooting"
                   className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-accent-500 px-5 py-3 text-sm font-semibold text-navy-950 shadow-glow transition-colors hover:bg-accent-600"
                 >
-                  Compare Local Quotes
+                  Troubleshooting guides
                   <Icon name="arrowRight" className="h-4 w-4" />
                 </Link>
-                <a
-                  href={site.phoneHref}
+                <Link
+                  href="/tools/repair-or-replace"
                   className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-navy-900/15 bg-white px-5 py-3 text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-50"
                 >
-                  <Icon name="phone" className="h-4 w-4 text-accent-500" />
-                  Call now
-                </a>
+                  <Icon name="gauge" className="h-4 w-4 text-accent-500" />
+                  Repair or replace?
+                </Link>
               </div>
             </div>
           </Reveal>

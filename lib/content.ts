@@ -40,7 +40,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       "Furnace not heating? Get fast, honest furnace and heating repair in Eagan, MN and the south metro. Same-day and 24/7 emergency service from vetted local pros.",
     tagline: "No heat is an emergency in a Minnesota winter — and we treat it like one.",
     intro: [
-      "When your furnace quits on a sub-zero January night, you don't have time to wait days for a callback. Eagan HVACs connects you with trusted, licensed heating technicians across Eagan and the south metro who offer same-day and 24/7 emergency furnace repair for every make and model.",
+      "When your furnace quits on a sub-zero January night, you need to know what's wrong and what a fair fix costs before you call anyone. This guide covers the common causes of a no-heat furnace, what heating repairs typically run in the Twin Cities, and how to find a licensed local contractor who offers same-day and 24/7 emergency service for every make and model.",
       "From a furnace blowing cold air to short cycling, strange noises, a tripping limit switch, or a system that won't ignite at all, a local pro will diagnose the real problem, explain it in plain language, and give you an upfront price before any work begins — no scare tactics, no surprise fees.",
     ],
     signs: [
@@ -72,7 +72,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       {
         question: "How fast can someone repair my furnace?",
         answer:
-          "For no-heat emergencies during winter, contractors in our network offer same-day and 24/7 service across Eagan and the south metro. Most non-emergency repairs are scheduled within 1–2 business days.",
+          "For no-heat emergencies during winter, most Twin Cities HVAC companies offer same-day and 24/7 service — call a licensed local contractor directly and they'll prioritize it. Most non-emergency repairs are scheduled within 1–2 business days.",
       },
       {
         question: "Is it worth repairing an older furnace?",
@@ -96,7 +96,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       "AC not cooling? Get same-day air conditioning repair in Eagan, MN and nearby cities. Vetted local techs, all makes & models, upfront pricing. Call today.",
     tagline: "When a heat wave hits, a warm house gets miserable fast. We move quickly.",
     intro: [
-      "Minnesota summers swing from mild to sweltering in a matter of hours, and a failed air conditioner turns a comfortable home into a sauna. Eagan HVACs matches you with local, licensed AC technicians offering same-day service across Eagan and the surrounding communities.",
+      "Minnesota summers swing from mild to sweltering in a matter of hours, and a failed air conditioner turns a comfortable home into a sauna. This guide explains what usually goes wrong, what a fair AC repair costs in the Twin Cities, and how to find a licensed local contractor offering same-day service across Eagan and the surrounding communities.",
       "Whether your system is blowing warm air, leaking water, freezing up, tripping the breaker, or simply not turning on, a trusted pro will find the root cause — low refrigerant, a failed capacitor, a dirty coil, a bad compressor — and quote an honest price before starting any repair.",
     ],
     signs: [
@@ -121,14 +121,14 @@ export const serviceDetails: readonly ServiceDetail[] = [
       {
         title: "All makes and models",
         description:
-          "Carrier, Trane, Lennox, Goodman, Rheem, Amana and more — network techs service every major brand.",
+          "Carrier, Trane, Lennox, Goodman, Rheem, Amana and more — most local HVAC companies service every major brand, so brand alone rarely limits your choice of contractor.",
       },
     ],
     faqs: [
       {
         question: "Can you fix my AC the same day?",
         answer:
-          "In most cases yes. During summer, contractors in our network prioritize no-cooling calls across Eagan and the south metro and carry common parts for on-the-spot repairs.",
+          "In most cases yes. During summer, most Twin Cities HVAC companies prioritize no-cooling calls and carry common parts for on-the-spot repairs — ask about same-day availability when you call.",
       },
       {
         question: "Why is my AC running but not cooling?",
@@ -152,7 +152,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       "Replacing your furnace or AC in Eagan, MN? Get free quotes on right-sized, high-efficiency systems from vetted local installers. Financing and rebate guidance.",
     tagline: "A new system installed right the first time — sized for your home, not upsold.",
     intro: [
-      "A new furnace or air conditioner is a major investment, and the quality of the installation matters as much as the equipment itself. An oversized or poorly installed system wastes energy and wears out early. Eagan HVACs connects you with local installers who size systems correctly using a proper load calculation.",
+      "A new furnace or air conditioner is a major investment, and the quality of the installation matters as much as the equipment itself. An oversized or poorly installed system wastes energy and wears out early. This guide explains what a proper, right-sized installation should include — so you can tell whether a local installer's quote is doing it correctly with a real load calculation.",
       "You'll get free, no-obligation replacement quotes across Eagan and the south metro, guidance on high-efficiency options that lower your utility bills, and help navigating Minnesota utility rebates and financing so a new system fits your budget.",
     ],
     signs: [
@@ -194,7 +194,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       {
         question: "Are there rebates for high-efficiency systems in Minnesota?",
         answer:
-          "Yes. Xcel Energy and CenterPoint Energy offer rebates on qualifying high-efficiency furnaces and air conditioners, and installers in our network help you claim them.",
+          "Yes. Xcel Energy and CenterPoint Energy offer rebates on qualifying high-efficiency furnaces and air conditioners, and a good installer will help you claim them. Our Minnesota rebates guide and rebate checker show what typically applies.",
       },
     ],
   },
@@ -208,7 +208,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       "Seasonal furnace and AC tune-ups in Eagan, MN. Extend equipment life, cut energy bills, and catch small problems early with a multi-point inspection from local pros.",
     tagline: "The cheapest repair is the breakdown that never happens.",
     intro: [
-      "Regular maintenance is the single best way to avoid a surprise no-heat or no-cooling emergency. A seasonal tune-up keeps your system running efficiently, lowers your energy bills, and catches worn parts before they fail. Eagan HVACs connects you with local techs for spring AC and fall furnace tune-ups across the south metro.",
+      "Regular maintenance is the single best way to avoid a surprise no-heat or no-cooling emergency. A seasonal tune-up keeps your system running efficiently, lowers your energy bills, and catches worn parts before they fail. This guide explains what a real spring AC or fall furnace tune-up should cover — and how to tell a thorough one from a quick upsell visit.",
       "Most manufacturers also require documented annual maintenance to keep your warranty valid — so a yearly tune-up protects both your equipment and your coverage.",
     ],
     signs: [
@@ -264,7 +264,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       "Improve your home's air in Eagan, MN with duct cleaning, whole-home humidifiers, dehumidifiers, and air purification. Breathe easier with help from local HVAC pros.",
     tagline: "Minnesota homes stay sealed for months — the air inside should be clean.",
     intro: [
-      "Because our homes are closed up tight through long winters and humid summers, indoor air can end up several times more polluted than the air outside. Dust, allergens, dry winter air, and summer humidity all affect comfort and health. Eagan HVACs connects you with local pros who improve the air your family breathes.",
+      "Because our homes are closed up tight through long winters and humid summers, indoor air can end up several times more polluted than the air outside. Dust, allergens, dry winter air, and summer humidity all affect comfort and health. This guide covers the indoor-air-quality upgrades that genuinely help a Minnesota home — and how to judge what a contractor recommends.",
       "From duct cleaning and high-performance filtration to whole-home humidifiers that fight dry winter air and dehumidifiers that tame summer mugginess, a technician can recommend the right solution for your home across Eagan and the south metro.",
     ],
     signs: [
@@ -320,7 +320,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       "No heat or no cooling emergency in Eagan, MN? Get 24/7 emergency HVAC repair from local, licensed technicians. Nights, weekends, and holidays. Call now.",
     tagline: "Furnaces don't fail at convenient times. Neither do we.",
     intro: [
-      "HVAC emergencies rarely happen during business hours. A furnace that dies at 2 AM in January or an AC that quits during a July heat wave can't wait until Monday — especially with kids, older family members, or pets at home. Eagan HVACs connects you with local technicians on call around the clock.",
+      "HVAC emergencies rarely happen during business hours. A furnace that dies at 2 AM in January or an AC that quits during a July heat wave can't wait until Monday — especially with kids, older family members, or pets at home. This guide explains what counts as a true emergency, the safety steps to take first, and how after-hours pricing works so a late-night call doesn't mean getting overcharged.",
       "Whether it's a complete no-heat failure, a no-cooling emergency, a gas smell, or a system that's tripping the breaker, rapid dispatch gets a real, licensed local technician to your door fast — nights, weekends, and holidays across Eagan and the south metro.",
     ],
     signs: [
@@ -335,7 +335,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       {
         title: "Around-the-clock dispatch",
         description:
-          "Technicians are on call nights, weekends, and holidays for genuine heating and cooling emergencies.",
+          "Many local HVAC companies keep technicians on call nights, weekends, and holidays for genuine heating and cooling emergencies — worth confirming before you need it.",
       },
       {
         title: "Rapid local response",
@@ -357,7 +357,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       {
         question: "Do you really answer calls at night and on weekends?",
         answer:
-          "Yes. Contractors in our network keep technicians on call 24/7, including nights, weekends, and holidays, for real heating and cooling emergencies across Eagan and nearby cities.",
+          "Many do. A number of Twin Cities HVAC companies keep technicians on call 24/7 — including nights, weekends, and holidays — for real heating and cooling emergencies. Look for one that advertises genuine 24/7 dispatch before an emergency strikes.",
       },
       {
         question: "I smell gas near my furnace — what should I do?",
@@ -379,8 +379,8 @@ export const extraServiceDetails: readonly ServiceDetail[] = [
       "Heat pump repair and cold-climate heat pump installation in Eagan, MN. Dual-fuel systems, rebate guidance, and honest advice from vetted local pros.",
     tagline: "Modern cold-climate heat pumps heat Minnesota homes — when they're set up right.",
     intro: [
-      "Heat pumps have come a long way: today's cold-climate models heat efficiently well below zero, and paired with a furnace in a dual-fuel setup they can cut heating costs significantly. But they only perform when they're sized, installed, and configured correctly for Minnesota winters — which is where a vetted local pro matters.",
-      "Whether your existing heat pump is icing up, stuck on auxiliary heat, or you're weighing a new cold-climate system for the rebates, Eagan HVACs connects you with technicians across Eagan and the south metro who work on heat pumps every week — not as an afterthought.",
+      "Heat pumps have come a long way: today's cold-climate models heat efficiently well below zero, and paired with a furnace in a dual-fuel setup they can cut heating costs significantly. But they only perform when they're sized, installed, and configured correctly for Minnesota winters — which is why choosing an experienced local installer matters so much.",
+      "Whether your existing heat pump is icing up, stuck on auxiliary heat, or you're weighing a new cold-climate system for the rebates, this guide helps you understand the technology and choose a contractor who works on heat pumps every week — not as an afterthought.",
     ],
     signs: [
       "Outdoor unit stays iced over beyond normal defrost cycles",
@@ -404,7 +404,7 @@ export const extraServiceDetails: readonly ServiceDetail[] = [
       {
         title: "Rebate & incentive guidance",
         description:
-          "Cold-climate heat pumps qualify for significant utility and federal incentives — installers help you capture them.",
+          "Cold-climate heat pumps qualify for significant utility and federal incentives — a good installer will help you capture them, and our rebates guide shows what typically applies.",
       },
     ],
     faqs: [
@@ -436,7 +436,7 @@ export const extraServiceDetails: readonly ServiceDetail[] = [
     tagline: "The $200 upgrade that pays for itself — when it's wired and configured right.",
     intro: [
       "A smart thermostat is one of the cheapest ways to cut heating and cooling costs — typically saving around 8% on energy bills through smarter schedules and occupancy sensing. But Minnesota systems with dual-fuel setups, humidifiers, or older wiring often need a proper C-wire and correct configuration to work reliably.",
-      "Eagan HVACs connects you with local techs who install and configure Nest, ecobee, Honeywell, and other smart thermostats correctly the first time — and who can diagnose an existing thermostat that's misreading temperatures or short-cycling your equipment.",
+      "This guide explains what a correct smart-thermostat install involves — from a compatible C-wire to configuring dual-fuel and multi-stage systems — so you know whether to DIY or hire a local pro to set up your Nest, ecobee, or Honeywell right the first time.",
     ],
     signs: [
       "Blank or unresponsive thermostat screen",
@@ -492,7 +492,7 @@ export const extraServiceDetails: readonly ServiceDetail[] = [
     tagline: "Two decades of dust doesn't belong in the air your family breathes.",
     intro: [
       "Your ductwork moves every bit of air your family breathes — and after years of construction dust, pet hair, and everyday living, a lot of homes are circulating more than they should. Done properly with negative-pressure equipment, duct cleaning removes that buildup at the source instead of just knocking it loose.",
-      "Eagan HVACs connects you with local duct cleaning pros who do it right — full-system cleaning, honest assessments of whether your ducts actually need it, and add-ons like dryer vent cleaning that reduce a genuine fire risk.",
+      "This guide helps you tell a legitimate, full-system duct cleaning from a bait-and-switch coupon job — including honest signs your ducts actually need it and the questions to ask before hiring a local duct cleaning pro.",
     ],
     signs: [
       "Visible dust puffing from supply vents",
@@ -570,7 +570,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Cedar Grove", "Lexington South", "Wescott", "Thomas Lake"],
     nearby: ["Apple Valley", "Burnsville", "Inver Grove Heights", "Mendota Heights"],
     intro:
-      "Eagan is our home base, and we know its neighborhoods, housing stock, and weather firsthand. From the established homes near Cedar Grove to newer builds around Lexington South and Thomas Lake, we connect Eagan homeowners with trusted local HVAC pros for fast furnace and AC service.",
+      "Eagan is our home base, and this guide is written for its homes and its climate. From the established homes near Cedar Grove to the newer builds around Lexington South and Thomas Lake, here's what Eagan homeowners should know about heating and cooling costs, common system issues, rebates, and hiring a qualified local contractor.",
     localNote:
       "Many Eagan homes built in the 1980s and 90s are now hitting the age where original furnaces and air conditioners need replacement — and our local installers know exactly how to size a modern, efficient system for these homes.",
   },
@@ -581,7 +581,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Cobblestone Lake", "Palomino Hills", "Regatta", "Diamond Path"],
     nearby: ["Eagan", "Burnsville", "Rosemount", "Lakeville"],
     intro:
-      "Just south of Eagan, Apple Valley homeowners count on us for dependable heating and cooling help. Whether you're near Cobblestone Lake or the established streets of Palomino Hills, local technicians offer same-day AC repair, furnace service, and full system replacements.",
+      "Just south of Eagan, Apple Valley sits in the same Dakota County climate and utility territory. Whether you're near Cobblestone Lake or the established streets of Palomino Hills, this guide covers what AC repair, furnace service, and system replacement typically cost here — and how to choose a reliable local contractor.",
     localNote:
       "Apple Valley's mix of mature neighborhoods and newer developments means we handle everything from aging furnaces to high-efficiency system upgrades and smart-thermostat installs.",
   },
@@ -592,7 +592,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Nicollet", "Sky Oaks", "Rudy Kraemer", "Crystal Beach"],
     nearby: ["Eagan", "Apple Valley", "Savage", "Bloomington"],
     intro:
-      "Burnsville residents get the same fast, honest HVAC service we bring to Eagan. From the neighborhoods near the Minnesota River bluffs to homes around Sky Oaks, we match you with vetted local contractors for furnace repair, AC service, and installations.",
+      "Burnsville homeowners face the same Minnesota temperature swings as the rest of the south metro. From the neighborhoods near the Minnesota River bluffs to homes around Sky Oaks, this guide covers local HVAC costs, common issues, rebates, and how to hire a qualified contractor for furnace repair, AC service, or a full replacement.",
     localNote:
       "With Burnsville's range of split-levels, ramblers, and townhomes, local pros are experienced with the ductwork and zoning challenges these home styles often present.",
   },
@@ -603,7 +603,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Bloomfield", "Evermoor", "Bella Vista", "Glendalough"],
     nearby: ["Apple Valley", "Eagan", "Inver Grove Heights", "Farmington"],
     intro:
-      "Rosemount's growing neighborhoods deserve reliable heating and cooling, and we deliver. From newer developments like Bloomfield and Evermoor to established homes near downtown, local technicians provide fast furnace and AC repair plus energy-efficient replacements.",
+      "Rosemount's growing neighborhoods deserve reliable heating and cooling. From newer developments like Bloomfield and Evermoor to established homes near downtown, this guide explains what furnace and AC repair or replacement costs here, which rebates apply, and how to pick a trustworthy local contractor.",
     localNote:
       "Rosemount's rapid growth means many homes have newer systems still under warranty — local pros document maintenance properly to keep that coverage intact.",
   },
@@ -614,7 +614,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Salem Hills", "Southview", "Arbor Pointe", "Cahill"],
     nearby: ["Eagan", "Mendota Heights", "Rosemount", "West St. Paul"],
     intro:
-      "Inver Grove Heights homeowners rely on us for prompt, trustworthy HVAC service. Whether you're in Salem Hills or near the river in Southview, we connect you with local, licensed technicians for heating repair, cooling service, and system installations.",
+      "Inver Grove Heights spans everything from mid-century homes to brand-new builds. Whether you're in Salem Hills or near the river in Southview, this guide covers local HVAC costs, the issues these homes commonly face, rebates, and how to hire a licensed local contractor with confidence.",
     localNote:
       "The variety of home ages across Inver Grove Heights, from mid-century to brand-new, means local techs are ready for both classic system repairs and modern high-efficiency upgrades.",
   },
@@ -625,7 +625,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Friendly Hills", "Copperfield", "The Ponds", "Somerset"],
     nearby: ["Eagan", "Inver Grove Heights", "West St. Paul", "Sunfish Lake"],
     intro:
-      "Mendota Heights homeowners expect quality, and local HVAC pros deliver. From the wooded lots near Somerset to the neighborhoods of Friendly Hills, we match you with vetted technicians for furnace and AC repair, maintenance, and premium system replacements.",
+      "Mendota Heights homeowners often have larger, more complex heating and cooling systems. From the wooded lots near Somerset to the neighborhoods of Friendly Hills, this guide covers what furnace and AC work costs here, how zoned and multi-system setups affect pricing, and how to choose a qualified local contractor.",
     localNote:
       "Mendota Heights' larger, custom homes often have zoned or multi-system HVAC setups, and local installers are experienced with designing and servicing these more complex systems.",
   },
@@ -636,7 +636,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Kenwood Trail", "Crystal Lake", "Spirit of Brandtjen Farm", "Cedar Highlands"],
     nearby: ["Apple Valley", "Burnsville", "Farmington", "Savage"],
     intro:
-      "Lakeville's fast-growing communities count on us for heating and cooling they can trust. From Spirit of Brandtjen Farm to homes near Crystal Lake, local technicians provide same-day repairs, seasonal tune-ups, and efficient new system installations.",
+      "Lakeville is one of the metro's fastest-growing cities, with many newer homes. From Spirit of Brandtjen Farm to homes near Crystal Lake, this guide explains local HVAC costs, when newer systems typically need attention, which rebates apply, and how to hire a reliable local contractor.",
     localNote:
       "As one of the metro's fastest-growing cities, Lakeville has many newer homes — local pros focus on maintenance that protects manufacturer warranties and keeps efficient systems running their best.",
   },
@@ -647,7 +647,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Hidden Valley", "Connelly Lakes", "Stonebrooke", "Prince of Peace"],
     nearby: ["Burnsville", "Apple Valley", "Lakeville", "Bloomington"],
     intro:
-      "Savage homeowners get fast, friendly HVAC service from pros who know the area. Whether you're near Hidden Valley or the Stonebrooke area, we connect you with licensed local technicians for furnace repair, AC service, and complete replacements.",
+      "Savage blends established and newer neighborhoods across Scott County. Whether you're near Hidden Valley or the Stonebrooke area, this guide covers what furnace repair, AC service, and full replacements cost locally, the issues these homes see, and how to choose a licensed contractor.",
     localNote:
       "Savage's blend of established and newer neighborhoods means local technicians handle everything from aging equipment to the latest high-efficiency heating and cooling systems.",
   },
@@ -658,7 +658,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Hyland", "Oak Grove", "Bloomington Ferry", "Penn Lake"],
     nearby: ["Burnsville", "Savage", "Eagan", "Edina"],
     intro:
-      "Bloomington homeowners rely on us for dependable heating and cooling across the city. From the Hyland area to neighborhoods near Penn Lake, local technicians offer prompt furnace and AC repair, tune-ups, and energy-efficient system upgrades.",
+      "Bloomington's many mid-century homes come with their own HVAC quirks. From the Hyland area to neighborhoods near Penn Lake, this guide covers local heating and cooling costs, the common issues in older Bloomington homes, available rebates, and how to hire a qualified contractor.",
     localNote:
       "Bloomington's many mid-century homes often have original ductwork and aging systems — local pros specialize in upgrading these homes to modern, efficient comfort without a full remodel.",
   },
@@ -669,7 +669,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Charleswood", "Dakota County Fairgrounds area", "Meadowview", "North Creek"],
     nearby: ["Rosemount", "Lakeville", "Apple Valley", "Eagan"],
     intro:
-      "Farmington families count on us for reliable, affordable HVAC service. From newer developments like Charleswood to established homes near downtown, we connect you with trusted local technicians for heating repair, cooling service, and system installations.",
+      "Farmington's steady growth has brought many newer homes alongside established ones. From developments like Charleswood to homes near downtown, this guide explains local HVAC costs, when systems typically need service or replacement, and how to choose a trustworthy local contractor.",
     localNote:
       "Farmington's steady growth has brought many newer homes with efficient systems — local pros keep them running well with proper seasonal maintenance and warranty-protecting service.",
   },
@@ -680,7 +680,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Thompson", "Birchview", "Marie", "Emerson"],
     nearby: ["Mendota Heights", "Inver Grove Heights", "Eagan", "St. Paul"],
     intro:
-      "West St. Paul homeowners get fast, honest HVAC help from local pros. Whether you're near Thompson Park or the neighborhoods along Robert Street, we match you with licensed technicians for furnace and AC repair, maintenance, and replacements.",
+      "West St. Paul's established housing stock means many homes with older furnaces and boilers. Whether you're near Thompson Park or along Robert Street, this guide covers local HVAC costs, the issues older systems face, rebates, and how to hire a licensed contractor with confidence.",
     localNote:
       "West St. Paul's established housing stock means many homes have older furnaces and boilers — local technicians are experienced with both classic systems and efficient modern replacements.",
   },
@@ -691,7 +691,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Sunfish Lake", "Salem Church Road area"],
     nearby: ["Mendota Heights", "Inver Grove Heights", "West St. Paul", "Eagan"],
     intro:
-      "Sunfish Lake's estate homes deserve premium HVAC care, and local pros deliver. We connect residents with vetted, licensed technicians experienced in the larger, often multi-zone heating and cooling systems these custom homes require.",
+      "Sunfish Lake's estate homes often run larger, multi-zone heating and cooling systems. This guide covers what that means for costs and maintenance, the issues these more complex systems face, and how to choose a licensed contractor experienced with custom homes.",
     localNote:
       "With Sunfish Lake's large custom homes and wooded lots, local installers are equipped to design, service, and replace the more sophisticated zoned HVAC systems these properties often use.",
   },
@@ -702,7 +702,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Kaposia", "North End", "Southview area", "Riverside"],
     nearby: ["West St. Paul", "Inver Grove Heights", "Mendota Heights", "Eagan"],
     intro:
-      "South St. Paul's classic river-town neighborhoods count on us for honest, reliable heating and cooling help. From the homes above Kaposia Landing to the North End, we connect residents with licensed local technicians for furnace repair, AC service, and full system replacements.",
+      "South St. Paul has some of the metro's most established housing stock, including homes still running boilers. From above Kaposia Landing to the North End, this guide covers local HVAC costs, the issues older systems face, rebates, and how to hire a licensed contractor.",
     localNote:
       "South St. Paul has some of the metro's most established housing stock, with many homes still running boilers or decades-old furnaces — local techs are comfortable with older systems and with planning sensible, efficient upgrades when the time comes.",
   },
@@ -713,7 +713,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["The Wilds", "Jeffers Pond", "Spring Lake", "Downtown Prior Lake"],
     nearby: ["Savage", "Shakopee", "Lakeville", "Burnsville"],
     intro:
-      "Prior Lake homeowners — from lakeshore properties to the newer neighborhoods around Jeffers Pond — get fast, trustworthy HVAC service through our vetted local network. Same-day repairs, seasonal tune-ups, and right-sized system installations, all with upfront pricing.",
+      "Prior Lake mixes lakeshore properties with newer neighborhoods around Jeffers Pond. This guide covers local HVAC costs, humidity considerations for lakeside homes, seasonal maintenance, and how to hire a qualified local contractor who quotes upfront.",
     localNote:
       "Prior Lake's mix of lake homes and newer developments means everything from humidity control for lakeside properties to warranty-protecting maintenance on newer high-efficiency systems — local pros handle both routinely.",
   },
@@ -724,7 +724,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Southbridge", "Dean Lakes", "Riverside Fields", "Downtown Shakopee"],
     nearby: ["Prior Lake", "Savage", "Burnsville", "Bloomington"],
     intro:
-      "Shakopee's fast-growing neighborhoods rely on us for dependable heating and cooling. Whether you're in Southbridge, near Dean Lakes, or in an established home closer to downtown, we match you with licensed local technicians for furnace and AC repair, maintenance, and replacements.",
+      "Shakopee is one of the metro's fastest-growing cities, with lots of newer homes reaching their first service years. Whether you're in Southbridge, near Dean Lakes, or closer to downtown, this guide covers local HVAC costs, common issues, rebates, and how to choose a licensed contractor.",
     localNote:
       "As one of the metro's fastest-growing cities, Shakopee has many newer homes with builder-grade equipment now reaching its first major service years — exactly when proper maintenance and honest repair advice matter most.",
   },
@@ -735,7 +735,7 @@ export const locations: readonly Location[] = [
     neighborhoods: ["Historic Mendota village", "Sibley Historic Site area"],
     nearby: ["Mendota Heights", "West St. Paul", "Eagan", "Inver Grove Heights"],
     intro:
-      "Mendota may be one of Minnesota's smallest and oldest cities, but its homeowners get the same fast, honest HVAC service as the rest of the south metro. We connect residents of the historic village with trusted local technicians for heating repair, cooling service, and system replacements.",
+      "Mendota may be one of Minnesota's smallest and oldest cities, but its homes face real heating and cooling challenges. This guide covers what HVAC work costs for the historic village's older housing stock, the retrofit issues these homes see, and how to hire a trustworthy local contractor.",
     localNote:
       "Mendota's historic housing stock brings unique challenges — older ductwork, additions, and homes that predate central air entirely. Local pros are experienced with retrofits that respect these homes while bringing them up to modern comfort.",
   },

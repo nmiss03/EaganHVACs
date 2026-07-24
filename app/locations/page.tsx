@@ -29,7 +29,7 @@ export default function LocationsIndexPage() {
         icon="mapPin"
         title="HVAC Service Across Eagan & the South Metro"
         intro={[
-          "Based in Eagan, we connect homeowners across Dakota County and the surrounding south metro with trusted local HVAC pros. Find your city below for local heating and cooling service details.",
+          "Based in Eagan, we publish local HVAC guides for homeowners across Dakota County and the surrounding south metro — costs, common issues, rebates, and how to hire a qualified contractor. Find your city below.",
         ]}
       />
 
@@ -96,7 +96,7 @@ export default function LocationsIndexPage() {
 
       <CTABand
         heading="Don't see your city?"
-        sub="We serve the broader south metro — give us a call and we can usually still help with your heating and cooling needs."
+        sub="Our cost data and guides apply across the broader Twin Cities south metro — start with the free tools and Buyer's Kit to plan your project wherever you live."
       />
     </>
   );

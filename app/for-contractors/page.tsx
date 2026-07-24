@@ -125,7 +125,7 @@ export default function ForContractorsPage() {
     name: "Exclusive HVAC Lead Generation for Twin Cities Contractors",
     serviceType: "HVAC lead generation",
     areaServed: { "@type": "State", name: "Minnesota" },
-    provider: { "@id": `${site.url}/#business` },
+    provider: { "@id": `${site.url}/#organization` },
     url: absoluteUrl("/for-contractors"),
     description:
       "Exclusive, un-shared HVAC leads from local Minnesota homeowners for licensed heating and cooling contractors in the Twin Cities south metro.",

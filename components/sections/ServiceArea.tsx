@@ -4,7 +4,6 @@ import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { locations } from "@/lib/content";
-import { site } from "@/lib/site";
 
 export function ServiceArea() {
   return (
@@ -42,14 +41,14 @@ export function ServiceArea() {
                 ))}
               </ul>
               <p className="mt-7 text-sm text-slate-600">
-                Just outside these areas?{" "}
-                <a
-                  href={site.phoneHref}
+                Just outside these areas? Our{" "}
+                <Link
+                  href="/tools"
                   className="font-semibold text-navy-900 underline decoration-accent-400 decoration-2 underline-offset-4 transition-colors hover:text-accent-600"
                 >
-                  Give us a call
-                </a>{" "}
-                — we can usually still help.
+                  free tools and cost data
+                </Link>{" "}
+                still apply across the Twin Cities metro.
               </p>
             </Reveal>
           </div>

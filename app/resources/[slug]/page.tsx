@@ -98,7 +98,7 @@ export default async function ArticlePage({
     url: absoluteUrl(`/resources/${article.slug}`),
     dateModified: "2026-07-01",
     author: { "@type": "Organization", name: site.name, url: site.url },
-    publisher: { "@id": `${site.url}/#business` },
+    publisher: { "@id": `${site.url}/#organization` },
     mainEntityOfPage: absoluteUrl(`/resources/${article.slug}`),
   };
 
@@ -308,11 +308,11 @@ export default async function ArticlePage({
               {/* Inline CTA */}
               <div className="mt-8 rounded-xl border border-navy-900/[0.08] bg-slate-50 p-6">
                 <p className="font-display text-lg font-bold text-navy-900">
-                  Ready to compare real quotes?
+                  Put this into action
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  {site.name} connects you with vetted local contractors so you can compare
-                  multiple estimates — free, and with no obligation.
+                  Use these free tools and guides to plan your project — then gather your
+                  own written quotes from local contractors and compare them with confidence.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
                   {relatedServices.slice(0, 3).map((s) => (

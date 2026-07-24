@@ -47,36 +47,31 @@ export default async function LocationDetailPage({
   const location = getLocation(slug);
   if (!location) notFound();
 
-  const localBusinessSchema = {
+  const webPageSchema = {
     "@context": "https://schema.org",
-    "@type": "HVACBusiness",
-    "@id": `${site.url}/#business`,
-    name: site.name,
-    description: `HVAC repair, installation, and maintenance serving ${location.name}, ${location.county}, Minnesota.`,
+    "@type": "WebPage",
+    "@id": absoluteUrl(`/locations/${location.slug}`),
     url: absoluteUrl(`/locations/${location.slug}`),
-    telephone: site.phoneHref.replace("tel:", ""),
-    email: site.email,
-    areaServed: { "@type": "City", name: `${location.name}, MN` },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: site.address.city,
-      addressRegion: site.address.state,
-      addressCountry: "US",
-    },
+    name: `HVAC Guide for ${location.name}, MN Homeowners`,
+    description: `An independent local guide to heating and cooling in ${location.name}, ${location.county}: climate, common HVAC issues, costs, rebates, permits, and how to hire a qualified local contractor.`,
+    isPartOf: { "@id": `${site.url}/#website` },
+    publisher: { "@id": `${site.url}/#organization` },
+    about: { "@type": "City", name: `${location.name}, Minnesota` },
+    inLanguage: "en-US",
   };
 
   const localFaqs = [
     {
-      question: `Do you offer emergency HVAC service in ${location.name}?`,
-      answer: `Yes. Contractors in our network provide 24/7 emergency furnace and AC repair throughout ${location.name} and ${location.county}, including nights, weekends, and holidays for no-heat and no-cooling emergencies.`,
+      question: `Where can I get emergency HVAC service in ${location.name}?`,
+      answer: `Many Twin Cities HVAC companies offer 24/7 emergency service. For a no-heat or no-cooling emergency in ${location.name}, call a licensed local contractor directly and they'll prioritize it — our cost guides help you recognize a fair price even in a rush.`,
     },
     {
-      question: `How fast can a technician reach my home in ${location.name}?`,
-      answer: `Because the pros we work with are local to the south metro, most ${location.name} homeowners get a callback within the hour during business hours, with same-day appointments available for urgent repairs.`,
+      question: `How much does HVAC work cost in ${location.name}?`,
+      answer: `Costs in ${location.name} track the broader Twin Cities market — roughly $4,000–$9,000 for a furnace and $4,500–$9,500 for central AC installed, before rebates. Use our free cost estimator for a range tailored to your home.`,
     },
     {
-      question: `Are the HVAC contractors serving ${location.name} licensed and insured?`,
-      answer: `Every contractor we match you with is licensed, insured, and vetted for quality workmanship before they're sent to a ${location.name} home.`,
+      question: `How do I find a licensed HVAC contractor in ${location.name}?`,
+      answer: `Ask any contractor for their Minnesota license number and proof of insurance, get the quote in writing, and compare at least two or three. Our free quote analyzer and contractor-questions guide walk you through exactly what to check.`,
     },
   ];
 
@@ -141,8 +136,8 @@ export default async function LocationDetailPage({
         <Container>
           <SectionTitle
             eyebrow="Local services"
-            title={`HVAC services available in ${location.name}`}
-            description={`From emergency furnace repair to full system replacement, here's how local pros keep ${location.name} homes comfortable year-round.`}
+            title={`HVAC services ${location.name} homeowners search for`}
+            description={`From furnace repair to full system replacement, here's what each service involves and what to expect from a qualified local contractor in ${location.name}.`}
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {services.map((service) => (
@@ -185,7 +180,7 @@ export default async function LocationDetailPage({
               </p>
               <div className="mt-6">
                 <p className="text-sm font-bold uppercase tracking-[0.12em] text-navy-700">
-                  Neighborhoods we serve
+                  Local neighborhoods
                 </p>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {location.neighborhoods.map((n) => (
@@ -279,13 +274,13 @@ export default async function LocationDetailPage({
       ) : null}
 
       <CTABand
-        heading={`Need HVAC help in ${location.name}?`}
-        sub={`Get connected with a trusted local pro serving ${location.name} and ${location.county} — free quotes, honest pricing, and fast response.`}
+        heading={`Planning an HVAC project in ${location.name}?`}
+        sub={`Use our free tools and honest cost guides to plan your project and hire the right ${location.county} contractor with confidence — no sales calls, no obligation.`}
       />
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
     </>
   );

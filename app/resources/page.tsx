@@ -101,7 +101,7 @@ export default function ResourcesIndexPage() {
 
       <CTABand
         heading="Done researching? Compare local quotes."
-        sub="Get free, no-obligation quotes from vetted local HVAC contractors serving the Twin Cities south metro."
+        sub="Use our free tools and honest cost guides to plan your project — then gather and compare quotes from local HVAC contractors with confidence."
       />
     </>
   );

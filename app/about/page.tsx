@@ -51,8 +51,8 @@ const HELP_CARDS: { icon: IconName; title: string; body: string }[] = [
   },
   {
     icon: "badgeCheck",
-    title: "Side-by-side quote comparison",
-    body: "When you're ready, we connect you with licensed, insured local contractors so you can compare multiple written quotes for the same job — free, and with no obligation.",
+    title: "A framework for comparing quotes",
+    body: "A quote analyzer, a comparison checklist, and the exact questions to ask — so when you gather your own written quotes from local contractors, you can compare them fairly and spot the fair one.",
   },
 ];
 
@@ -122,8 +122,8 @@ export default function AboutPage() {
     name: "About Eagan HVACs",
     url: absoluteUrl(path),
     description,
-    mainEntity: { "@id": `${site.url}/#business` },
-    publisher: { "@id": `${site.url}/#business` },
+    mainEntity: { "@id": `${site.url}/#organization` },
+    publisher: { "@id": `${site.url}/#organization` },
   };
 
   return (
@@ -255,27 +255,26 @@ export default function AboutPage() {
           <div className="mx-auto max-w-3xl">
             <SectionTitle
               align="left"
-              eyebrow="Referral philosophy"
-              title="Free for homeowners, and you stay in control"
+              eyebrow="Our model"
+              title="Free for homeowners, and genuinely independent"
             />
             <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-slate-700">
               <p>
                 Using {site.name} is always free for homeowners — there is no fee
-                to use our tools, read our guides, or request quotes, and no
-                obligation to hire anyone.
+                to use our tools, read our guides, or download the Buyer&rsquo;s Kit,
+                and there&rsquo;s nothing to buy.
               </p>
               <p>
-                Contractor matching is straightforward: when you tell us what you
-                need and where you live, we share your request only with the
-                licensed, insured contractors in our network who serve your city
-                and handle your type of job. They reach out so you can compare
-                pricing and approach directly.
+                We&rsquo;re an independent information resource, not a contractor and
+                not a lead broker. We don&rsquo;t sell, install, or repair equipment,
+                and we don&rsquo;t take commissions for sending you to any company — so
+                nothing here is designed to steer you toward a sale.
               </p>
               <p>
-                At every step, you're the one deciding. You choose whether to
-                request quotes, which contractors to talk to, and who — if anyone —
-                to hire. We're done once you have quotes you trust and the
-                information to choose with confidence.
+                At every step, you&rsquo;re the one deciding. You use the tools and
+                guides to understand your options, gather your own written quotes
+                from local contractors, and choose who — if anyone — to hire. Our
+                job is done once you have the information to choose with confidence.
               </p>
             </div>
           </div>

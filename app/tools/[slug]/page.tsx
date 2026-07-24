@@ -63,7 +63,7 @@ export default async function ToolPage({
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "Web",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    provider: { "@id": `${site.url}/#business` },
+    provider: { "@id": `${site.url}/#organization` },
     description: tool.metaDescription,
   };
 

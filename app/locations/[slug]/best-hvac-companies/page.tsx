@@ -122,7 +122,7 @@ export default async function CityGuidePage({
     url: absoluteUrl(path),
     dateModified: guide.dateModified,
     author: { "@type": "Organization", name: site.name, url: site.url },
-    publisher: { "@id": `${site.url}/#business` },
+    publisher: { "@id": `${site.url}/#organization` },
     mainEntityOfPage: absoluteUrl(path),
     about: `Choosing an HVAC company in ${location.name}, ${location.county}, Minnesota`,
   };
@@ -394,8 +394,8 @@ export default async function CityGuidePage({
       </section>
 
       <CTABand
-        heading="Ready to compare quotes from vetted local pros?"
-        sub={`${site.name} connects ${location.name} homeowners with trusted, licensed local contractors so you can compare quotes side by side — free, and with no obligation.`}
+        heading={`Ready to choose an HVAC contractor in ${location.name}?`}
+        sub={`Use this guide, the free tools, and the Buyer's Kit to evaluate ${location.name} contractors and compare their written quotes side by side — so you can hire with confidence.`}
       />
 
       <script

@@ -28,12 +28,12 @@ const faqGroups: FaqGroup[] = [
       {
         question: "How much does AC repair cost in Eagan?",
         answer:
-          "Most common AC repairs in the Eagan area — capacitors, contactors, fan motors — fall in the low hundreds of dollars, while refrigerant leaks or compressor issues cost more. Every contractor in our network quotes an upfront written price after diagnosis, and the diagnostic fee is often applied to the repair, so you'll never be surprised by the bill.",
+          "Most common AC repairs in the Eagan area — capacitors, contactors, fan motors — fall in the low hundreds of dollars, while refrigerant leaks or compressor issues cost more. A reputable contractor gives you an upfront written price after diagnosis, and the diagnostic fee is often applied to the repair — so you're not surprised by the bill.",
       },
       {
         question: "How much does furnace repair cost?",
         answer:
-          "Simple fixes like a flame sensor cleaning or ignitor replacement are typically inexpensive; blower motors and control boards cost more. The honest answer is that no one can price a repair before diagnosing it — which is why upfront, written estimates before any work begins are non-negotiable in our network.",
+          "Simple fixes like a flame sensor cleaning or ignitor replacement are typically inexpensive; blower motors and control boards cost more. The honest answer is that no one can price a repair before diagnosing it — which is why an upfront, written estimate before any work begins is non-negotiable. Insist on one from any contractor you consider.",
       },
       {
         question: "How much does a new furnace or AC cost in Minnesota?",
@@ -41,9 +41,9 @@ const faqGroups: FaqGroup[] = [
           "A full system replacement typically runs several thousand dollars depending on size, efficiency rating, and installation complexity. High-efficiency equipment costs more upfront but qualifies for Xcel Energy and CenterPoint rebates plus federal incentives, and lowers bills every month. Replacement quotes are always free.",
       },
       {
-        question: "Do you charge for estimates?",
+        question: "Are HVAC estimates free?",
         answer:
-          "Estimates for replacements and new installations are free. Repair visits usually carry a standard diagnostic fee — quoted before the visit — which is often credited toward the repair itself.",
+          "Estimates for replacements and new installations are typically free from most contractors. Repair visits usually carry a standard diagnostic fee — quoted before the visit — which is often credited toward the repair itself. Everything on Eagan HVACs is always free.",
       },
       {
         question: "Are there rebates for high-efficiency HVAC in Minnesota?",
@@ -128,22 +128,22 @@ const faqGroups: FaqGroup[] = [
     ],
   },
   {
-    title: "Service & scheduling",
+    title: "Timing & hiring",
     faqs: [
       {
-        question: "How fast can a technician get to my home?",
+        question: "How fast can I get HVAC help in an emergency?",
         answer:
-          "For no-heat or no-cooling emergencies, contractors in our network offer same-day and 24/7 service across Eagan and the south metro. Routine repairs and tune-ups are typically scheduled within 1–2 business days, and most inquiries get a callback within the hour during business hours.",
+          "For a no-heat or no-cooling emergency, most Twin Cities HVAC companies offer same-day and 24/7 service — call a licensed local contractor directly and they'll prioritize it. Routine repairs and tune-ups are typically scheduled within 1–2 business days.",
       },
       {
-        question: "What areas do you serve?",
+        question: "What areas does Eagan HVACs cover?",
         answer:
-          "Eagan and the surrounding south metro, including Apple Valley, Burnsville, Rosemount, Inver Grove Heights, Mendota Heights, Lakeville, Savage, Prior Lake, Shakopee, Bloomington, and nearby communities.",
+          "Our guides, tools, and cost data focus on Eagan and the surrounding south metro, including Apple Valley, Burnsville, Rosemount, Inver Grove Heights, Mendota Heights, Lakeville, Savage, Prior Lake, Shakopee, Bloomington, and nearby communities.",
       },
       {
-        question: "Are the contractors licensed and insured?",
+        question: "How do I know an HVAC contractor is licensed and insured?",
         answer:
-          "Yes — every contractor we match you with is licensed, insured, and vetted for workmanship and professionalism before they ever visit a home.",
+          "In Minnesota, ask any contractor for their state license number and current proof of insurance before work begins, and confirm the license on the state's licensing lookup. Our contractor-questions guide walks you through exactly what to verify.",
       },
       {
         question: "When should I schedule seasonal maintenance?",
@@ -180,7 +180,7 @@ export default function FaqPage() {
         icon="clipboard"
         title="HVAC Questions, Answered Honestly"
         intro={[
-          "Straight answers to the questions Eagan homeowners ask us most — costs, common problems, repair-or-replace decisions, and how to get the most from your system. Don't see yours? Call and ask a real local person.",
+          "Straight, unbiased answers to the questions Minnesota homeowners ask most — costs, common problems, repair-or-replace decisions, and how to get the most from your system. Want to go deeper? The free tools and guides break each one down.",
         ]}
       />
 

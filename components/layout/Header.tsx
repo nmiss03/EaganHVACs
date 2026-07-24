@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
-import { navLinks, site } from "@/lib/site";
+import { navLinks } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -68,18 +68,18 @@ export function Header() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <a
-            href={site.phoneHref}
+          <Link
+            href="/tools"
             className="hidden items-center gap-2 text-sm font-semibold text-navy-900 transition-colors hover:text-accent-600 sm:flex"
           >
-            <Icon name="phone" className="h-4 w-4 text-accent-500" />
-            {site.phone}
-          </a>
+            <Icon name="gauge" className="h-4 w-4 text-accent-500" />
+            Free Tools
+          </Link>
           <Link
-            href="/#inquiry"
+            href="/minnesota-hvac-buyers-kit"
             className="hidden rounded-xl bg-accent-500 px-5 py-2.5 text-sm font-semibold text-navy-950 shadow-glow transition-all hover:-translate-y-0.5 hover:bg-accent-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 sm:inline-flex"
           >
-            Compare Quotes
+            Free Buyer&rsquo;s Kit
           </Link>
           <button
             type="button"
@@ -152,20 +152,21 @@ export function Header() {
           </nav>
           <div className="space-y-3 border-t border-navy-900/10 p-5 pb-8">
             <Link
-              href="/#inquiry"
+              href="/minnesota-hvac-buyers-kit"
               onClick={() => setOpen(false)}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent-500 px-5 py-4 text-base font-semibold text-navy-950 shadow-glow transition-colors hover:bg-accent-600"
             >
-              Compare Quotes
+              Get the Free Buyer&rsquo;s Kit
               <Icon name="arrowRight" className="h-4 w-4" />
             </Link>
-            <a
-              href={site.phoneHref}
+            <Link
+              href="/tools"
+              onClick={() => setOpen(false)}
               className="flex w-full items-center justify-center gap-2 rounded-xl border border-navy-900/15 px-5 py-4 text-base font-semibold text-navy-900 transition-colors hover:bg-navy-50"
             >
-              <Icon name="phone" className="h-4 w-4 text-accent-500" />
-              Call {site.phone}
-            </a>
+              <Icon name="gauge" className="h-4 w-4 text-accent-500" />
+              Browse the free tools
+            </Link>
           </div>
         </div>
       </div>

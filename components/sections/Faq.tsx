@@ -17,7 +17,7 @@ export function Faq() {
           <SectionTitle
             eyebrow="FAQ"
             title="Answers to common questions"
-            description="Everything homeowners usually ask before requesting service. Don't see your question? Give us a call."
+            description="Everything homeowners usually ask before spending on HVAC. Want more detail? Explore the full FAQ and the free guides."
           />
         </Reveal>
         <div className="mx-auto mt-12 max-w-3xl space-y-4">

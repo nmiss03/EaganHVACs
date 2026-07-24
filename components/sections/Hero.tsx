@@ -3,7 +3,6 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { SectionDivider } from "@/components/ui/SectionDivider";
-import { site } from "@/lib/site";
 
 /** Static "product output" previews — they demonstrate what each tool
  * returns so a homeowner understands the platform before reading copy.
@@ -99,8 +98,10 @@ export function Hero() {
             </h1>
 
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-navy-100/85">
-              Free tools and honest Minnesota cost guides — then compare quotes
-              from licensed local contractors when you&rsquo;re ready.
+              Free tools, honest Minnesota cost data, and unbiased guides — so you
+              can plan your project and hire the right local contractor with
+              confidence. We&rsquo;re independent: we don&rsquo;t sell, install, or repair
+              anything.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -108,19 +109,19 @@ export function Hero() {
                 Explore Homeowner Tools
                 <Icon name="arrowRight" className="h-5 w-5" />
               </ButtonLink>
-              <ButtonLink href="/#inquiry" variant="ghost" size="lg">
-                Compare Local Quotes
+              <ButtonLink href="/minnesota-hvac-buyers-kit" variant="ghost" size="lg">
+                Get the Free Buyer&rsquo;s Kit
               </ButtonLink>
             </div>
             <p className="mt-4 text-sm text-navy-100/60">
-              No heat or cooling right now?{" "}
-              <a
-                href={site.phoneHref}
+              System down right now? Start with our{" "}
+              <Link
+                href="/resources/furnace-not-working-troubleshooting"
                 className="font-semibold text-navy-100 underline decoration-accent-400 decoration-2 underline-offset-4 transition-colors hover:text-accent-300"
               >
-                Call {site.phone}
-              </a>{" "}
-              for the 24/7 network line.
+                troubleshooting guides
+              </Link>
+              , then call a licensed local pro.
             </p>
           </div>
 

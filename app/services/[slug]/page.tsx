@@ -8,7 +8,7 @@ import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { absoluteUrl, getServiceDetail, allServiceDetails, locations } from "@/lib/content";
+import { absoluteUrl, getServiceDetail, allServiceDetails } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -44,20 +44,17 @@ export default async function ServiceDetailPage({
   const service = getServiceDetail(slug);
   if (!service) notFound();
 
-  const serviceSchema = {
+  const webPageSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: service.title,
-    serviceType: service.title,
-    description: service.metaDescription,
+    "@type": "WebPage",
+    "@id": absoluteUrl(`/services/${service.slug}`),
     url: absoluteUrl(`/services/${service.slug}`),
-    provider: {
-      "@type": "HVACBusiness",
-      "@id": `${site.url}/#business`,
-      name: site.name,
-      telephone: site.phoneHref.replace("tel:", ""),
-    },
-    areaServed: locations.map((l) => ({ "@type": "City", name: `${l.name}, MN` })),
+    name: service.h1,
+    description: service.metaDescription,
+    isPartOf: { "@id": `${site.url}/#website` },
+    publisher: { "@id": `${site.url}/#organization` },
+    about: { "@type": "Thing", name: service.title },
+    inLanguage: "en-US",
   };
 
   const otherServices = allServiceDetails.filter((s) => s.slug !== service.slug);
@@ -158,13 +155,13 @@ export default async function ServiceDetailPage({
       </section>
 
       <CTABand
-        heading={`Need ${service.title.toLowerCase()} today?`}
-        sub={`Get connected with a trusted, licensed local pro serving ${site.address.city} and the south metro — free quotes, upfront pricing, fast response.`}
+        heading={`Weighing ${service.title.toLowerCase()}?`}
+        sub={`Use our free tools and honest cost guides to understand fair pricing and hire the right local contractor in ${site.address.city} and the south metro — no sales calls, no obligation.`}
       />
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
     </>
   );
