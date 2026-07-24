@@ -72,6 +72,14 @@ export function Footer() {
                   Get a Quote
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/for-contractors"
+                  className="text-navy-100/70 transition-colors hover:text-accent-300"
+                >
+                  For Contractors
+                </Link>
+              </li>
             </ul>
           </nav>
 
