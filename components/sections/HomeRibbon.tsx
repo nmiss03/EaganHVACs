@@ -12,7 +12,7 @@ export function HomeRibbon() {
   return (
     <section aria-label="Eagan HVAC Guide" className="bg-slate-50">
       <Image
-        src="/images/home-ribbon.webp"
+        src="/site-images/home-ribbon.webp"
         alt="Eagan HVAC Guide — independent HVAC research and tools for Minnesota homeowners. Free tools at no cost, no sales pitches, Minnesota-focused local data on rebates and climate, and research that is sourced, cited, and regularly updated."
         width={1983}
         height={460}

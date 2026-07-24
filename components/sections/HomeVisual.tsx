@@ -22,7 +22,7 @@ export function HomeVisual() {
         />
         <figure className="mx-auto mt-10 max-w-4xl">
           <Image
-            src="/images/home-hvac-collage.webp"
+            src="/site-images/home-hvac-collage.webp"
             alt="A collage of Minnesota home HVAC equipment and decisions: a snowy suburban home, an outdoor central air conditioner, a smart thermostat set to 72°F, a basement gas furnace with ductwork, a living room with a fireplace, a rooftop unit above the Minneapolis skyline, a homeowner reviewing an inspection checklist, an air-conditioner-versus-heat-pump comparison panel, and a laptop showing an HVAC cost estimator."
             width={1536}
             height={1024}
