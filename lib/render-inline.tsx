@@ -12,8 +12,12 @@ import Link from "next/link";
  * URLs. Returns React nodes with the site's standard inline styling.
  */
 
+// Editorial inline link: regular weight (so links don't compete with **bold**
+// emphasis), clearly underlined for recognition, and shifting to the accent on
+// hover for affordance. Distinguishing links from emphasis improves scanability
+// in dense research prose.
 const LINK_STYLE =
-  "font-semibold text-navy-900 underline decoration-accent-400 decoration-2 underline-offset-4 transition-colors hover:text-accent-600";
+  "text-navy-900 underline decoration-accent-500/60 decoration-2 underline-offset-[3px] transition-colors hover:text-accent-700 hover:decoration-accent-600";
 
 // Either [text](/internal-path) or **bold**.
 const TOKEN = /\[([^\]]+)\]\((\/[^)\s]*)\)|\*\*([^*]+)\*\*/g;

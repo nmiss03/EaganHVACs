@@ -40,14 +40,18 @@ const config: Config = {
         display: ["var(--font-jakarta)", "var(--font-inter)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        card: "0 1px 2px 0 rgb(11 37 69 / 0.04), 0 8px 24px -6px rgb(11 37 69 / 0.10)",
+        // Flatter, more "document"-like elevation. Cards already carry a
+        // hairline border, so the shadow only needs to lift them subtly —
+        // editorial restraint over floaty-SaaS depth.
+        card: "0 1px 2px 0 rgb(11 37 69 / 0.04), 0 3px 10px -4px rgb(11 37 69 / 0.07)",
         "card-hover":
-          "0 2px 4px 0 rgb(11 37 69 / 0.05), 0 20px 40px -12px rgb(11 37 69 / 0.18)",
-        glow: "0 8px 30px -6px rgb(242 97 13 / 0.45)",
+          "0 2px 4px 0 rgb(11 37 69 / 0.05), 0 10px 24px -10px rgb(11 37 69 / 0.13)",
+        // Restrained lift for the primary action — a subtle warmth, not a neon glow.
+        glow: "0 5px 18px -8px rgb(242 97 13 / 0.30)",
       },
       keyframes: {
         "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "0%": { opacity: "0", transform: "translateY(12px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "fade-in": {
