@@ -31,8 +31,9 @@ const SECTIONS: TocSection[] = [
   { id: "mission", label: "Our mission" },
   { id: "how-we-help", label: "How we help" },
   { id: "independence", label: "Why we stay independent" },
-  { id: "referrals", label: "Referral philosophy" },
+  { id: "referrals", label: "Our model" },
   { id: "methodology", label: "Methodology" },
+  { id: "sources", label: "Sources" },
   { id: "editorial-standards", label: "Editorial standards" },
   { id: "transparency", label: "Transparency" },
   { id: "contact", label: "Contact" },
@@ -82,12 +83,54 @@ const METHODOLOGY: { icon: IconName; title: string; points: string[] }[] = [
     ],
   },
   {
+    icon: "badgeCheck",
+    title: "One reference dataset behind every number",
+    points: [
+      "Every cost range, equipment lifespan, efficiency rating, and rebate figure on the site is drawn from a single internal reference dataset — so a number can't say one thing on a city page and another on a calculator.",
+      "When a figure changes, it changes in one place and updates everywhere, and the reconciliation is documented rather than silently overwritten.",
+    ],
+  },
+  {
     icon: "clock",
     title: "Review & update cadence",
     points: [
       "Content is reviewed periodically and revised when programs, prices, or best practices change. The date on each guide and tool reflects its most recent review.",
       "The information across this site is current as of July 2026.",
     ],
+  },
+];
+
+/** Primary sources we rely on — cited so readers can verify them directly. */
+const SOURCES: { label: string; detail: string; href: string }[] = [
+  {
+    label: "Xcel Energy",
+    detail: "Minnesota electric rebate programs for heat pumps, AC, and thermostats.",
+    href: "https://www.xcelenergy.com",
+  },
+  {
+    label: "CenterPoint Energy",
+    detail: "Minnesota natural-gas rebates for high-efficiency furnaces and boilers.",
+    href: "https://www.centerpointenergy.com",
+  },
+  {
+    label: "IRS — Energy Efficient Home Improvement Credit (25C)",
+    detail: "Federal tax-credit rules and history (the credit expired after 2025).",
+    href: "https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit",
+  },
+  {
+    label: "Minnesota Dept. of Commerce",
+    detail: "State energy programs and the pending Home Energy Rebates (HEAR).",
+    href: "https://mn.gov/commerce/",
+  },
+  {
+    label: "Minnesota Dept. of Labor & Industry (DLI)",
+    detail: "Contractor licensing lookup and mechanical permit requirements.",
+    href: "https://www.dli.mn.gov",
+  },
+  {
+    label: "ENERGY STAR",
+    detail: "Equipment efficiency criteria (AFUE, SEER2, HSPF2) and product standards.",
+    href: "https://www.energystar.gov",
   },
 ];
 
@@ -105,13 +148,13 @@ const STANDARDS: { icon: IconName; title: string; body: string }[] = [
   },
   {
     icon: "dollar",
-    title: "No pay-to-play placement",
-    body: "Contractors cannot buy a higher position, a better review, or a fabricated endorsement. Matching is based on your job and location, not on who paid the most.",
+    title: "No pay-for-placement, ever",
+    body: "We don't rank contractors, run a \"top companies\" list, or take money to feature anyone. No business can buy a mention, a better position, or an endorsement on this site.",
   },
   {
     icon: "check",
     title: "Clear disclosure",
-    body: "We're upfront that we're a free matching and comparison service — not an HVAC contractor — and that the work is always done by the independent pros you choose.",
+    body: "We're upfront that we're an independent information resource — not an HVAC contractor and not a lead broker. The work is always done by the licensed pros you choose and vet yourself.",
   },
 ];
 
@@ -140,7 +183,7 @@ export default function AboutPage() {
         icon="badgeCheck"
         title="An independent HVAC platform, built for Minnesota homeowners"
         intro={[
-          `${site.name} is a free service that helps Twin Cities homeowners understand their heating and cooling options and compare quotes from licensed local contractors. We don't perform HVAC work ourselves — and that independence is the whole point.`,
+          `${site.name} is a free, independent resource that helps Twin Cities homeowners understand their heating and cooling options and compare the quotes they gather from licensed local contractors. We don't perform HVAC work ourselves — and that independence is the whole point.`,
         ]}
       />
 
@@ -344,6 +387,33 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
+
+          {/* Sources we cite */}
+          <div id="sources" className="mx-auto mt-10 max-w-4xl scroll-mt-32">
+            <h3 className="font-display text-xl font-bold text-navy-900">
+              Sources we cite
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              Our guidance is built from primary sources — the utilities, agencies,
+              and standards bodies that actually set the programs and specifications.
+              Here are the main ones, so you can check them yourself.
+            </p>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {SOURCES.map((s) => (
+                <li key={s.label} className="rounded-xl border border-navy-900/[0.08] bg-white p-4 shadow-card">
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-display text-sm font-bold text-navy-900 underline decoration-accent-300 underline-offset-2 hover:text-accent-700"
+                  >
+                    {s.label}
+                  </a>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{s.detail}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Container>
       </section>
 
@@ -387,15 +457,18 @@ export default function AboutPage() {
             />
             <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-slate-700">
               <p>
-                {site.name} is a free matching and comparison service that connects
-                homeowners with independent, licensed, and insured HVAC contractors
+                {site.name} is an independent information resource for homeowners
                 across {locations.length} south-metro cities. We are not a licensed
-                HVAC contractor and we don't perform heating or cooling work.
+                HVAC contractor, we don&rsquo;t perform heating or cooling work, and we
+                don&rsquo;t operate a contractor network or sell your information as a
+                lead.
               </p>
               <p>
-                We fund the platform through our contractor network, never by
-                charging homeowners and never by letting payment influence our
-                guidance, our matching, or what we publish as fact. If we ever get
+                The site is free for homeowners. We don&rsquo;t charge you, we
+                don&rsquo;t take commissions from contractors, and we don&rsquo;t accept
+                payment to influence our guidance or what we publish as fact. If we
+                ever introduce advertising or another revenue source, it will be
+                clearly labeled and kept separate from our editorial work. If we get
                 something wrong, we want to hear about it and fix it.
               </p>
             </div>
@@ -456,7 +529,7 @@ export default function AboutPage() {
 
       <CTABand
         heading="Learn first. Compare quotes when you're ready."
-        sub={`${site.name} is a free service that connects Twin Cities homeowners with trusted, licensed local HVAC contractors — no cost, no obligation.`}
+        sub={`${site.name} is a free, independent resource that helps Twin Cities homeowners understand costs and compare the quotes they gather from licensed local contractors — no cost, no obligation.`}
       />
 
       <script

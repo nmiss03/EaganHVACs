@@ -21,9 +21,9 @@ export function ServiceArea() {
             <Reveal>
               <SectionTitle
                 align="left"
-                eyebrow="Service Area"
-                title="Proudly serving Eagan and the south metro"
-                description="Based right here in Dakota County, our contractor network covers Eagan and the surrounding communities — so help is never far away."
+                eyebrow="City guides"
+                title="HVAC guides for Eagan & the south metro"
+                description="We're based in Eagan and cover the south-metro cities below with independent homeowner guides — local repair and replacement costs, common problems, permits, and rebates for each."
               />
             </Reveal>
             <Reveal delay={100}>
@@ -53,37 +53,32 @@ export function ServiceArea() {
             </Reveal>
           </div>
 
-          {/* Stylized radius map */}
+          {/* What every city guide covers */}
           <Reveal delay={150}>
-            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-xl bg-gradient-to-br from-navy-100 via-navy-50 to-white shadow-card">
-              <svg className="absolute inset-0 h-full w-full text-navy-900/[0.05]" aria-hidden="true">
-                <defs>
-                  <pattern id="map-grid" width="36" height="36" patternUnits="userSpaceOnUse">
-                    <path d="M36 0H0v36" fill="none" stroke="currentColor" strokeWidth="1" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#map-grid)" />
-              </svg>
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <span className="absolute h-[85%] w-[85%] rounded-full border border-navy-200/80" />
-                <span className="absolute h-[62%] w-[62%] rounded-full border border-navy-200" />
-                <span className="absolute h-[38%] w-[38%] rounded-full border border-navy-300 bg-navy-100/40" />
-                <span className="absolute h-[38%] w-[38%] animate-pulse-ring rounded-full bg-accent-400/20" />
-              </div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent-500 text-white shadow-glow">
-                  <Icon name="mapPin" className="h-7 w-7" />
-                </span>
-                <p className="font-display text-lg font-extrabold text-navy-900">
-                  Eagan, MN
-                </p>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy-500">
-                  Service radius map placeholder
-                </p>
-              </div>
+            <div className="mx-auto w-full max-w-md rounded-2xl border border-navy-900/[0.08] bg-white p-6 shadow-card sm:p-8">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent-700">
+                In every city guide
+              </p>
+              <p className="mt-2 font-display text-lg font-bold text-navy-900">
+                What you&rsquo;ll find for your city
+              </p>
+              <ul className="mt-5 space-y-3">
+                {[
+                  "Typical furnace & AC repair and replacement costs",
+                  "The HVAC problems common to that city's homes",
+                  "Repair-or-replace guidance for your system",
+                  "Permit requirements and local utilities",
+                  "Which rebates apply — and how to claim them",
+                  "How to choose and compare local contractors",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-navy-800">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-100 text-accent-600">
+                      <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.4} />
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
         </div>
