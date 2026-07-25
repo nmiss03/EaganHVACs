@@ -17,7 +17,7 @@ import { ResearchSnapshot } from "@/components/ui/ResearchSnapshot";
 import { articles, getArticle } from "@/lib/articles";
 import { renderInline } from "@/lib/render-inline";
 import { absoluteUrl, getServiceDetail } from "@/lib/content";
-import { site } from "@/lib/site";
+import { site, authorSchema } from "@/lib/site";
 import { getTool } from "@/lib/tools";
 
 export function generateStaticParams() {
@@ -80,8 +80,9 @@ export default async function ArticlePage({
     headline: article.title,
     description: article.metaDescription,
     url: absoluteUrl(`/resources/${article.slug}`),
+    datePublished: "2026-07-01",
     dateModified: "2026-07-01",
-    author: { "@type": "Organization", name: site.name, url: site.url },
+    author: authorSchema(),
     publisher: { "@id": `${site.url}/#organization` },
     mainEntityOfPage: absoluteUrl(`/resources/${article.slug}`),
   };

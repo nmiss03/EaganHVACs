@@ -509,10 +509,10 @@ export const toolContent: Record<string, ToolContent> = {
       "Leaning toward a heat pump or dual-fuel system? Price it with the [cost estimator](/tools/hvac-cost-estimator), then capture the substantial [heat pump rebates and tax credits](/tools/minnesota-hvac-rebate-checker) — they're the largest incentives available. Read the [heat pump service overview](/services/heat-pumps) to understand what a proper cold-climate install requires, and bring the [right questions](/resources/questions-to-ask-hvac-contractor) so any installer proves they size and set up heat pumps correctly.",
     ],
     relatedGuides: [
+      { label: "Heat pump cost in Minnesota", href: "/resources/heat-pump-replacement-cost" },
       { label: "Heat pumps in Minnesota", href: "/services/heat-pumps" },
       { label: "Minnesota rebates & tax credits", href: "/resources/minnesota-hvac-rebates" },
       { label: "HVAC cost guide for Minnesota", href: "/resources/hvac-cost-guide-minnesota" },
-      { label: "Questions to ask an HVAC contractor", href: "/resources/questions-to-ask-hvac-contractor" },
     ],
     relatedTools: ["hvac-cost-estimator", "minnesota-hvac-rebate-checker", "system-lifespan", "hvac-financing-calculator"],
     relatedRebates: true,

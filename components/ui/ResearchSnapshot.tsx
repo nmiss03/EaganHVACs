@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { SourceList, type Source } from "@/components/ui/SourceList";
-import { site } from "@/lib/site";
+import { bylineName } from "@/lib/site";
 
 interface ResearchSnapshotProps {
   /** Human-readable last-updated date, e.g. "July 2026". */
@@ -28,7 +28,7 @@ interface ResearchSnapshotProps {
 export function ResearchSnapshot({
   updated,
   readMinutes,
-  reviewedBy = `the ${site.name} editorial team`,
+  reviewedBy = bylineName(),
   snapshot,
   sources,
   methodologyHref = "/about#methodology",

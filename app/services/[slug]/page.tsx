@@ -43,7 +43,7 @@ const SERVICE_LINKS: Record<string, { tools: string[]; articles: string[] }> = {
   },
   "heat-pumps": {
     tools: ["heat-pump-vs-furnace", "minnesota-hvac-rebate-checker", "hvac-cost-estimator"],
-    articles: ["minnesota-hvac-rebates", "hvac-cost-guide-minnesota"],
+    articles: ["heat-pump-replacement-cost", "minnesota-hvac-rebates", "hvac-cost-guide-minnesota"],
   },
   "thermostats": {
     tools: ["minnesota-hvac-rebate-checker"],

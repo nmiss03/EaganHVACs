@@ -20,6 +20,40 @@ export const site = {
   },
 } as const;
 
+/**
+ * Who researches and maintains the content — the E-E-A-T author signal.
+ *
+ * For the strongest signal on money/cost (YMYL-adjacent) content this should be
+ * a REAL, named individual. We deliberately do NOT invent a person. Until the
+ * owner supplies their name, content is credited honestly to the editorial team
+ * as an Organization. Fill in `person` with a real name/title/bio and the
+ * bylines and Article/Person JSON-LD upgrade automatically — no other changes.
+ */
+export const editorial = {
+  /** Set to a real individual to upgrade bylines + schema to a named Person. */
+  person: null as { name: string; jobTitle?: string; bio?: string } | null,
+  /** Honest fallback credit while `person` is null. */
+  teamName: "EaganHVACs Editorial Team",
+} as const;
+
+/** JSON-LD author node: a real Person when named, else the editorial Organization. */
+export function authorSchema() {
+  if (editorial.person) {
+    return {
+      "@type": "Person",
+      name: editorial.person.name,
+      ...(editorial.person.jobTitle ? { jobTitle: editorial.person.jobTitle } : {}),
+      url: `${site.url}/about`,
+    };
+  }
+  return { "@type": "Organization", name: editorial.teamName, url: site.url };
+}
+
+/** Human-readable byline label. */
+export function bylineName() {
+  return editorial.person?.name ?? editorial.teamName;
+}
+
 export const navLinks = [
   { label: "Tools", href: "/tools" },
   { label: "Resources", href: "/resources" },
