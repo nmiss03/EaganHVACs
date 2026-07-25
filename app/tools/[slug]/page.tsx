@@ -6,6 +6,7 @@ import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
 import { ContentImage } from "@/components/ui/ContentImage";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { CityLinks } from "@/components/sections/CityLinks";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { site } from "@/lib/site";
 import { CostEstimator } from "@/components/tools/CostEstimator";
@@ -129,6 +130,11 @@ export default async function ToolPage({
           </Container>
         </section>
       ) : null}
+
+      <CityLinks
+        heading="Using this tool for a specific city?"
+        description="Pair your numbers with the local buying guide for your city — costs, common problems, permits, rebates, and how to hire."
+      />
 
       <CTABand
         heading="Ready to see real numbers?"

@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/landing/Breadcrumbs";
 import { CTABand } from "@/components/landing/CTABand";
 import { FaqList } from "@/components/landing/FaqList";
 import { StickyToc } from "@/components/cityguide/StickyToc";
+import { CityLinks } from "@/components/sections/CityLinks";
 import { KitCapture } from "@/components/sections/KitCapture";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { Callout } from "@/components/ui/Callout";
@@ -349,6 +350,12 @@ export default async function ArticlePage({
           </section>
         ) : null}
       </article>
+
+      <CityLinks
+        tone="slate"
+        heading="HVAC guides for your city"
+        description="See how this applies where you live — local costs, common problems, permits, and rebates for each south-metro city."
+      />
 
       <CTABand
         heading="Learn first. Compare quotes when you're ready."
