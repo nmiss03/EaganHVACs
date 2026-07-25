@@ -1,5 +1,11 @@
 import type { IconName } from "@/components/ui/Icon";
 import { getLocation } from "@/lib/content";
+import {
+  FURNACE_AFUE,
+  LIFESPANS,
+  FEDERAL_25C_EXPIRATION_YEAR,
+  afuePlus,
+} from "@/lib/hvac-data";
 
 /**
  * Data layer for the reusable City Guide system that powers
@@ -250,7 +256,7 @@ export const MINNESOTA_CONSIDERATIONS: MinnesotaConsideration[] = [
   },
   {
     title: "Furnace efficiency & venting",
-    body: "High-efficiency (95%+ AFUE) condensing furnaces vent through sidewall PVC that can clog with snow and ice. Sizing, venting routes, and combustion-air supply all matter for both safety and reliability through a Minnesota winter.",
+    body: `High-efficiency (${afuePlus(FURNACE_AFUE.highEfficiency)}) condensing furnaces vent through sidewall PVC that can clog with snow and ice. Sizing, venting routes, and combustion-air supply all matter for both safety and reliability through a Minnesota winter.`,
   },
   {
     title: "Indoor air quality",
@@ -258,7 +264,7 @@ export const MINNESOTA_CONSIDERATIONS: MinnesotaConsideration[] = [
   },
   {
     title: "Rebates & tax credits",
-    body: "Xcel Energy (electric) and CenterPoint Energy (gas) offer rebates on qualifying high-efficiency equipment, with the largest utility incentives going to heat pumps. Note that the federal Energy Efficient Home Improvement Credit (25C) expired at the end of 2025 and is not available for 2026 installs. Program amounts change often, so verify current amounts with your utility and confirm which specific models qualify.",
+    body: `Xcel Energy (electric) and CenterPoint Energy (gas) offer rebates on qualifying high-efficiency equipment, with the largest utility incentives going to heat pumps. Note that the federal Energy Efficient Home Improvement Credit (25C) expired at the end of ${FEDERAL_25C_EXPIRATION_YEAR} and is not available for 2026 installs. Program amounts change often, so verify current amounts with your utility and confirm which specific models qualify.`,
   },
 ];
 
@@ -277,7 +283,7 @@ export const cityGuides: readonly CityGuide[] = [
       "A homeowner's guide to choosing an HVAC company in Eagan, MN. Learn what to evaluate, how to compare quotes fairly, the red flags to avoid, and questions to ask — plus a printable checklist and comparison worksheet.",
     h1: "How to Choose an HVAC Company in Eagan, MN",
     heroIntro: [
-      "Hiring the right company for a furnace or AC replacement in Eagan is a bigger decision than the equipment itself — the quality of the install determines how long your system lasts and how efficiently it runs for the next 15 to 20 years. This guide walks you through how to evaluate and compare local companies honestly, without relying on someone else's \"best of\" list.",
+      `Hiring the right company for a furnace or AC replacement in Eagan is a bigger decision than the equipment itself — the quality of the install determines how long your system lasts and how efficiently it runs for the next ${LIFESPANS.furnace.low} to ${LIFESPANS.furnace.high} years. This guide walks you through how to evaluate and compare local companies honestly, without relying on someone else's \"best of\" list.`,
       "We're a homeowner-education platform, not an HVAC contractor, so we have no company to sell you. Instead, use the criteria, worksheet, and checklists below to run your own fair comparison and hire with confidence.",
     ],
     intro: [

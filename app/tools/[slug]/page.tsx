@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/landing/Breadcrumbs";
 import { CTABand } from "@/components/landing/CTABand";
 import { PageHero } from "@/components/landing/PageHero";
 import { Container } from "@/components/ui/Container";
+import { ContentImage } from "@/components/ui/ContentImage";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { site } from "@/lib/site";
@@ -90,6 +91,19 @@ export default async function ToolPage({
             {tool.slug === "hvac-quote-analyzer" ? <QuoteAnalyzer /> : null}
             {tool.slug === "minnesota-hvac-rebate-checker" ? <RebateChecker /> : null}
           </div>
+
+          {tool.slug === "repair-or-replace" ? (
+            <div className="mx-auto mt-10 max-w-3xl">
+              <ContentImage
+                src="/site-images/repair-or-replace-infographic.webp"
+                alt="Repair-or-replace decision flowchart: if the system has trouble, assess whether it's a minor issue (simple, low-cost fix — system remains viable) or a significant problem (major failure, frequent breakdowns), then weigh a cost-benefit analysis of repair cost versus a new-system investment."
+                width={1800}
+                height={1005}
+                caption="How the repair-or-replace decision flows — the calculator above turns this logic into a recommendation for your system."
+                sizes="(min-width: 768px) 48rem, 100vw"
+              />
+            </div>
+          ) : null}
         </Container>
       </section>
 

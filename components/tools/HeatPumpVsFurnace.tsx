@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { track } from "@/lib/track";
+import { FURNACE_AFUE, afuePlus } from "@/lib/hvac-data";
 
 type Priority = "bills" | "upfront" | "carbon" | "comfort";
 type Cooling = "yes" | "no";
@@ -52,7 +53,7 @@ function recommend(priority: Priority, cooling: Cooling, heating: Heating): Reco
       icon: "flame",
       title: `A high-efficiency gas furnace${cooling === "yes" ? " (plus a new AC)" : ""} fits best`,
       why: [
-        "With gas already at your home and lowest upfront cost as your priority, a high-efficiency (96%+ AFUE) furnace is hard to beat.",
+        `With gas already at your home and lowest upfront cost as your priority, a high-efficiency (${afuePlus(FURNACE_AFUE.highEfficiency)}) furnace is hard to beat.`,
         cooling === "yes"
           ? "Pairing it with a new AC covers cooling at the same time and saves on shared installation labor."
           : "Since your AC still works, you only pay for the furnace now.",

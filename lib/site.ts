@@ -1,4 +1,5 @@
 import type { IconName } from "@/components/ui/Icon";
+import { LIFESPANS } from "@/lib/hvac-data";
 
 export const site = {
   name: "Eagan HVACs",
@@ -187,9 +188,8 @@ export const faqs: readonly Faq[] = [
       "In Minnesota, ask any contractor for their state license number and current proof of insurance before work begins, and confirm the license on the state's licensing lookup. Our contractor-questions guide walks you through exactly what to verify.",
   },
   {
-    question: "My furnace is 15+ years old. Should I repair or replace it?",
-    answer:
-      "It depends on the repair cost, the system's condition, and your energy bills. A good rule of thumb: if the repair costs more than a third of a new system and your furnace is past 15 years, replacement usually makes more financial sense. A technician can walk you through both options with real numbers — no pressure.",
+    question: `My furnace is ${LIFESPANS.furnace.low}+ years old. Should I repair or replace it?`,
+    answer: `It depends on the repair cost, the system's condition, and your energy bills. A good rule of thumb: if the repair costs more than a third of a new system and your furnace is past ${LIFESPANS.furnace.low} years, replacement usually makes more financial sense. A technician can walk you through both options with real numbers — no pressure.`,
   },
   {
     question: "Is financing available for new HVAC systems?",

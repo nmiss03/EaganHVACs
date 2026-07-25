@@ -11,6 +11,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { getCityGuide } from "@/lib/city-guides";
 import { absoluteUrl, getLocation, locations } from "@/lib/content";
 import { services, site, whyUs } from "@/lib/site";
+import { COST_RANGES, usdRange } from "@/lib/hvac-data";
 
 export function generateStaticParams() {
   return locations.map((location) => ({ slug: location.slug }));
@@ -67,7 +68,7 @@ export default async function LocationDetailPage({
     },
     {
       question: `How much does HVAC work cost in ${location.name}?`,
-      answer: `Costs in ${location.name} track the broader Twin Cities market — roughly $4,000–$9,000 for a furnace and $4,500–$9,500 for central AC installed, before rebates. Use our free cost estimator for a range tailored to your home.`,
+      answer: `Costs in ${location.name} track the broader Twin Cities market — roughly ${usdRange(COST_RANGES.furnace)} for a furnace and ${usdRange(COST_RANGES.ac)} for central AC installed, before rebates. Use our free cost estimator for a range tailored to your home.`,
     },
     {
       question: `How do I find a licensed HVAC contractor in ${location.name}?`,

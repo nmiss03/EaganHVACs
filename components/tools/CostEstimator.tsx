@@ -4,21 +4,23 @@ import { useState } from "react";
 import Link from "next/link";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { track } from "@/lib/track";
+import { COST_RANGES } from "@/lib/hvac-data";
 
 type SystemKey = "furnace" | "ac" | "both" | "heatpump";
 type SizeKey = "small" | "medium" | "large";
 type TierKey = "standard" | "high";
 
 /**
- * Twin Cities installed-price ranges. Kept deliberately as broad planning
- * ranges (consistent with /resources/hvac-cost-guide-minnesota) so the tool
- * never poses as a quote. Sourced from typical regional pricing bands.
+ * Twin Cities installed-price ranges — sourced from the canonical
+ * {@link COST_RANGES} so the estimator, the Quote Analyzer, the cost articles,
+ * and the buyer's kit can never drift apart. Kept as broad planning bands so
+ * the tool never poses as a quote.
  */
-const baseRanges: Record<SystemKey, [number, number]> = {
-  furnace: [4000, 9000],
-  ac: [4500, 9500],
-  both: [8000, 16500],
-  heatpump: [8000, 18000],
+const baseRanges: Record<SystemKey, readonly [number, number]> = {
+  furnace: COST_RANGES.furnace,
+  ac: COST_RANGES.ac,
+  both: COST_RANGES.furnaceAndAc,
+  heatpump: COST_RANGES.heatPump,
 };
 
 const systemLabels: Record<SystemKey, { label: string; icon: IconName }> = {
@@ -167,8 +169,8 @@ export function CostEstimator() {
             {tier === "high" ? (
               <li className="flex items-start gap-2.5">
                 <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-accent-500" strokeWidth={2.4} />
-                High-efficiency systems qualify for utility rebates and federal tax
-                credits that can cut thousands off this range
+                High-efficiency systems qualify for Minnesota utility rebates that
+                can cut hundreds to thousands off this range
               </li>
             ) : null}
             <li className="flex items-start gap-2.5">

@@ -1,5 +1,6 @@
 import type { IconName } from "@/components/ui/Icon";
 import { services, site } from "@/lib/site";
+import { LIFESPANS, SMART_THERMOSTAT_SAVINGS_PCT } from "@/lib/hvac-data";
 
 /**
  * Long-form, locally-relevant content for the programmatic service and
@@ -77,7 +78,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       {
         question: "Is it worth repairing an older furnace?",
         answer:
-          "If your furnace is under 15 years old and the repair costs less than about a third of a new system, repair usually makes sense. A technician can show you real numbers for both repair and replacement so you can decide with no pressure.",
+          `If your furnace is under ${LIFESPANS.furnace.low} years old and the repair costs less than about a third of a new system, repair usually makes sense. A technician can show you real numbers for both repair and replacement so you can decide with no pressure.`,
       },
       {
         question: "Why is my furnace blowing cold air?",
@@ -435,7 +436,7 @@ export const extraServiceDetails: readonly ServiceDetail[] = [
       "Smart thermostat installation and thermostat repair in Eagan, MN. Compatibility checks, C-wire installs, and proper setup for Nest, ecobee, and Honeywell.",
     tagline: "The $200 upgrade that pays for itself — when it's wired and configured right.",
     intro: [
-      "A smart thermostat is one of the cheapest ways to cut heating and cooling costs — typically saving around 8% on energy bills through smarter schedules and occupancy sensing. But Minnesota systems with dual-fuel setups, humidifiers, or older wiring often need a proper C-wire and correct configuration to work reliably.",
+      `A smart thermostat is one of the cheapest ways to cut heating and cooling costs — typically saving around ${SMART_THERMOSTAT_SAVINGS_PCT}% on energy bills through smarter schedules and occupancy sensing. But Minnesota systems with dual-fuel setups, humidifiers, or older wiring often need a proper C-wire and correct configuration to work reliably.`,
       "This guide explains what a correct smart-thermostat install involves — from a compatible C-wire to configuring dual-fuel and multi-stage systems — so you know whether to DIY or hire a local pro to set up your Nest, ecobee, or Honeywell right the first time.",
     ],
     signs: [
@@ -467,7 +468,7 @@ export const extraServiceDetails: readonly ServiceDetail[] = [
       {
         question: "Are smart thermostats really worth it?",
         answer:
-          "For most homes, yes. Studies consistently show roughly 8% savings on heating and cooling costs, which typically pays back the device within a couple of years — faster in a climate like Minnesota's with heavy heating use.",
+          `For most homes, yes. Studies consistently show roughly ${SMART_THERMOSTAT_SAVINGS_PCT}% savings on heating and cooling costs, which typically pays back the device within a couple of years — faster in a climate like Minnesota's with heavy heating use.`,
       },
       {
         question: "Can I install a smart thermostat myself?",

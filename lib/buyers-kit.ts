@@ -1,7 +1,16 @@
 /**
  * Source of truth for the free "Minnesota HVAC Buyer's Kit" lead magnet.
  * Shared by the on-site kit page and the welcome email so they never drift.
+ * All factual figures (prices, efficiency) come from lib/hvac-data.
  */
+
+import {
+  COST_RANGES,
+  FURNACE_AFUE,
+  FEDERAL_25C_EXPIRATION_LABEL,
+  usdRange,
+  afuePlus,
+} from "@/lib/hvac-data";
 
 /** A comparable, trustworthy replacement quote should include every one of these. */
 export const kitChecklist: string[] = [
@@ -35,10 +44,10 @@ export const kitQuestions: string[] = [
 
 /** Twin Cities installed price ranges, before rebates. Mirrors the cost tools. */
 export const kitPrices: { label: string; range: string }[] = [
-  { label: "New furnace", range: "$4,000 – $9,000" },
-  { label: "Central air conditioner", range: "$4,500 – $9,500" },
-  { label: "Furnace + AC together", range: "$8,000 – $16,500" },
-  { label: "Cold-climate heat pump", range: "$8,000 – $18,000" },
+  { label: "New furnace", range: usdRange(COST_RANGES.furnace, { sep: " – " }) },
+  { label: "Central air conditioner", range: usdRange(COST_RANGES.ac, { sep: " – " }) },
+  { label: "Furnace + AC together", range: usdRange(COST_RANGES.furnaceAndAc, { sep: " – " }) },
+  { label: "Cold-climate heat pump", range: usdRange(COST_RANGES.heatPump, { sep: " – " }) },
 ];
 
 /** Minnesota rebate & tax-credit cheat sheet. Programs, not dollar amounts. */
@@ -49,10 +58,10 @@ export const kitRebates: { program: string; covers: string }[] = [
   },
   {
     program: "CenterPoint Energy (gas)",
-    covers: "Rebates on qualifying high-efficiency (95%+ AFUE) furnaces and boilers.",
+    covers: `Rebates on qualifying high-efficiency (${afuePlus(FURNACE_AFUE.highEfficiency)}) furnaces and boilers.`,
   },
   {
     program: "Federal tax credit (25C) — EXPIRED end of 2025",
-    covers: "No longer available for equipment installed in 2026 or later (ended Dec 31, 2025). Only claimable for qualifying equipment installed on or before that date, on your 2025 return.",
+    covers: `No longer available for equipment installed in 2026 or later (ended ${FEDERAL_25C_EXPIRATION_LABEL}). Only claimable for qualifying equipment installed on or before that date, on your 2025 return.`,
   },
 ];

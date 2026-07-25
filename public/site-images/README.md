@@ -46,3 +46,8 @@ trees), I can generate it as native inline SVG from our own data instead.
 |---|---|
 | `home-ribbon.webp` | Homepage top masthead ribbon |
 | `home-hvac-collage.webp` | Homepage "What we help you decide" visual band |
+| `minnesota-home-winter.webp` | HVAC cost-guide article (lead) |
+| `modern-furnace-utility-room.webp` | Furnace replacement cost article (lead) |
+| `replacing-furnace-filter.webp` | HVAC maintenance calendar article (lead) |
+| `repair-vs-replace-matrix.webp` | Furnace repair cost article (lead) |
+| `repair-or-replace-infographic.webp` | `/tools/repair-or-replace` |

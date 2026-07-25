@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { track } from "@/lib/track";
+import { LIFESPANS, REPAIR_REPLACE_RULE_USD, usd } from "@/lib/hvac-data";
 
 type SystemType = "furnace" | "ac";
 
@@ -15,10 +16,12 @@ interface Result {
 
 /**
  * Repair-vs-replace decision aid. Uses the widely-used "$5,000 rule"
- * (age × repair cost) plus age thresholds — educational, not a quote.
+ * (age × repair cost) plus age thresholds — educational, not a quote. The
+ * lifespan threshold and the rule's dollar figure come from the canonical
+ * {@link LIFESPANS} / {@link REPAIR_REPLACE_RULE_USD} data.
  */
 function evaluate(age: number, repairCost: number, system: SystemType): Result {
-  const lifespan = system === "furnace" ? 20 : 15;
+  const lifespan = LIFESPANS[system].high;
   const fiveKScore = age * repairCost;
 
   if (age >= lifespan) {
@@ -28,11 +31,11 @@ function evaluate(age: number, repairCost: number, system: SystemType): Result {
       explanation: `At ${age} years, this system is at or past the typical ${lifespan}-year lifespan for a ${system === "furnace" ? "furnace" : "central AC"}. Putting ${formatMoney(repairCost)} into it rarely pays off when a failure is statistically near. Comparing replacement quotes now — on your schedule, not during a breakdown — usually wins.`,
     };
   }
-  if (fiveKScore >= 5000) {
+  if (fiveKScore >= REPAIR_REPLACE_RULE_USD) {
     return {
       verdict: "lean-replace",
       headline: "Leaning toward replacement",
-      explanation: `The common "$5,000 rule" multiplies age by repair cost: ${age} × ${formatMoney(repairCost)} = ${formatMoney(fiveKScore)}, which is above $5,000. That's the zone where many homeowners come out ahead replacing — but it's close enough that a second opinion and a replacement quote are worth getting.`,
+      explanation: `The common "${usd(REPAIR_REPLACE_RULE_USD)} rule" multiplies age by repair cost: ${age} × ${formatMoney(repairCost)} = ${formatMoney(fiveKScore)}, which is above ${usd(REPAIR_REPLACE_RULE_USD)}. That's the zone where many homeowners come out ahead replacing — but it's close enough that a second opinion and a replacement quote are worth getting.`,
     };
   }
   if (age >= lifespan * 0.6) {

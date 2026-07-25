@@ -122,7 +122,7 @@ export interface RebateProgramRow {
 /** One installed-price data point (Price Index). */
 export interface PriceIndexRow {
   system: string;
-  /** Efficiency tier label, e.g. "High-efficiency (96%+ AFUE)". */
+  /** Efficiency tier label, e.g. "High-efficiency (95%+ AFUE)". */
   efficiencyTier?: string;
   metro?: string;
   lowUsd: number | null;

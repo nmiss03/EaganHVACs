@@ -8,7 +8,20 @@
  * cost bands mirror the ranges the calculators themselves use, lifespans and
  * efficiency terms are industry-standard, and rebate specifics defer to the
  * rebate guide and each utility rather than quoting amounts.
+ *
+ * All numeric figures come from the canonical lib/hvac-data module.
  */
+
+import {
+  COST_RANGES,
+  FURNACE_AFUE,
+  REPAIR_REPLACE_RULE_USD,
+  FEDERAL_25C,
+  FEDERAL_25C_EXPIRATION_YEAR,
+  usd,
+  usdRange,
+  afuePlus,
+} from "@/lib/hvac-data";
 
 export interface ToolExample {
   title: string;
@@ -73,8 +86,8 @@ export const toolContent: Record<string, ToolContent> = {
       "It's also the fastest way to sanity-check a quote you've already received. If a bid lands far above or below the range, that's your cue to ask why — which is exactly what the [HVAC Quote Analyzer](/tools/hvac-quote-analyzer) helps you do line by line.",
     ],
     howItWorks: [
-      "The estimator starts from a base installed range for each system type in the Twin Cities: roughly $4,000–$9,000 for a furnace, $4,500–$9,500 for central AC, $8,000–$16,500 for a furnace and AC replaced together, and $8,000–$18,000 for a cold-climate heat pump. These bands already account for both equipment and professional installation.",
-      "It then adjusts within (and slightly beyond) that band for the two variables that move price the most: home size, because a larger home needs more capacity and often more ductwork, and efficiency, because a high-efficiency furnace (96%+ AFUE) or high-SEER2 AC costs more up front than a builder-grade unit. The result is a tighter range tailored to your inputs rather than a single national average.",
+      `The estimator starts from a base installed range for each system type in the Twin Cities: roughly ${usdRange(COST_RANGES.furnace)} for a furnace, ${usdRange(COST_RANGES.ac)} for central AC, ${usdRange(COST_RANGES.furnaceAndAc)} for a furnace and AC replaced together, and ${usdRange(COST_RANGES.heatPump)} for a cold-climate heat pump. These bands already account for both equipment and professional installation.`,
+      `It then adjusts within (and slightly beyond) that band for the two variables that move price the most: home size, because a larger home needs more capacity and often more ductwork, and efficiency, because a high-efficiency furnace (${afuePlus(FURNACE_AFUE.highEfficiency)}) or high-SEER2 AC costs more up front than a builder-grade unit. The result is a tighter range tailored to your inputs rather than a single national average.`,
     ],
     methodology: [
       "The base ranges are editorial estimates for the Twin Cities market, derived from published contractor pricing, manufacturer equipment costs, and typical local labor — reviewed and updated over time. They are deliberately expressed as wide low-to-high bands rather than a single number, because honest HVAC pricing is a range, not a point.",
@@ -100,7 +113,7 @@ export const toolContent: Record<string, ToolContent> = {
       },
       {
         title: "Furnace and AC failing the same year",
-        body: "Replacing both together lands in the $8,000–$16,500 band rather than paying two separate mobilization and labor charges. The homeowner then checks the [heat pump vs. furnace tool](/tools/heat-pump-vs-furnace) to see whether a dual-fuel setup makes sense before committing, since replacing both at once is the ideal moment to reconsider the system type.",
+        body: `Replacing both together lands in the ${usdRange(COST_RANGES.furnaceAndAc)} band rather than paying two separate mobilization and labor charges. The homeowner then checks the [heat pump vs. furnace tool](/tools/heat-pump-vs-furnace) to see whether a dual-fuel setup makes sense before committing, since replacing both at once is the ideal moment to reconsider the system type.`,
       },
     ],
     commonMistakes: [
@@ -128,11 +141,11 @@ export const toolContent: Record<string, ToolContent> = {
       },
       {
         q: "How much does a new furnace cost in Minnesota?",
-        a: "A typical installed furnace runs about $4,000–$9,000 in the Twin Cities, with high-efficiency (96%+ AFUE) models at the upper end. The estimator narrows that by home size and efficiency.",
+        a: `A typical installed furnace runs about ${usdRange(COST_RANGES.furnace)} in the Twin Cities, with high-efficiency (${afuePlus(FURNACE_AFUE.highEfficiency)}) models at the upper end. The estimator narrows that by home size and efficiency.`,
       },
       {
         q: "Is a heat pump really that much more than a furnace?",
-        a: "A cold-climate heat pump ($8,000–$18,000 installed) costs more up front, but it both heats and cools, qualifies for the largest incentives, and lowers operating cost. The heat-pump-vs-furnace tool weighs the trade-off for a Minnesota home.",
+        a: `A cold-climate heat pump (${usdRange(COST_RANGES.heatPump)} installed) costs more up front, but it both heats and cools, qualifies for the largest incentives, and lowers operating cost. The heat-pump-vs-furnace tool weighs the trade-off for a Minnesota home.`,
       },
     ],
     nextSteps: [
@@ -149,12 +162,12 @@ export const toolContent: Record<string, ToolContent> = {
     costSnapshot: {
       title: "Typical Twin Cities installed ranges",
       note: "Before rebates. Bars share one scale, so you can compare systems at a glance.",
-      scaleMax: 18000,
+      scaleMax: COST_RANGES.heatPump[1],
       bars: [
-        { label: "Furnace", low: 4000, high: 9000 },
-        { label: "Central AC", low: 4500, high: 9500 },
-        { label: "Furnace + AC together", low: 8000, high: 16500 },
-        { label: "Cold-climate heat pump", low: 8000, high: 18000 },
+        { label: "Furnace", low: COST_RANGES.furnace[0], high: COST_RANGES.furnace[1] },
+        { label: "Central AC", low: COST_RANGES.ac[0], high: COST_RANGES.ac[1] },
+        { label: "Furnace + AC together", low: COST_RANGES.furnaceAndAc[0], high: COST_RANGES.furnaceAndAc[1] },
+        { label: "Cold-climate heat pump", low: COST_RANGES.heatPump[0], high: COST_RANGES.heatPump[1] },
       ],
     },
   },
@@ -174,7 +187,7 @@ export const toolContent: Record<string, ToolContent> = {
     ],
     howItWorks: [
       "The logic combines two well-known industry rules of thumb. The first is the age test: every system has a typical lifespan (roughly 15–20 years for a gas furnace, 12–15 for central AC and heat pumps), and the closer you are to it, the weaker the case for a big repair. The second is the cost test: when a repair costs more than about a third to a half of a new system, replacement usually becomes the better long-term value.",
-      "A widely used shorthand is the \"$5,000 rule\" — multiply the equipment's age by the repair cost, and if the result exceeds $5,000, lean toward replacement. The tool blends these signals rather than relying on any single one, because a $400 repair on a 20-year-old furnace and a $1,800 repair on an 8-year-old one are very different decisions.",
+      `A widely used shorthand is the "${usd(REPAIR_REPLACE_RULE_USD)} rule" — multiply the equipment's age by the repair cost, and if the result exceeds ${usd(REPAIR_REPLACE_RULE_USD)}, lean toward replacement. The tool blends these signals rather than relying on any single one, because a $400 repair on a 20-year-old furnace and a $1,800 repair on an 8-year-old one are very different decisions.`,
     ],
     methodology: [
       "The lifespan thresholds are industry-standard ranges, the same ones used in the [System Lifespan estimator](/tools/system-lifespan). The cost thresholds (the one-third rule, the 50% rule, and the age-times-cost heuristic) are long-standing contractor rules of thumb, not proprietary formulas — we use them because they're transparent and you can check the math yourself.",
@@ -215,8 +228,8 @@ export const toolContent: Record<string, ToolContent> = {
     ],
     faqs: [
       {
-        q: "What is the $5,000 rule?",
-        a: "Multiply the equipment's age in years by the repair cost. If the result is over $5,000, lean toward replacement. It's a quick sanity check, not a hard law — the calculator blends it with lifespan and other signals.",
+        q: `What is the ${usd(REPAIR_REPLACE_RULE_USD)} rule?`,
+        a: `Multiply the equipment's age in years by the repair cost. If the result is over ${usd(REPAIR_REPLACE_RULE_USD)}, lean toward replacement. It's a quick sanity check, not a hard law — the calculator blends it with lifespan and other signals.`,
       },
       {
         q: "At what age should I stop repairing my furnace?",
@@ -437,7 +450,7 @@ export const toolContent: Record<string, ToolContent> = {
       "Because a heat pump both heats and cools, it's frequently compared against buying a furnace and an AC together — which is why the honest comparison, and the incentives, often look better than a first glance suggests.",
     ],
     methodology: [
-      "The recommendation logic reflects cold-climate HVAC guidance: cold-climate (ccASHP) heat pumps maintain useful heating output well below 0°F, and dual-fuel systems are a common Minnesota answer because they capture heat-pump efficiency in the shoulder seasons while keeping a furnace's brute-force heat for deep cold. We frame incentives qualitatively — heat pumps still draw the largest utility rebates in Minnesota (the federal 25C credit that once added up to $2,000 expired at the end of 2025) — and send you to the [rebates guide](/resources/minnesota-hvac-rebates), [rebate database](/minnesota-hvac-rebate-database), and [rebate checker](/tools/minnesota-hvac-rebate-checker) for current amounts rather than quoting figures that change yearly.",
+      `The recommendation logic reflects cold-climate HVAC guidance: cold-climate (ccASHP) heat pumps maintain useful heating output well below 0°F, and dual-fuel systems are a common Minnesota answer because they capture heat-pump efficiency in the shoulder seasons while keeping a furnace's brute-force heat for deep cold. We frame incentives qualitatively — heat pumps still draw the largest utility rebates in Minnesota (the federal 25C credit that once added up to ${usd(FEDERAL_25C.capHeatPumpUsd)} expired at the end of ${FEDERAL_25C_EXPIRATION_YEAR}) — and send you to the [rebates guide](/resources/minnesota-hvac-rebates), [rebate database](/minnesota-hvac-rebate-database), and [rebate checker](/tools/minnesota-hvac-rebate-checker) for current amounts rather than quoting figures that change yearly.`,
       "The tool doesn't model your exact energy bills, because that depends on your rates, usage, and insulation. It gives a directional recommendation and the reasoning; a contractor's load calculation and an energy model refine it.",
     ],
     assumptions: [
@@ -606,7 +619,7 @@ export const toolContent: Record<string, ToolContent> = {
       "It intentionally stops short of quoting exact dollars. For each program it tells you where to confirm the current amount — because a rebate figure that's right today may be revised at the start of the next program year, and a stale number is worse than no number.",
     ],
     methodology: [
-      "Program routing is based on the published incentive structures of Xcel Energy and CenterPoint Energy, and mirrors the [Minnesota rebates guide](/resources/minnesota-hvac-rebates) and the [rebate database](/minnesota-hvac-rebate-database). The federal 25C credit that once applied (30% of cost up to annual caps) expired at the end of 2025; the tool notes this rather than routing you to an incentive you can no longer use.",
+      `Program routing is based on the published incentive structures of Xcel Energy and CenterPoint Energy, and mirrors the [Minnesota rebates guide](/resources/minnesota-hvac-rebates) and the [rebate database](/minnesota-hvac-rebate-database). The federal 25C credit that once applied (${FEDERAL_25C.ratePct}% of cost up to annual caps) expired at the end of ${FEDERAL_25C_EXPIRATION_YEAR}; the tool notes this rather than routing you to an incentive you can no longer use.`,
       "This design is a deliberate accuracy choice. Our [Rebate Database](/minnesota-hvac-rebate-database) tracks each program's status and links to the primary source. Because utility amounts change often — and can't always be verified from those sources on demand — the checker names the program and sends you to the official page rather than quoting a figure that might be stale.",
     ],
     assumptions: [
@@ -629,7 +642,7 @@ export const toolContent: Record<string, ToolContent> = {
       },
       {
         title: "Gas furnace replacement, CenterPoint customer",
-        body: "For a high-efficiency (95%+ AFUE) furnace, the checker surfaces the CenterPoint furnace rebate. The homeowner asks the installer to confirm the qualifying model numbers and who files the utility paperwork — a question straight from the [contractor questions guide](/resources/questions-to-ask-hvac-contractor).",
+        body: `For a high-efficiency (${afuePlus(FURNACE_AFUE.highEfficiency)}) furnace, the checker surfaces the CenterPoint furnace rebate. The homeowner asks the installer to confirm the qualifying model numbers and who files the utility paperwork — a question straight from the [contractor questions guide](/resources/questions-to-ask-hvac-contractor).`,
       },
     ],
     commonMistakes: [
@@ -658,7 +671,7 @@ export const toolContent: Record<string, ToolContent> = {
       },
       {
         q: "Do heat pumps really get the biggest incentives?",
-        a: "Heat pumps still draw the largest utility rebates in Minnesota, a big reason cold-climate heat pumps have surged here. (The federal credit that once added up to $2,000 expired at the end of 2025, so a 2026 heat pump relies on utility rebates and the pending state program.)",
+        a: `Heat pumps still draw the largest utility rebates in Minnesota, a big reason cold-climate heat pumps have surged here. (The federal credit that once added up to ${usd(FEDERAL_25C.capHeatPumpUsd)} expired at the end of ${FEDERAL_25C_EXPIRATION_YEAR}, so a 2026 heat pump relies on utility rebates and the pending state program.)`,
       },
     ],
     nextSteps: [

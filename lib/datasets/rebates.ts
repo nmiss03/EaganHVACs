@@ -1,4 +1,5 @@
 import type { Dataset, RebateProgramRow } from "@/lib/datasets/types";
+import { FEDERAL_25C, FEDERAL_25C_EXPIRATION_LABEL, usd } from "@/lib/hvac-data";
 
 /**
  * Minnesota HVAC Rebate Database.
@@ -49,19 +50,17 @@ export const rebateDataset: Dataset<RebateProgramRow> = {
       equipment: "Heat pumps, high-efficiency furnaces & AC",
       program: "Energy Efficient Home Improvement Credit (25C)",
       amount: null,
-      eligibility:
-        "Historically 30% of qualifying equipment cost, up to annual caps (up to $600 for a qualifying furnace or AC; up to $2,000 for a qualifying heat pump).",
+      eligibility: `Historically ${FEDERAL_25C.ratePct}% of qualifying equipment cost, up to annual caps (up to ${usd(FEDERAL_25C.capFurnaceAcUsd)} for a qualifying furnace or AC; up to ${usd(FEDERAL_25C.capHeatPumpUsd)} for a qualifying heat pump).`,
       incomeRestriction: null,
       status: "expired",
-      effectiveDate: "2023-01-01",
-      expirationDate: "2025-12-31",
+      effectiveDate: FEDERAL_25C.effectiveDate,
+      expirationDate: FEDERAL_25C.expirationDate,
       lastVerified: "July 2026",
       source: {
         label: "IRS — Energy Efficient Home Improvement Credit (25C)",
         url: "https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit",
       },
-      notes:
-        "Expired for equipment placed in service after December 31, 2025 (terminated early by the One Big Beautiful Bill Act, 2025). It is NOT available for 2026 installations. Equipment installed on or before December 31, 2025 may still be claimed on your 2025 federal return (IRS Form 5695) — confirm with a tax professional.",
+      notes: `Expired for equipment placed in service after ${FEDERAL_25C_EXPIRATION_LABEL} (terminated early by the One Big Beautiful Bill Act, 2025). It is NOT available for 2026 installations. Equipment installed on or before ${FEDERAL_25C_EXPIRATION_LABEL} may still be claimed on your 2025 federal return (IRS Form 5695) — confirm with a tax professional.`,
     },
     {
       id: "xcel-heat-pump",

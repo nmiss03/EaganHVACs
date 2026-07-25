@@ -4,15 +4,18 @@ import { useState } from "react";
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { track } from "@/lib/track";
+import { LIFESPANS } from "@/lib/hvac-data";
 
 type EquipmentKey = "furnace" | "ac" | "heatpump" | "boiler" | "waterheater";
 
+// Lifespan bands come from the canonical LIFESPANS table so the calculator and
+// every lifespan reference in the content stay in lockstep.
 const equipment: Record<EquipmentKey, { label: string; icon: "flame" | "snowflake" | "gauge" | "wind" | "thermometer"; low: number; high: number }> = {
-  furnace: { label: "Gas furnace", icon: "flame", low: 15, high: 20 },
-  ac: { label: "Central AC", icon: "snowflake", low: 12, high: 17 },
-  heatpump: { label: "Heat pump", icon: "gauge", low: 12, high: 15 },
-  boiler: { label: "Boiler", icon: "thermometer", low: 20, high: 30 },
-  waterheater: { label: "Water heater", icon: "wind", low: 8, high: 12 },
+  furnace: { label: "Gas furnace", icon: "flame", ...LIFESPANS.furnace },
+  ac: { label: "Central AC", icon: "snowflake", ...LIFESPANS.ac },
+  heatpump: { label: "Heat pump", icon: "gauge", ...LIFESPANS.heatPump },
+  boiler: { label: "Boiler", icon: "thermometer", ...LIFESPANS.boiler },
+  waterheater: { label: "Water heater", icon: "wind", ...LIFESPANS.waterHeater },
 };
 
 export function LifespanCalculator() {

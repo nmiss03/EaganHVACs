@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { getRebateDataset, datasetJsonLd } from "@/lib/datasets";
 import { absoluteUrl } from "@/lib/content";
+import { FEDERAL_25C, FEDERAL_25C_EXPIRATION_LABEL, usd } from "@/lib/hvac-data";
 
 export const metadata: Metadata = {
   title: "Minnesota HVAC Rebate Database | Verified Incentives & Sources",
@@ -62,8 +63,8 @@ export default function RebateDatabasePage() {
           <div className="mx-auto max-w-3xl">
             <Callout tone="warning" title="Important 2026 update: the federal HVAC tax credit has expired">
               The federal Energy Efficient Home Improvement Credit (25C) — which offered up to
-              $2,000 toward a qualifying heat pump — was ended early by 2025 legislation and is{" "}
-              <strong>no longer available for equipment placed in service after December 31, 2025</strong>.
+              {" "}{usd(FEDERAL_25C.capHeatPumpUsd)} toward a qualifying heat pump — was ended early by 2025 legislation and is{" "}
+              <strong>no longer available for equipment placed in service after {FEDERAL_25C_EXPIRATION_LABEL}</strong>.
               If you installed qualifying equipment on or before that date, you may still claim it
               on your 2025 federal return; a tax professional can confirm. For 2026 projects, focus
               on the Minnesota utility rebates below and watch for the pending state program.

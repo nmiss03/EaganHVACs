@@ -9,6 +9,7 @@ import { KitCapture } from "@/components/sections/KitCapture";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { Callout } from "@/components/ui/Callout";
 import { Container } from "@/components/ui/Container";
+import { ContentImage } from "@/components/ui/ContentImage";
 import { Icon } from "@/components/ui/Icon";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { ResearchSnapshot } from "@/components/ui/ResearchSnapshot";
@@ -116,6 +117,18 @@ export default async function ArticlePage({
                 readMinutes={article.readMinutes}
                 className="mb-8"
               />
+              {article.leadImage ? (
+                <ContentImage
+                  src={article.leadImage.src}
+                  alt={article.leadImage.alt}
+                  width={article.leadImage.width}
+                  height={article.leadImage.height}
+                  caption={article.leadImage.caption}
+                  priority
+                  sizes="(min-width: 768px) 48rem, 100vw"
+                  className="mb-8"
+                />
+              ) : null}
               {article.intro.map((p) => (
                 <p key={p.slice(0, 24)} className="mb-4 text-lg leading-relaxed text-slate-700">
                   {renderInline(p)}
@@ -232,9 +245,18 @@ export default async function ArticlePage({
                       </div>
                     </div>
                   ) : null}
-                  {section.image ? (
+                  {section.image?.src ? (
+                    <ContentImage
+                      src={section.image.src}
+                      alt={section.image.alt ?? ""}
+                      width={section.image.width ?? 1600}
+                      height={section.image.height ?? 1000}
+                      caption={section.image.caption}
+                      className="mt-6"
+                    />
+                  ) : section.image ? (
                     <ImagePlaceholder
-                      label={section.image.label}
+                      label={section.image.label ?? ""}
                       aspect="video"
                       className="mt-5"
                     />

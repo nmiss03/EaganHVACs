@@ -8,6 +8,13 @@ import { Icon } from "@/components/ui/Icon";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { allServiceDetails } from "@/lib/content";
+import {
+  FURNACE_AFUE,
+  LIFESPANS,
+  SMART_THERMOSTAT_SAVINGS_PCT,
+  afuePlus,
+  yearsRange,
+} from "@/lib/hvac-data";
 
 export const metadata: Metadata = {
   title: "HVAC FAQs | Costs, Repairs & Advice for Eagan, MN Homeowners",
@@ -58,12 +65,12 @@ const faqGroups: FaqGroup[] = [
       {
         question: "Should I repair or replace my furnace?",
         answer:
-          "A useful rule of thumb: if your furnace is past 15 years old and the repair costs more than a third of a new system, replacement usually wins financially. Below that, repair is often the smart call. A good technician will show you real numbers for both paths — never pressure.",
+          `A useful rule of thumb: if your furnace is past ${LIFESPANS.furnace.low} years old and the repair costs more than a third of a new system, replacement usually wins financially. Below that, repair is often the smart call. A good technician will show you real numbers for both paths — never pressure.`,
       },
       {
         question: "How long should an HVAC system last?",
         answer:
-          "In Minnesota's climate, furnaces typically last 15–20 years and air conditioners 12–17, with heat pumps in a similar range. Annual maintenance is the biggest factor in reaching the high end of those ranges.",
+          `In Minnesota's climate, furnaces typically last ${yearsRange(LIFESPANS.furnace)} years and air conditioners ${yearsRange(LIFESPANS.ac)}, with heat pumps in a similar range. Annual maintenance is the biggest factor in reaching the high end of those ranges.`,
       },
       {
         question: "Is it worth replacing my furnace and AC at the same time?",
@@ -113,12 +120,12 @@ const faqGroups: FaqGroup[] = [
       {
         question: "What furnace efficiency (AFUE) should I choose in Minnesota?",
         answer:
-          "With our long heating season, high-efficiency condensing furnaces (95%+ AFUE) usually pay off in Minnesota and qualify for utility rebates. Your installer can compare lifetime operating costs of the options for your actual usage.",
+          `With our long heating season, high-efficiency condensing furnaces (${afuePlus(FURNACE_AFUE.highEfficiency)}) usually pay off in Minnesota and qualify for utility rebates. Your installer can compare lifetime operating costs of the options for your actual usage.`,
       },
       {
         question: "Do smart thermostats really lower bills?",
         answer:
-          "Yes — typically around 8% on heating and cooling, more if your schedule is away-heavy. In a Minnesota heating season that adds up quickly, which is why a professionally installed and configured smart thermostat is one of the fastest-payback upgrades.",
+          `Yes — typically around ${SMART_THERMOSTAT_SAVINGS_PCT}% on heating and cooling, more if your schedule is away-heavy. In a Minnesota heating season that adds up quickly, which is why a professionally installed and configured smart thermostat is one of the fastest-payback upgrades.`,
       },
       {
         question: "How often should I change my furnace filter?",

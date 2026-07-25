@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { track } from "@/lib/track";
+import { COST_RANGES } from "@/lib/hvac-data";
 
 type Equip = "furnace" | "ac" | "both" | "heatpump";
 
@@ -14,11 +15,11 @@ const equipOptions: { value: Equip; label: string; icon: IconName }[] = [
   { value: "heatpump", label: "Heat pump", icon: "gauge" },
 ];
 
-const ranges: Record<Equip, [number, number]> = {
-  furnace: [4000, 9000],
-  ac: [4500, 9500],
-  both: [8000, 16500],
-  heatpump: [8000, 18000],
+const ranges: Record<Equip, readonly [number, number]> = {
+  furnace: COST_RANGES.furnace,
+  ac: COST_RANGES.ac,
+  both: COST_RANGES.furnaceAndAc,
+  heatpump: COST_RANGES.heatPump,
 };
 
 /** Each item a comparable, trustworthy quote should include. Missing items

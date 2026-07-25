@@ -4,6 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { track } from "@/lib/track";
+import {
+  FURNACE_AFUE,
+  FEDERAL_25C,
+  FEDERAL_25C_EXPIRATION_LABEL,
+  afuePlus,
+} from "@/lib/hvac-data";
 
 type Electric = "xcel" | "other";
 type Gas = "centerpoint" | "other" | "none";
@@ -61,8 +67,8 @@ function matchPrograms(
             : "High-efficiency furnace rebate (gas utilities)",
       detail:
         gas === "centerpoint"
-          ? "CenterPoint offers rebates on qualifying high-efficiency (95%+ AFUE) gas furnaces."
-          : "Gas utilities across Minnesota commonly rebate 95%+ AFUE furnaces — check your provider.",
+          ? `CenterPoint offers rebates on qualifying high-efficiency (${afuePlus(FURNACE_AFUE.highEfficiency)}) gas furnaces.`
+          : `Gas utilities across Minnesota commonly rebate ${afuePlus(FURNACE_AFUE.highEfficiency)} furnaces — check your provider.`,
     });
     federal = true;
   }
@@ -78,8 +84,7 @@ function matchPrograms(
   if (federal) {
     out.push({
       name: "Federal tax credit (25C) — expired for 2026 installs",
-      detail:
-        "The federal Energy Efficient Home Improvement Credit (25C) ended December 31, 2025 and is not available for equipment installed in 2026 or later. If you installed on or before that date, you may still claim it on your 2025 return (confirm with a tax professional). For 2026 projects, rely on the utility rebates above and watch for Minnesota's pending state program — see our rebate database for current status.",
+      detail: `The federal ${FEDERAL_25C.name} ended ${FEDERAL_25C_EXPIRATION_LABEL} and is not available for equipment installed in 2026 or later. If you installed on or before that date, you may still claim it on your 2025 return (confirm with a tax professional). For 2026 projects, rely on the utility rebates above and watch for Minnesota's pending state program — see our rebate database for current status.`,
     });
   }
   return out;
