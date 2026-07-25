@@ -37,8 +37,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const location = getLocation(slug);
   if (!location) return {};
-  const title = `HVAC in ${location.name}, MN: Furnace Repair, AC & Cost Guide`;
-  const description = `Independent ${location.name}, MN HVAC guide for homeowners: furnace repair and AC repair cost ranges, replacement pricing, emergency HVAC tips, heat pumps, rebates, permits, and how to choose and compare local contractors. Free tools, no sales calls.`;
+  const title = `${location.name} HVAC Guide: Furnace & AC Repair, Costs`;
+  const description = `Independent ${location.name}, MN HVAC guide: real furnace & AC repair costs, replacement pricing, emergency HVAC, rebates, and how to hire and compare local contractors — before you call.`;
   return {
     title,
     description,

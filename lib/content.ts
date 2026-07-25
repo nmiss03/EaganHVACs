@@ -322,7 +322,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
     tagline: "Furnaces don't fail at convenient times — here's how to handle a no-heat emergency without overpaying.",
     intro: [
       "HVAC emergencies rarely happen during business hours. A furnace that dies at 2 AM in January or an AC that quits during a July heat wave can't wait until Monday — especially with kids, older family members, or pets at home. This guide explains what counts as a true emergency, the safety steps to take first, and how after-hours pricing works so a late-night call doesn't mean getting overcharged.",
-      "Whether it's a complete no-heat failure, a no-cooling emergency, a gas smell, or a system that's tripping the breaker, rapid dispatch gets a real, licensed local technician to your door fast — nights, weekends, and holidays across Eagan and the south metro.",
+      "Whether it's a complete no-heat failure, a no-cooling emergency, a gas smell, or a system that's tripping the breaker, the move is to call a licensed local company that offers 24/7 service — most can get a technician to your door fast, nights, weekends, and holidays across Eagan and the south metro. (A gas smell is the exception: leave the home and call your gas utility or 911 first.)",
     ],
     signs: [
       "No heat during freezing temperatures",
