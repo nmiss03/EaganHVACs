@@ -63,6 +63,7 @@ const RELATED_TOOL_SLUGS = [
 
 const RELATED_ARTICLE_SLUGS = [
   "hvac-cost-guide-minnesota",
+  "twin-cities-hvac-cost-report-2026",
   "furnace-replacement-cost",
   "ac-replacement-cost",
   "furnace-repair-cost",

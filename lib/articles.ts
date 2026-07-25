@@ -9,6 +9,7 @@
 
 import {
   COST_RANGES,
+  LIFESPANS,
   FURNACE_AFUE,
   AC_SEER2,
   FEDERAL_25C,
@@ -17,6 +18,7 @@ import {
   FURNACE_REPAIR_RANGE,
   usd,
   usdRange,
+  yearsRange,
   afuePlus,
 } from "@/lib/hvac-data";
 
@@ -165,7 +167,7 @@ export const articles: readonly Article[] = [
           "Reputable contractors quote replacements for free. Diagnostic visits for repairs usually carry a fee that's often credited toward the work.",
       },
     ],
-    related: ["questions-to-ask-hvac-contractor", "minnesota-hvac-rebates"],
+    related: ["twin-cities-hvac-cost-report-2026", "questions-to-ask-hvac-contractor", "minnesota-hvac-rebates"],
     relatedServices: ["installation-replacement", "furnace-repair", "ac-repair"],
     relatedTools: ["hvac-cost-estimator", "repair-or-replace"],
   },
@@ -1170,6 +1172,138 @@ export const articles: readonly Article[] = [
     related: ["furnace-replacement-cost", "ac-replacement-cost", "minnesota-hvac-rebates", "hvac-cost-guide-minnesota"],
     relatedServices: ["heat-pumps", "installation-replacement"],
     relatedTools: ["heat-pump-vs-furnace", "hvac-cost-estimator", "minnesota-hvac-rebate-checker"],
+  },
+  {
+    slug: "twin-cities-hvac-cost-report-2026",
+    category: "Cost Report",
+    title: "Twin Cities HVAC Cost Report 2026: What Homeowners Actually Pay",
+    metaTitle: "Twin Cities HVAC Cost Report (2026 Data) — EaganHVACs",
+    metaDescription:
+      "An independent 2026 report on Twin Cities HVAC costs: furnace, AC, and heat pump replacement and repair ranges, the efficiency premium, the rebate landscape, and the expired federal tax credit. Free to cite.",
+    updated: "July 2026",
+    readMinutes: 9,
+    leadImage: {
+      src: "/site-images/home-hvac-collage.webp",
+      alt: "A montage of Twin Cities home HVAC equipment: furnaces, central air conditioners, a heat pump, a smart thermostat, and ductwork.",
+      width: 1536,
+      height: 1024,
+      caption: "What Twin Cities homeowners pay to replace and repair the systems that keep a Minnesota home comfortable — 2026 data.",
+    },
+    intro: [
+      "Most HVAC pricing online is either hidden behind a phone call or copied from national averages that are thousands of dollars off for our market. This report is different: it's an independent, plainly-sourced snapshot of what heating and cooling actually costs Twin Cities homeowners in 2026 — replacement and repair ranges, the efficiency premium, and the rebate landscape after the federal tax credit expired.",
+      "Every figure here comes from the same internal reference dataset that powers our calculators, so the numbers are consistent across the whole site. Ranges are deliberately broad, because honest HVAC pricing is a range, not a single number. You're free to cite this report — see [how to cite it](#how-to-cite) at the end.",
+    ],
+    keyTakeaways: [
+      `A furnace replacement runs **${usdRange(COST_RANGES.furnace)}** installed; central AC **${usdRange(COST_RANGES.ac)}**; both together **${usdRange(COST_RANGES.furnaceAndAc)}**; a cold-climate heat pump **${usdRange(COST_RANGES.heatPump)}** — all before rebates.`,
+      `Most furnace repairs land between **${usdRange(FURNACE_REPAIR_RANGE)}**; the part matters less than labor, diagnosis, and availability.`,
+      "The biggest single change for 2026: the **federal 25C tax credit expired** at the end of 2025, so incentives now come from Minnesota utility rebates (largest for heat pumps) and the pending state program.",
+      "Installation quality moves lifetime cost more than brand does — a right-sized, well-installed mid-tier system beats a premium unit installed poorly.",
+    ],
+    sections: [
+      {
+        heading: "Replacement cost by system (Twin Cities, installed, before rebates)",
+        tocLabel: "Replacement costs",
+        paragraphs: [
+          "These are full installed prices — equipment, labor, permit, and removal of the old system — for a standard replacement in an existing home with usable ductwork. Lifespans are typical, well-maintained expectations in Minnesota's climate.",
+        ],
+        table: {
+          headers: ["System", "Installed range", "Typical lifespan"],
+          rows: [
+            ["Gas furnace", usdRange(COST_RANGES.furnace), `${yearsRange(LIFESPANS.furnace)} years`],
+            ["Central air conditioner", usdRange(COST_RANGES.ac), `${yearsRange(LIFESPANS.ac)} years`],
+            ["Furnace + AC (replaced together)", usdRange(COST_RANGES.furnaceAndAc), "—"],
+            ["Cold-climate heat pump", usdRange(COST_RANGES.heatPump), `${yearsRange(LIFESPANS.heatPump)} years`],
+            ["Boiler", "Varies by system", `${yearsRange(LIFESPANS.boiler)} years`],
+          ],
+        },
+      },
+      {
+        heading: "The efficiency premium: what higher ratings cost",
+        tocLabel: "Efficiency premium",
+        paragraphs: [
+          `Higher efficiency costs more up front and earns larger rebates. For furnaces, the jump is from a standard ${FURNACE_AFUE.standard}% AFUE unit to a high-efficiency condensing furnace (${afuePlus(FURNACE_AFUE.highEfficiency)}). For central AC, efficiency is measured in SEER2:`,
+        ],
+        table: {
+          headers: ["AC efficiency tier", "SEER2", "Typical use"],
+          rows: [
+            ["Standard", `~${AC_SEER2.standard.min}–${AC_SEER2.standard.max}`, "Budget-conscious replacement"],
+            ["Mid-efficiency", `${AC_SEER2.mid.min}–${AC_SEER2.mid.max}`, "Best balance for most Minnesota homes"],
+            ["High-efficiency", `${AC_SEER2.high.min}+`, "Lowest bills, top rebate eligibility"],
+          ],
+        },
+        callout: {
+          tone: "note",
+          title: "Minnesota leans high-efficiency",
+          text: "With our long heating season, the monthly savings from a high-efficiency furnace add up faster here than almost anywhere in the country — which is why high-efficiency models are the common recommendation and why the rebates exist.",
+        },
+      },
+      {
+        heading: "Typical repair costs",
+        tocLabel: "Repair costs",
+        paragraphs: [
+          `Most furnace repairs run ${usdRange(FURNACE_REPAIR_RANGE)} — a flame sensor or ignitor at the low end, a blower motor or control board higher. A cracked heat exchanger is the exception: it's a safety issue that usually means replacing the furnace. Common AC repairs (a capacitor, contactor, or fan motor) tend to be a few hundred dollars; a refrigerant leak or a failed compressor is where costs climb and repair-versus-replace enters the picture.`,
+          "As a rule of thumb, once a system is past its typical lifespan and a repair would cost more than about a third of a new system, replacement usually wins on total cost. Our [repair-or-replace calculator](/tools/repair-or-replace) applies that math to your specific system.",
+        ],
+      },
+      {
+        heading: "The 2026 rebate landscape",
+        tocLabel: "Rebates",
+        paragraphs: [
+          `Incentives materially change the real cost of high-efficiency equipment, and 2026 looks different from prior years. The headline: the federal Energy Efficient Home Improvement Credit (25C) — historically ${FEDERAL_25C.ratePct}% of cost, up to ${usd(FEDERAL_25C.capFurnaceAcUsd)} for a furnace or AC and ${usd(FEDERAL_25C.capHeatPumpUsd)} for a heat pump — expired ${FEDERAL_25C_EXPIRATION_LABEL} and is not available for 2026 installs.`,
+          "What remains: Minnesota utility rebates. Xcel Energy (electric) rebates central AC, heat pumps, and smart thermostats; CenterPoint Energy (gas) rebates high-efficiency furnaces and boilers. Heat pumps draw the largest rebates. Amounts change every program year, so we don't quote them — verify current figures in our [rebate database](/minnesota-hvac-rebate-database).",
+        ],
+      },
+      {
+        heading: "What drives Twin Cities prices",
+        tocLabel: "Price drivers",
+        list: [
+          "Climate: a demanding heating season pushes homeowners toward cold-climate and high-efficiency equipment sized for real Minnesota loads",
+          "Home size and ductwork: larger homes and duct modifications add capacity and labor",
+          "Efficiency tier: high-efficiency and modulating equipment costs more up front",
+          "Electrical and venting: heat pump panel upgrades or new sidewall venting add cost",
+          "Season and urgency: emergency winter replacements price higher than off-season work",
+          "Install quality: the single biggest driver of lifetime cost, more than brand",
+        ],
+      },
+      {
+        heading: "Methodology",
+        tocLabel: "Methodology",
+        paragraphs: [
+          "Figures are editorial planning ranges for the Twin Cities metro, derived from published contractor pricing, manufacturer equipment costs, typical local labor, and Minnesota utility program structures — reviewed and reconciled against a single internal reference dataset so no figure contradicts another across the site.",
+          "We express prices as broad low-to-high bands rather than single points, and we do not apply rebates inside the ranges (incentives change yearly). We never invent statistics or carry a prior year's rebate amount forward. For the full list of primary sources and our review process, see our [editorial policy](/editorial-policy) and [methodology](/about#methodology).",
+        ],
+      },
+      {
+        heading: "How to cite this report",
+        tocLabel: "How to cite",
+        paragraphs: [
+          "This report is free to cite and reference. If you use these figures, please attribute them to EaganHVACs and link back to this page so readers can see the methodology and current data.",
+          "Suggested citation: \"Twin Cities HVAC Cost Report 2026,\" EaganHVACs, https://www.eaganhvacs.com/resources/twin-cities-hvac-cost-report-2026.",
+        ],
+        callout: {
+          tone: "tip",
+          title: "Journalists & bloggers",
+          text: "Want the underlying breakdowns or a specific figure verified for a story? Email us and we'll help — we'd rather you cite an accurate number than a national average that's wrong for Minnesota.",
+        },
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does HVAC replacement cost in the Twin Cities in 2026?",
+        answer: `Before rebates: a furnace runs ${usdRange(COST_RANGES.furnace)} installed, central AC ${usdRange(COST_RANGES.ac)}, both together ${usdRange(COST_RANGES.furnaceAndAc)}, and a cold-climate heat pump ${usdRange(COST_RANGES.heatPump)}. Your exact price depends on home size, efficiency, ductwork, and access.`,
+      },
+      {
+        question: "Did HVAC costs change in 2026?",
+        answer: `The biggest change is incentives, not equipment prices: the federal 25C tax credit expired ${FEDERAL_25C_EXPIRATION_LABEL}, so 2026 projects rely on Minnesota utility rebates (largest for heat pumps) and the state's pending program rather than the federal credit.`,
+      },
+      {
+        question: "Can I use these figures on my own site?",
+        answer: "Yes — this report is free to cite with attribution to EaganHVACs and a link back to this page so readers can see the methodology. Email us if you need a specific figure verified for a story.",
+      },
+    ],
+    related: ["hvac-cost-guide-minnesota", "furnace-replacement-cost", "ac-replacement-cost", "heat-pump-replacement-cost"],
+    relatedServices: ["installation-replacement", "heat-pumps"],
+    relatedTools: ["hvac-cost-estimator", "repair-or-replace", "minnesota-hvac-rebate-checker"],
   },
 ];
 
