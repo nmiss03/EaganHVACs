@@ -8,6 +8,7 @@ import { StickyToc } from "@/components/cityguide/StickyToc";
 import { CityLinks } from "@/components/sections/CityLinks";
 import { KitCapture } from "@/components/sections/KitCapture";
 import { ToolCard } from "@/components/tools/ToolCard";
+import { AuthorBox } from "@/components/ui/AuthorBox";
 import { Callout } from "@/components/ui/Callout";
 import { Container } from "@/components/ui/Container";
 import { ContentImage } from "@/components/ui/ContentImage";
@@ -17,7 +18,8 @@ import { ResearchSnapshot } from "@/components/ui/ResearchSnapshot";
 import { articles, getArticle } from "@/lib/articles";
 import { renderInline } from "@/lib/render-inline";
 import { absoluteUrl, getServiceDetail } from "@/lib/content";
-import { site, authorSchema } from "@/lib/site";
+import { site } from "@/lib/site";
+import { articleSchema, faqPageSchema, jsonLdString } from "@/lib/schema";
 import { getTool } from "@/lib/tools";
 
 export function generateStaticParams() {
@@ -74,18 +76,18 @@ export default async function ArticlePage({
   }));
   const showToc = tocSections.length >= 3;
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
+  const schema = articleSchema({
     headline: article.title,
     description: article.metaDescription,
-    url: absoluteUrl(`/resources/${article.slug}`),
-    datePublished: "2026-07-01",
-    dateModified: "2026-07-01",
-    author: authorSchema(),
-    publisher: { "@id": `${site.url}/#organization` },
-    mainEntityOfPage: absoluteUrl(`/resources/${article.slug}`),
-  };
+    path: `/resources/${article.slug}`,
+    image: article.leadImage
+      ? {
+          src: article.leadImage.src,
+          width: article.leadImage.width,
+          height: article.leadImage.height,
+        }
+      : undefined,
+  });
 
   return (
     <>
@@ -315,6 +317,8 @@ export default async function ArticlePage({
                 </div>
               </div>
 
+              <AuthorBox updated={article.updated} className="mt-10" />
+
               <KitCapture source={`article-${article.slug}`} className="mt-8" />
             </div>
           </Container>
@@ -365,7 +369,11 @@ export default async function ArticlePage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: article.faqs.length
+            ? jsonLdString(schema, faqPageSchema(article.faqs))
+            : jsonLdString(schema),
+        }}
       />
     </>
   );
