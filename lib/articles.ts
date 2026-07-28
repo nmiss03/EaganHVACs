@@ -70,6 +70,12 @@ export interface Article {
   relatedServices: string[];
   /** Tool slugs this article naturally pairs with (same intent, deeper). */
   relatedTools?: string[];
+  /**
+   * Emit HowTo schema for a genuine step-by-step guide. `fromHeading` names the
+   * section whose ordered `list` holds the steps, so the steps live in exactly
+   * one place (the visible list) and the schema is generated from it.
+   */
+  howTo?: { name: string; fromHeading: string };
 }
 
 export const articles: readonly Article[] = [
@@ -478,6 +484,7 @@ export const articles: readonly Article[] = [
     related: ["furnace-repair-cost", "minnesota-hvac-maintenance-calendar", "hvac-cost-guide-minnesota"],
     relatedServices: ["furnace-repair", "emergency-hvac"],
     relatedTools: ["repair-or-replace", "system-lifespan", "hvac-cost-estimator"],
+    howTo: { name: "How to troubleshoot a furnace that isn't heating", fromHeading: "The 7 checks, in order" },
   },
   {
     slug: "furnace-replacement-cost",
@@ -842,6 +849,7 @@ export const articles: readonly Article[] = [
     related: ["ac-repair-cost", "furnace-not-working-troubleshooting", "minnesota-hvac-maintenance-calendar"],
     relatedServices: ["ac-repair", "emergency-hvac", "maintenance-tune-ups"],
     relatedTools: ["repair-or-replace", "hvac-quote-analyzer"],
+    howTo: { name: "How to troubleshoot an AC that isn't cooling", fromHeading: "First, the quick checks you can do safely" },
   },
   {
     slug: "ac-repair-cost",
