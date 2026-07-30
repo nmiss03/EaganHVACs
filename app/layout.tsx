@@ -20,37 +20,33 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
 });
 
-// Publisher framing (not "quotes"/lead-gen): we're an independent Minnesota
-// HVAC cost + tools resource. Single source so the three title fields agree.
-const HOME_TITLE = `${site.name} — Minnesota HVAC Costs, Calculators & Buying Guides`;
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: HOME_TITLE,
+    default: `${site.name} — HVAC Costs, Free Tools & Trusted Local Quotes in Eagan, MN`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
   keywords: [
-    "Minnesota HVAC cost",
+    "HVAC Eagan MN",
     "HVAC cost estimator Minnesota",
-    "furnace replacement cost Minnesota",
-    "AC replacement cost Minnesota",
-    "repair or replace furnace",
+    "furnace repair Eagan",
+    "AC repair Eagan",
     "compare HVAC quotes",
-    "Twin Cities HVAC guide",
+    "heating and cooling Eagan",
+    "HVAC contractors Dakota County",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: site.url,
     siteName: site.name,
-    title: HOME_TITLE,
+    title: `${site.name} — HVAC Costs, Free Tools & Trusted Local Quotes in Eagan, MN`,
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: HOME_TITLE,
+    title: `${site.name} — HVAC Costs, Free Tools & Trusted Local Quotes in Eagan, MN`,
     description: site.description,
   },
   robots: {

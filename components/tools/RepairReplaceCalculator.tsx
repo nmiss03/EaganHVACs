@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { track } from "@/lib/track";
 import { LIFESPANS, REPAIR_REPLACE_RULE_USD, usd } from "@/lib/hvac-data";
-import { useShareResult, readParams } from "@/lib/share-result";
 
 type SystemType = "furnace" | "ac";
 
@@ -69,27 +68,10 @@ export function RepairReplaceCalculator() {
   const [age, setAge] = useState(12);
   const [repairCost, setRepairCost] = useState(800);
   const [result, setResult] = useState<Result | null>(null);
-  const { syncUrl, copyLink, copied } = useShareResult();
-
-  // Reproduce a shared result from the URL on first load.
-  useEffect(() => {
-    const p = readParams();
-    const s = p.get("system");
-    const a = Number(p.get("age"));
-    const c = Number(p.get("cost"));
-    if ((s === "furnace" || s === "ac") && a > 0 && c >= 0) {
-      setSystem(s);
-      setAge(a);
-      setRepairCost(c);
-      setResult(evaluate(a, c, s));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   function handleCalculate() {
     const r = evaluate(age, repairCost, system);
     setResult(r);
-    syncUrl({ system, age, cost: repairCost });
     track("tool_repair_replace", { system, age, repair_cost: repairCost, verdict: r.verdict });
   }
 
@@ -177,14 +159,6 @@ export function RepairReplaceCalculator() {
             {leanReplace ? "Compare free replacement quotes" : "Get a repair quote from a local pro"}
             <Icon name="arrowRight" className="h-4 w-4" />
           </Link>
-          <button
-            type="button"
-            onClick={copyLink}
-            className="mt-4 flex items-center gap-1.5 text-sm font-semibold underline decoration-2 underline-offset-4 opacity-80 transition-opacity hover:opacity-100"
-          >
-            <Icon name={copied ? "check" : "clipboard"} className="h-4 w-4" strokeWidth={2.4} />
-            {copied ? "Link copied — share this result" : "Copy link to this result"}
-          </button>
         </div>
       ) : null}
 

@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { track } from "@/lib/track";
-import { useShareResult, readParams } from "@/lib/share-result";
 
 const terms = [24, 36, 60, 84, 120] as const;
 const rates = [
@@ -29,28 +28,14 @@ export function FinancingCalculator() {
   const [amount, setAmount] = useState(9000);
   const [term, setTerm] = useState<number>(60);
   const [rate, setRate] = useState<number>(9.99);
-  const { syncUrl, copyLink, copied } = useShareResult();
 
   const payment = monthlyPayment(amount, rate, term);
   const totalPaid = payment * term;
   const totalInterest = totalPaid - amount;
 
-  // Reproduce a shared scenario from the URL on first load.
-  useEffect(() => {
-    const p = readParams();
-    const a = Number(p.get("amount"));
-    const t = Number(p.get("term"));
-    const r = Number(p.get("rate"));
-    if (a >= 3000 && a <= 20000) setAmount(a);
-    if ((terms as readonly number[]).includes(t)) setTerm(t);
-    if (rates.some((x) => x.value === r)) setRate(r);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   function report(next: { term?: number; rate?: number }) {
     const t = next.term ?? term;
     const r = next.rate ?? rate;
-    syncUrl({ amount, term: t, rate: r });
     track("tool_financing", {
       amount,
       term: t,
@@ -191,15 +176,6 @@ export function FinancingCalculator() {
             Estimate your project cost first
           </Link>
         </div>
-
-        <button
-          type="button"
-          onClick={copyLink}
-          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-700 transition-colors hover:text-accent-700"
-        >
-          <Icon name={copied ? "check" : "clipboard"} className="h-4 w-4 text-accent-500" strokeWidth={2.4} />
-          {copied ? "Link copied — share this scenario" : "Copy link to this scenario"}
-        </button>
       </div>
 
       <p className="mt-4 text-xs leading-relaxed text-slate-500">

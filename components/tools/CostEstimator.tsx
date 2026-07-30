@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { track } from "@/lib/track";
 import { COST_RANGES } from "@/lib/hvac-data";
-import { useShareResult, readParams } from "@/lib/share-result";
 
 type SystemKey = "furnace" | "ac" | "both" | "heatpump";
 type SizeKey = "small" | "medium" | "large";
@@ -60,27 +59,10 @@ export function CostEstimator() {
   const [size, setSize] = useState<SizeKey>("medium");
   const [tier, setTier] = useState<TierKey>("high");
   const [result, setResult] = useState<[number, number] | null>(null);
-  const { syncUrl, copyLink, copied } = useShareResult();
-
-  // Reproduce a shared result from the URL on first load.
-  useEffect(() => {
-    const p = readParams();
-    const s = p.get("system") as SystemKey | null;
-    const z = p.get("size") as SizeKey | null;
-    const t = p.get("tier") as TierKey | null;
-    if (s && s in baseRanges) {
-      if (s) setSystem(s);
-      if (z && z in sizeShift) setSize(z);
-      if (t && (t === "standard" || t === "high")) setTier(t);
-      setResult(estimate(s, z && z in sizeShift ? z : "medium", t === "standard" ? "standard" : "high"));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   function handleEstimate() {
     const r = estimate(system, size, tier);
     setResult(r);
-    syncUrl({ system, size, tier });
     track("tool_cost_estimator", {
       system,
       size,
@@ -213,15 +195,6 @@ export function CostEstimator() {
               See which rebates you can claim
             </Link>
           </div>
-
-          <button
-            type="button"
-            onClick={copyLink}
-            className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-700 transition-colors hover:text-accent-700"
-          >
-            <Icon name={copied ? "check" : "clipboard"} className="h-4 w-4 text-accent-500" strokeWidth={2.4} />
-            {copied ? "Link copied — share this estimate" : "Copy link to this estimate"}
-          </button>
         </div>
       ) : null}
 

@@ -16,7 +16,6 @@ import { services, site } from "@/lib/site";
 import { getArticle } from "@/lib/articles";
 import { getTool } from "@/lib/tools";
 import { kitQuestions } from "@/lib/buyers-kit";
-import { faqPageSchema } from "@/lib/schema";
 import {
   COST_RANGES,
   FURNACE_REPAIR_RANGE,
@@ -64,7 +63,6 @@ const RELATED_TOOL_SLUGS = [
 
 const RELATED_ARTICLE_SLUGS = [
   "hvac-cost-guide-minnesota",
-  "twin-cities-hvac-cost-report-2026",
   "furnace-replacement-cost",
   "ac-replacement-cost",
   "furnace-repair-cost",
@@ -133,7 +131,19 @@ export default async function LocationDetailPage({
     inLanguage: "en-US",
   };
 
-  const faqSchema = faqPageSchema(localFaqs);
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: localFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        // Strip inline-link markup for the plain-text schema value.
+        text: f.answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"),
+      },
+    })),
+  };
 
   // In-guide jump nav (server-rendered anchors — no client JS).
   const toc: { id: string; label: string }[] = [

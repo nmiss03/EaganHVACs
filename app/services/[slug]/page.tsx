@@ -14,7 +14,6 @@ import { absoluteUrl, getServiceDetail, allServiceDetails, locations } from "@/l
 import { site } from "@/lib/site";
 import { getArticle } from "@/lib/articles";
 import { getTool } from "@/lib/tools";
-import { faqPageSchema } from "@/lib/schema";
 
 /** Service → the tools and guides that best satisfy that service's intent. */
 const SERVICE_LINKS: Record<string, { tools: string[]; articles: string[] }> = {
@@ -44,7 +43,7 @@ const SERVICE_LINKS: Record<string, { tools: string[]; articles: string[] }> = {
   },
   "heat-pumps": {
     tools: ["heat-pump-vs-furnace", "minnesota-hvac-rebate-checker", "hvac-cost-estimator"],
-    articles: ["heat-pump-replacement-cost", "minnesota-hvac-rebates", "hvac-cost-guide-minnesota"],
+    articles: ["minnesota-hvac-rebates", "hvac-cost-guide-minnesota"],
   },
   "thermostats": {
     tools: ["minnesota-hvac-rebate-checker"],
@@ -105,7 +104,15 @@ export default async function ServiceDetailPage({
     inLanguage: "en-US",
   };
 
-  const faqSchema = faqPageSchema(service.faqs);
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: service.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
 
   const otherServices = allServiceDetails.filter((s) => s.slug !== service.slug);
 

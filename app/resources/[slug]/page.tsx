@@ -8,7 +8,6 @@ import { StickyToc } from "@/components/cityguide/StickyToc";
 import { CityLinks } from "@/components/sections/CityLinks";
 import { KitCapture } from "@/components/sections/KitCapture";
 import { ToolCard } from "@/components/tools/ToolCard";
-import { AuthorBox } from "@/components/ui/AuthorBox";
 import { Callout } from "@/components/ui/Callout";
 import { Container } from "@/components/ui/Container";
 import { ContentImage } from "@/components/ui/ContentImage";
@@ -19,7 +18,6 @@ import { articles, getArticle } from "@/lib/articles";
 import { renderInline } from "@/lib/render-inline";
 import { absoluteUrl, getServiceDetail } from "@/lib/content";
 import { site } from "@/lib/site";
-import { articleSchema, faqPageSchema, howToSchema, jsonLdString } from "@/lib/schema";
 import { getTool } from "@/lib/tools";
 
 export function generateStaticParams() {
@@ -76,41 +74,17 @@ export default async function ArticlePage({
   }));
   const showToc = tocSections.length >= 3;
 
-  const schema = articleSchema({
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
     headline: article.title,
     description: article.metaDescription,
-    path: `/resources/${article.slug}`,
-    image: article.leadImage
-      ? {
-          src: article.leadImage.src,
-          width: article.leadImage.width,
-          height: article.leadImage.height,
-        }
-      : undefined,
-  });
-
-  // HowTo schema derived from the visible ordered list (single source of truth).
-  const howToSourceList = article.howTo
-    ? article.sections.find((s) => s.heading === article.howTo!.fromHeading)?.list
-    : undefined;
-  const howTo =
-    article.howTo && howToSourceList?.length
-      ? howToSchema({
-          name: article.howTo.name,
-          description: article.metaDescription,
-          steps: howToSourceList.map((item, i) => {
-            const clean = item.replace(/^\d+\.\s*/, "");
-            const sep = clean.indexOf(": ");
-            return sep > 0
-              ? { name: clean.slice(0, sep), text: clean.slice(sep + 2) }
-              : { name: `Step ${i + 1}`, text: clean };
-          }),
-        })
-      : null;
-
-  const jsonLdBlocks: object[] = [schema];
-  if (howTo) jsonLdBlocks.push(howTo);
-  if (article.faqs.length) jsonLdBlocks.push(faqPageSchema(article.faqs));
+    url: absoluteUrl(`/resources/${article.slug}`),
+    dateModified: "2026-07-01",
+    author: { "@type": "Organization", name: site.name, url: site.url },
+    publisher: { "@id": `${site.url}/#organization` },
+    mainEntityOfPage: absoluteUrl(`/resources/${article.slug}`),
+  };
 
   return (
     <>
@@ -340,8 +314,6 @@ export default async function ArticlePage({
                 </div>
               </div>
 
-              <AuthorBox updated={article.updated} className="mt-10" />
-
               <KitCapture source={`article-${article.slug}`} className="mt-8" />
             </div>
           </Container>
@@ -392,7 +364,7 @@ export default async function ArticlePage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLdString(...jsonLdBlocks) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
     </>
   );
